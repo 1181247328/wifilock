@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#fff</color>
+    <color name="colorPrimaryDark">#fff</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorBlack">#000</color>
+    <color name="colorWhite">#fff</color>
+    <color name="transparent">#00000000</color>
+
+    <color name="window_back">#cce8e7e7</color>
+
+    <color name="divider">#ccd9d9d9</color>
+    <color name="blockDivider">#e8e7e7</color>
+    <color name="background">#f0f0f0</color>
+
+    <color name="title_gradient_left">#00bff3</color>
+    <color name="button_gradient_left">#12c6e5</color>
+    <color name="title_gradient_right">#42dabe</color>
+    <color name="shadow_color">#01bff2</color>
+
+    <color name="colorGray">#b9b9b9</color>
+    <color name="lighterGray">#dcdcdc</color>
+    <color name="colorCenterName">#999999</color>
+    <color name="linkWifiColor">#48466d</color>
+    <color name="switch_color">#01bff2</color>
+    <color name="common_text_color">#717171</color>
+    <color name="dark_background">#66000000</color>
+    <color name="deeper_dark_color">#4c4c4c</color>
+
+    <color name="call_police_number">#666</color>
+    <color name="deep_dark_text_color">#333333</color>
+    <color name="delete_color">#ff8239</color>
+    <color name="line">#D3D3D3</color>
+
+    <color name="offline">#ff8239</color>
+    <color name="online">#43e3c9</color>
+    <color name="day_bind">#4c4c4c</color>
+    <color name="red">#ff0000</color>
+    <color name="device_online">#20e029</color>
+
+    <color name="ble_default_select">#3EC3F7</color>
+    <color name="ble_default_text">#9d9d9d</color>
+
+    <color name="device_state">#2e2e89</color>
+</resources>

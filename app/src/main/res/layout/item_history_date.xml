@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+
+    </data>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y128"
+        android:orientation="vertical"
+        android:background="@color/background">
+
+        <com.deelock.wifilock.overwrite.ScrollItem
+            android:id="@+id/si"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/date_tv"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y88"
+                android:layout_marginTop="@dimen/y40"
+                android:background="@color/colorWhite"
+                android:textSize="@dimen/common_text_size"
+                android:textColor="@color/colorCenterName"
+                android:gravity="center"/>
+
+            <ImageButton
+                android:id="@+id/delete_ib"
+                android:layout_width="@dimen/x88"
+                android:layout_height="@dimen/y88"
+                android:layout_marginTop="@dimen/y40"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/rx88"
+                android:src="@mipmap/delete_white"
+                android:scaleType="centerInside"
+                android:background="#f54528"/>
+
+        </com.deelock.wifilock.overwrite.ScrollItem>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider"/>
+
+    </LinearLayout>
+</layout>

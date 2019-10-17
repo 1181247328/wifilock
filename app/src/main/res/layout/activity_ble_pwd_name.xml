@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="click"
+            type="com.deelock.wifilock.bluetooth.BlePwdNameActivity" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:fitsSystemWindows="true"
+        android:clipToPadding="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+
+            android:layout_width="@dimen/title_bar_height"
+            android:layout_height="@dimen/title_bar_height"
+            android:layout_marginLeft="@dimen/icon_left_margin"
+            android:background="?android:attr/selectableItemBackground"
+            android:onClick="@{()->click.goBack()}"
+            android:padding="@dimen/x26"
+            android:src="@mipmap/left_arrow_black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/title_bar_height"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:padding="@dimen/x26"
+            android:text="下发密码"
+            android:textSize="@dimen/x32" />
+
+        <ImageView
+            android:id="@+id/ble_pwd_icon"
+            android:layout_width="@dimen/x80"
+            android:layout_height="@dimen/x88"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/x171"
+            android:src="@mipmap/add_succeed_password" />
+
+        <TextView
+            android:id="@+id/ble_pwd_notice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ble_pwd_icon"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/x23"
+            android:text="您设置的密码为"
+            android:textSize="@dimen/x22" />
+
+        <TextView
+            android:id="@+id/ble_pwd_pw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ble_pwd_notice"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/x64"
+            android:textColor="@color/switch_color"
+            android:textSize="25dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ble_pwd_pw"
+            android:layout_marginLeft="@dimen/x143"
+            android:layout_marginRight="@dimen/x143"
+            android:layout_marginTop="40dp"
+            android:text="@string/add_password_notice"
+            android:textColor="@color/delete_color"
+            android:textSize="@dimen/x22" />
+
+        <Button
+            android:id="@+id/ble_pwd_save"
+            android:layout_width="@dimen/x500"
+            android:layout_height="@dimen/y88"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/y149"
+            android:background="@mipmap/wechat_border"
+            android:onClick="@{()->click.savePwd()}"
+            android:text="下发密码"
+            android:textColor="#13c6e4"
+            android:textSize="@dimen/common_text_size" />
+
+        <LinearLayout
+            android:id="@+id/ble_pwd_weixin"
+            android:layout_width="@dimen/x500"
+            android:layout_height="@dimen/y88"
+            android:layout_above="@id/ble_pwd_save"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/y50"
+            android:background="@mipmap/wechat_border"
+            android:gravity="center"
+            android:onClick="@{()->click.shareByWeixin()}"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/x40"
+                android:layout_height="@dimen/y32"
+                android:layout_marginRight="@dimen/x16"
+                android:src="@mipmap/wechat" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="下发密码并微信分享"
+                android:textColor="#13c6e4"
+                android:textSize="@dimen/common_text_size" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ble_pwd_message"
+            android:layout_width="@dimen/x500"
+            android:layout_height="@dimen/y88"
+            android:layout_above="@id/ble_pwd_weixin"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/x50"
+            android:background="@mipmap/wechat_border"
+            android:gravity="center"
+            android:onClick="@{()->click.shareByMessage()}"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/x40"
+                android:layout_height="@dimen/y32"
+                android:layout_marginRight="@dimen/x16"
+                android:src="@mipmap/message" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="下发密码并短信分享"
+                android:textColor="#13c6e4"
+                android:textSize="@dimen/common_text_size" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/ble_pwd_select"
+            android:layout_width="@dimen/y60"
+            android:layout_height="@dimen/y60"
+            android:layout_above="@id/ble_pwd_message"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="@dimen/y52"
+            android:layout_marginRight="@dimen/x108"
+            android:onClick="@{()->click.selectPhone()}">
+
+            <ImageView
+                android:layout_width="@dimen/x40"
+                android:layout_height="@dimen/x40"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/contacts" />
+
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/ble_pwd_name"
+            style="@style/customEditText"
+            android:layout_width="@dimen/x400"
+            android:layout_height="@dimen/y60"
+            android:layout_above="@id/ble_pwd_message"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/y52"
+            android:gravity="center"
+            android:hint="请输入密码昵称"
+            android:maxLength="16"
+            android:maxLines="1" />
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/dayRl"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y123">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="循环方式"
+            android:gravity="center"
+            android:textSize="@dimen/x28"
+            android:layout_marginStart="@dimen/x108"
+            android:textColor="@color/deeper_dark_color"/>
+
+        <TextView
+            android:id="@+id/settingTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/x20"
+            android:layout_centerVertical="true"
+            android:text="点击设置"
+            android:gravity="center"
+            android:textSize="@dimen/x26"
+            android:layout_marginEnd="@dimen/x88"
+            android:layout_alignParentEnd="true"
+            android:textColor="@color/colorCenterName"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y324"
+        android:layout_marginStart="@dimen/x60"
+        android:layout_marginEnd="@dimen/x60"
+        android:layout_marginTop="@dimen/y179"
+        android:background="@drawable/bg_equipment_center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/deeper_dark_color"
+            android:layout_marginStart="@dimen/x99"
+            android:layout_marginTop="@dimen/y43"
+            android:textSize="@dimen/common_text_size"
+            android:text="生效时间"/>
+
+        <TextView
+            android:id="@+id/startTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorCenterName"
+            android:layout_marginStart="@dimen/x58"
+            android:layout_marginTop="@dimen/y93"
+            android:textSize="@dimen/x28"/>
+
+        <View
+            android:layout_width="@dimen/x88"
+            android:layout_height="@dimen/y2"
+            android:background="@mipmap/virtual_line"
+            android:layout_marginTop="@dimen/y60"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/deeper_dark_color"
+            android:layout_marginEnd="@dimen/x99"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/y43"
+            android:textSize="@dimen/common_text_size"
+            android:text="到期时间"/>
+
+        <TextView
+            android:id="@+id/endTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorCenterName"
+            android:layout_marginEnd="@dimen/x58"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/y93"
+            android:textSize="@dimen/x28"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/x48"
+            android:layout_marginEnd="@dimen/x48"/>
+
+        <LinearLayout
+            android:layout_width="@dimen/x300"
+            android:layout_height="@dimen/x88"
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/y36">
+
+            <Button
+                android:id="@+id/startBtn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="起"
+                android:gravity="center"
+                android:textSize="@dimen/common_text_size"
+                android:background="@drawable/bg_input_time_left_solid"
+                android:textColor="@color/colorWhite" />
+
+            <Button
+                android:id="@+id/endBtn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="止"
+                android:gravity="center"
+                android:textSize="@dimen/common_text_size"
+                android:background="@drawable/bg_input_time_right_stroke"
+                android:textColor="#01bff2"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/createBtn"
+        android:layout_width="@dimen/x500"
+        android:layout_height="@dimen/y88"
+        android:layout_below="@+id/rl"
+        android:layout_marginTop="@dimen/y150"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/bg_big_button"
+        android:shadowColor="@color/shadow_color"
+        android:text="生成密码"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/common_text_size" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/createBtn"
+        android:layout_marginStart="@dimen/x88"
+        android:layout_marginEnd="@dimen/x70"
+        android:layout_marginTop="@dimen/y99"
+        android:text="@string/forever_notice"
+        android:textColor="@color/colorCenterName"
+        android:textSize="@dimen/smaller_text_size"/>
+
+</RelativeLayout>

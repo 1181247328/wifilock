@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+
+    </data>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:background="@drawable/bg_title_gradient">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/title_bar_height"
+            android:background="@drawable/bg_title_gradient">
+
+            <ImageButton
+                android:id="@+id/back_ib"
+                android:layout_width="@dimen/title_bar_height"
+                android:layout_height="match_parent"
+                android:paddingLeft="@dimen/x26"
+                android:paddingRight="@dimen/x26"
+                android:paddingTop="@dimen/y28"
+                android:paddingBottom="@dimen/y28"
+                android:layout_marginLeft="@dimen/icon_left_margin"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/left_arrow_white"
+                android:background="?android:attr/selectableItemBackground"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="指纹管理"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/title_text_size" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/background">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:overScrollMode="never"
+                android:background="@color/colorWhite"
+                android:layout_marginTop="@dimen/y40">
+
+            </android.support.v7.widget.RecyclerView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

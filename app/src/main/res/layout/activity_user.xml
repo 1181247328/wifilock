@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/y420">
+
+        </android.support.v7.widget.RecyclerView>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y456"
+            android:src="@mipmap/user_manage_top"
+            android:scaleType="fitXY"/>
+
+        <ImageButton
+            android:id="@+id/back_ib"
+            android:layout_width="@dimen/title_bar_height"
+            android:layout_height="@dimen/title_bar_height"
+            android:padding="@dimen/x26"
+            android:layout_marginLeft="@dimen/icon_left_margin"
+            android:src="@mipmap/left_arrow_white"
+            android:background="?android:attr/selectableItemBackground"/>
+
+        <TextView
+            android:id="@+id/title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/title_bar_height"
+            android:textSize="@dimen/title_text_size"
+            android:paddingLeft="@dimen/x20"
+            android:paddingRight="@dimen/x20"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_vertical"
+            android:text="我"
+            android:textColor="@color/colorWhite"
+            android:scrollbarSize="@dimen/title_text_size"/>
+
+        <ImageView
+            android:layout_width="@dimen/x167"
+            android:layout_height="@dimen/y110"
+            android:layout_marginTop="@dimen/y273"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/user_manage_shadow"
+            android:id="@+id/imageView2" />
+
+        <com.deelock.wifilock.overwrite.CircleImageView
+            android:id="@+id/head_civ"
+            android:layout_width="@dimen/x160"
+            android:layout_height="@dimen/x160"
+            android:layout_marginLeft="@dimen/x60"
+            app:border="true"
+            app:border_width="0dp"
+            app:border_color="@color/colorWhite"
+            android:src="@mipmap/user_head"
+            android:layout_alignBottom="@+id/imageView2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:id="@+id/delete_tv"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y140"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorWhite"
+            android:text="删除该用户"
+            android:textColor="#ff8239"
+            android:visibility="gone"
+            android:gravity="center"/>
+
+    </RelativeLayout>
+</layout>

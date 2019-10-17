@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/x280">
+
+    <View
+        android:id="@+id/bg_v"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y370"
+        android:layout_marginTop="@dimen/y81"
+        android:layout_marginLeft="@dimen/x85"
+        android:layout_marginRight="@dimen/x85"
+        android:background="@drawable/bg_equipment_center" />
+
+    <CheckBox
+        android:id="@+id/open_cb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/y151"
+        android:text="开门推送"
+        android:textSize="@dimen/title_text_size"
+        android:textColor="@color/deeper_dark_color"/>
+
+    <CheckBox
+        android:id="@+id/close_cb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/y226"
+        android:text="关门推送"
+        android:textSize="@dimen/title_text_size"
+        android:textColor="@color/deeper_dark_color"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="@dimen/x85"
+        android:layout_marginRight="@dimen/x85"
+        android:background="@color/divider"
+        android:layout_alignBottom="@+id/bg_v"
+        android:layout_marginBottom="@dimen/x97"/>
+
+    <TextView
+        android:id="@+id/cancel_tv"
+        android:layout_width="@dimen/x290"
+        android:layout_height="@dimen/y97"
+        android:text="取消"
+        android:textSize="@dimen/x34"
+        android:gravity="center"
+        android:layout_marginLeft="@dimen/x85"
+        android:layout_alignBottom="@+id/bg_v"/>
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="@dimen/x97"
+        android:background="@color/divider"
+        android:layout_centerHorizontal="true"
+        android:layout_alignBottom="@+id/bg_v"/>
+
+    <TextView
+        android:id="@+id/ensure_tv"
+        android:layout_width="@dimen/x290"
+        android:layout_height="@dimen/y97"
+        android:text="确定"
+        android:textColor="#ff8239"
+        android:textSize="@dimen/x34"
+        android:gravity="center"
+        android:layout_marginRight="@dimen/x85"
+        android:layout_alignParentRight="true"
+        android:layout_alignBottom="@+id/bg_v"/>
+
+</RelativeLayout>

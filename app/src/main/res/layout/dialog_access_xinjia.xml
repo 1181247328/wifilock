@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/x380">
+
+    <View
+        android:id="@+id/bg_v"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y370"
+        android:layout_marginLeft="@dimen/x85"
+        android:layout_marginRight="@dimen/x85"
+        android:layout_marginTop="@dimen/y81"
+        android:background="@drawable/bg_equipment_center" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x70"
+        android:layout_marginLeft="@dimen/x150"
+        android:layout_marginRight="@dimen/x150"
+        android:layout_marginTop="@dimen/y130"
+        android:gravity="center"
+        android:textColor="@color/colorBlack"
+        android:text="请输入八位验证码"
+        android:textSize="@dimen/x38" />
+
+    <com.deelock.wifilock.overwrite.InputCodeView
+        android:id="@+id/access_et"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="@dimen/y80"
+        android:layout_marginLeft="@dimen/x150"
+        android:layout_marginRight="@dimen/x150"
+        android:layout_marginTop="@dimen/y250" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignBottom="@+id/bg_v"
+        android:layout_marginBottom="@dimen/x97"
+        android:layout_marginLeft="@dimen/x85"
+        android:layout_marginRight="@dimen/x85"
+        android:background="@color/divider" />
+
+    <TextView
+        android:id="@+id/access_cancel"
+        android:layout_width="@dimen/x290"
+        android:layout_height="@dimen/y97"
+        android:layout_alignBottom="@+id/bg_v"
+        android:layout_marginLeft="@dimen/x85"
+        android:gravity="center"
+        android:text="取消"
+        android:textSize="@dimen/x34" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="@dimen/x97"
+        android:layout_alignBottom="@+id/bg_v"
+        android:layout_centerHorizontal="true"
+        android:background="@color/divider" />
+
+    <TextView
+        android:id="@+id/access_ensure"
+        android:layout_width="@dimen/x290"
+        android:layout_height="@dimen/y97"
+        android:layout_alignBottom="@+id/bg_v"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/x85"
+        android:gravity="center"
+        android:text="确定"
+        android:textColor="#ff8239"
+        android:textSize="@dimen/x34" />
+</RelativeLayout>

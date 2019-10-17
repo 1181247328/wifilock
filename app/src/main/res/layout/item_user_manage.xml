@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+
+    </data>
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y140"
+        android:background="@drawable/bg_ripple_white">
+
+        <com.deelock.wifilock.overwrite.CircleImageView
+            android:id="@+id/head_civ"
+            android:layout_width="@dimen/x60"
+            android:layout_height="@dimen/x60"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x60"
+            android:src="@mipmap/history_head"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x30"
+            android:layout_toRightOf="@+id/head_civ"
+            android:layout_centerVertical="true">
+
+            <TextView
+                android:id="@+id/name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="我"
+                android:textSize="@dimen/common_text_size"
+                android:textColor="@color/deeper_dark_color"/>
+
+            <TextView
+                android:id="@+id/type_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/name_tv"
+                android:layout_marginTop="@dimen/y11"
+                android:textSize="@dimen/x24"
+                android:textColor="@color/colorCenterName"
+                android:text="指纹 | 密码" />
+
+            <ImageView
+                android:id="@+id/manager_iv"
+                android:layout_width="@dimen/x120"
+                android:layout_height="@dimen/y36"
+                android:layout_toRightOf="@+id/name_tv"
+                android:layout_marginLeft="@dimen/x27"
+                android:src="@mipmap/manager"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/user_type_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/x10"
+            android:paddingRight="@dimen/x10"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/x180"
+            android:text="本地"
+            android:textSize="@dimen/x24"
+            android:textColor="#00b4ff"
+            android:visibility="gone"/>
+
+        <ImageView
+            android:id="@+id/enter_ib"
+            android:layout_width="@dimen/x88"
+            android:layout_height="@dimen/y88"
+            android:padding="@dimen/x30"
+            android:layout_marginRight="@dimen/x60"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/item_right_arrow"/>
+
+        <View
+            android:id="@+id/divider_v"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/divider"
+            android:layout_marginLeft="@dimen/x120"/>
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioGroup
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/name_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="现场使用讲解确认"
+        android:textSize="@dimen/evaluate_text_size"
+        android:textColor="@color/deeper_dark_color" />
+
+    <android.support.v7.widget.AppCompatRadioButton
+        android:id="@+id/ensureRb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/x50"
+        android:text="是" />
+
+    <android.support.v7.widget.AppCompatRadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="否" />
+
+</RadioGroup>

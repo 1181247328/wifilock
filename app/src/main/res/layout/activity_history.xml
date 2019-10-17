@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="event"
+            type="com.deelock.wifilock.event.HistoryEvent"/>
+    </data>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:background="@drawable/bg_title_gradient">
+
+        <RelativeLayout
+            android:id="@+id/guide_rl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@mipmap/history_guide"
+                android:onClick="@{()->event.closeGuide()}"
+                android:scaleType="fitXY"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/title_bar_height"
+            android:background="@drawable/bg_title_gradient">
+
+            <ImageButton
+                android:id="@+id/back_ib"
+                android:layout_width="@dimen/title_bar_height"
+                android:layout_height="match_parent"
+                android:paddingLeft="@dimen/x26"
+                android:paddingRight="@dimen/x26"
+                android:paddingTop="@dimen/y28"
+                android:paddingBottom="@dimen/y28"
+                android:layout_marginLeft="@dimen/icon_left_margin"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/left_arrow_white"
+                android:background="?android:attr/selectableItemBackground"
+                android:onClick="@{()->event.back()}" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="历史记录"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/title_text_size" />
+
+            <ImageButton
+                android:id="@+id/search_ib"
+                android:layout_width="@dimen/title_bar_height"
+                android:layout_height="match_parent"
+                android:padding="@dimen/x22"
+                android:layout_marginRight="@dimen/icon_left_margin"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/search"
+                android:onClick="@{()->event.search()}"
+                android:background="?android:attr/selectableItemBackground"/>
+
+        </RelativeLayout>
+
+        <!--<com.deelock.wifilock.overwrite.HistorySwipeRefreshLayout-->
+            <!--android:id="@+id/srl"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="@color/background">-->
+
+            <!--<com.deelock.wifilock.overwrite.HistoryRecyclerView-->
+                <!--android:id="@+id/rv"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:overScrollMode="never">-->
+
+            <!--</com.deelock.wifilock.overwrite.HistoryRecyclerView>-->
+
+        <!--</com.deelock.wifilock.overwrite.HistorySwipeRefreshLayout>-->
+
+        <com.deelock.wifilock.overwrite.HistoryView
+            android:id="@+id/rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/background"
+            android:overScrollMode="never">
+
+        </com.deelock.wifilock.overwrite.HistoryView>
+
+    </LinearLayout>
+</layout>

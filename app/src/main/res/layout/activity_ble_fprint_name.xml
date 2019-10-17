@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="click"
+            type="com.deelock.wifilock.bluetooth.BleFprintNameActivity" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/ble_fprint_name_icon"
+            android:layout_width="@dimen/x80"
+            android:layout_height="@dimen/x88"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/y170"
+            android:src="@mipmap/add_succeed_print" />
+
+        <EditText
+            android:id="@+id/ble_fprint_name"
+            style="@style/customEditText"
+            android:layout_width="@dimen/x400"
+            android:layout_height="@dimen/y60"
+            android:layout_below="@id/ble_fprint_name_icon"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/y140"
+            android:gravity="center"
+            android:hint="请输入指纹名称"
+            android:maxLength="16"
+            android:maxLines="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ble_fprint_name"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/x60"
+            android:text="或选择"
+            android:textColor="#4c4c4c"
+            android:textSize="@dimen/common_text_size" />
+
+        <TextView
+            android:layout_width="@dimen/x200"
+            android:layout_height="@dimen/x88"
+            android:layout_below="@+id/ble_fprint_name"
+            android:layout_marginLeft="@dimen/x60"
+            android:layout_marginTop="@dimen/x145"
+            android:background="@drawable/bg_print_name"
+            android:gravity="center"
+            android:onClick="@{()->click.rightThumb()}"
+            android:text="右手拇指"
+            android:textColor="@color/colorCenterName"
+            android:textSize="@dimen/common_text_size" />
+
+        <TextView
+            android:layout_width="@dimen/x200"
+            android:layout_height="@dimen/x88"
+            android:layout_below="@+id/ble_fprint_name"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/x145"
+            android:background="@drawable/bg_print_name"
+            android:gravity="center"
+            android:onClick="@{()->click.rightIndex()}"
+            android:text="右手食指"
+            android:textColor="@color/colorCenterName"
+            android:textSize="@dimen/common_text_size" />
+
+        <TextView
+            android:layout_width="@dimen/x200"
+            android:layout_height="@dimen/x88"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/ble_fprint_name"
+            android:layout_marginRight="@dimen/x60"
+            android:layout_marginTop="@dimen/x145"
+            android:background="@drawable/bg_print_name"
+            android:gravity="center"
+            android:onClick="@{()->click.rightMiddle()}"
+            android:text="右手中指"
+            android:textColor="@color/colorCenterName"
+            android:textSize="@dimen/common_text_size" />
+
+        <TextView
+            android:layout_width="@dimen/x200"
+            android:layout_height="@dimen/x88"
+            android:layout_below="@+id/ble_fprint_name"
+            android:layout_marginLeft="@dimen/x60"
+            android:layout_marginTop="@dimen/x250"
+            android:background="@drawable/bg_print_name"
+            android:gravity="center"
+            android:onClick="@{()->click.leftThumb()}"
+            android:text="左手拇指"
+            android:textColor="@color/colorCenterName"
+            android:textSize="@dimen/common_text_size" />
+
+        <TextView
+            android:layout_width="@dimen/x200"
+            android:layout_height="@dimen/x88"
+            android:layout_below="@+id/ble_fprint_name"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/x250"
+            android:background="@drawable/bg_print_name"
+            android:gravity="center"
+            android:onClick="@{()->click.leftIndex()}"
+            android:text="左手食指"
+            android:textColor="@color/colorCenterName"
+            android:textSize="@dimen/common_text_size" />
+
+        <TextView
+            android:layout_width="@dimen/x200"
+            android:layout_height="@dimen/x88"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/ble_fprint_name"
+            android:layout_marginRight="@dimen/x60"
+            android:layout_marginTop="@dimen/x250"
+            android:background="@drawable/bg_print_name"
+            android:gravity="center"
+            android:onClick="@{()->click.leftMiddle()}"
+            android:text="左手中指"
+            android:textColor="@color/colorCenterName"
+            android:textSize="@dimen/common_text_size" />
+
+        <Button
+            android:id="@+id/save_btn"
+            android:layout_width="@dimen/x500"
+            android:layout_height="@dimen/y88"
+            android:layout_below="@+id/ble_fprint_name"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/x406"
+            android:background="@drawable/bg_big_button"
+            android:onClick="@{()->click.save()}"
+            android:text="保存"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/common_text_size" />
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
+    android:background="@color/background">
+
+    <ImageButton
+        android:id="@+id/backIb"
+        android:layout_width="@dimen/title_bar_height"
+        android:layout_height="@dimen/title_bar_height"
+        android:padding="@dimen/x26"
+        android:layout_marginLeft="@dimen/icon_left_margin"
+        android:src="@mipmap/left_arrow_black"
+        android:background="?android:attr/selectableItemBackground"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="@dimen/title_bar_height"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"
+        android:text="下发密码"
+        android:textSize="@dimen/title_text_size"
+        android:textColor="@color/deeper_dark_color"/>
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="@dimen/x80"
+        android:layout_height="@dimen/y88"
+        android:src="@mipmap/add_succeed_password"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="@dimen/y177"
+        app:layout_constraintTop_toTopOf="parent"/>
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/icon"
+        android:layout_marginTop="@dimen/y23"
+        android:textColor="@color/colorCenterName"
+        android:gravity="center"
+        android:text="您设置的密码为："/>
+
+    <TextView
+        android:id="@+id/pwdTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="@dimen/x60"
+        android:textColor="@color/shadow_color"
+        app:layout_constraintTop_toBottomOf="@+id/icon"
+        android:layout_marginTop="@dimen/y93"/>
+    
+    <ImageButton
+        android:id="@+id/copyPwdIv"
+        android:layout_width="@dimen/x40"
+        android:layout_height="@dimen/x40"
+        app:layout_constraintTop_toTopOf="@+id/pwdTv"
+        app:layout_constraintBottom_toBottomOf="@+id/pwdTv"
+        android:layout_marginRight="@dimen/x167"
+        app:layout_constraintRight_toRightOf="parent"
+        android:src="@mipmap/copy"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y1"
+        app:layout_constraintTop_toBottomOf="@+id/pwdTv"
+        android:layout_marginTop="@dimen/y10"
+        android:background="@color/divider"
+        android:layout_marginLeft="@dimen/x168"
+        android:layout_marginRight="@dimen/x168"/>
+    
+    <TextView
+        android:id="@+id/pwdNotice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/x142"
+        android:layout_marginRight="@dimen/x142"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pwdTv"
+        android:textSize="@dimen/x22"
+        android:textColor="@color/delete_color"
+        android:text="@string/hs_pwd_notice"
+        android:layout_marginTop="@dimen/y49"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/pwdNotice"
+        android:layout_marginTop="@dimen/y77"
+        android:textColor="@color/colorCenterName"
+        android:gravity="center"
+        android:text="下发验证码为："/>
+
+    <TextView
+        android:id="@+id/verifyTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="@dimen/x60"
+        android:textColor="@color/shadow_color"
+        app:layout_constraintTop_toBottomOf="@+id/pwdNotice"
+        android:layout_marginTop="@dimen/y148"/>
+
+    <ImageButton
+        android:id="@+id/copyVerifyIv"
+        android:layout_width="@dimen/x40"
+        android:layout_height="@dimen/x40"
+        app:layout_constraintTop_toTopOf="@+id/verifyTv"
+        app:layout_constraintBottom_toBottomOf="@+id/verifyTv"
+        android:layout_marginRight="@dimen/y148"
+        app:layout_constraintRight_toRightOf="parent"
+        android:src="@mipmap/copy"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y1"
+        app:layout_constraintTop_toBottomOf="@+id/verifyTv"
+        android:layout_marginTop="@dimen/y10"
+        android:background="@color/divider"
+        android:layout_marginLeft="@dimen/x168"
+        android:layout_marginRight="@dimen/x168"/>
+
+    <TextView
+        android:id="@+id/verifyNotice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/x142"
+        android:layout_marginRight="@dimen/x142"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/verifyTv"
+        android:textSize="@dimen/x22"
+        android:textColor="@color/delete_color"
+        android:text="@string/hs_verify_notice"
+        android:layout_marginTop="@dimen/y43"/>
+    
+    <Button
+        android:id="@+id/succeedBtn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y88"
+        android:layout_marginRight="@dimen/x125"
+        android:layout_marginLeft="@dimen/x125"
+        android:background="@drawable/bg_border_blue"
+        android:text="下发成功"
+        android:textSize="@dimen/x30"
+        android:textColor="@color/shadow_color"
+        app:layout_constraintTop_toBottomOf="@+id/verifyNotice"
+        android:layout_marginTop="@dimen/y97"/>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="event"
+            type="com.deelock.wifilock.event.RegisterEvent" />
+
+        <variable
+            name="register"
+            type="com.deelock.wifilock.entity.RegisterRequest" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:fitsSystemWindows="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/title_bar_height">
+
+            <ImageButton
+                android:id="@+id/back_ib"
+                android:layout_width="@dimen/title_bar_height"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/icon_left_margin"
+                android:background="?android:attr/selectableItemBackground"
+                android:onClick="@{()->event.back()}"
+                android:padding="@dimen/x26"
+                android:src="@mipmap/left_arrow_black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="安装服务评价"
+                android:textSize="@dimen/title_text_size" />
+
+            <TextView
+                android:layout_width="@dimen/x100"
+                android:layout_height="@dimen/title_bar_height"
+                android:layout_alignParentRight="true"
+                android:text="跳过"
+                android:gravity="center"
+                android:layout_marginRight="@dimen/x40"
+                android:textSize="@dimen/x28"
+                android:textColor="@color/colorCenterName"/>
+
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/title_bar_height">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/y60">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_evaluate"
+                    android:layout_marginLeft="@dimen/x60"
+                    android:layout_marginRight="@dimen/x60"
+                    android:paddingLeft="@dimen/x60"
+                    android:paddingRight="@dimen/x60">
+
+                </android.support.v7.widget.RecyclerView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="您对本次安装服务的意见、建议："
+                    android:textSize="@dimen/common_text_size"
+                    android:textColor="@color/deeper_dark_color"
+                    android:layout_marginTop="@dimen/y60"
+                    android:layout_marginLeft="@dimen/x60"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y315"
+                    android:background="@drawable/bg_evaluate"
+                    android:layout_marginLeft="@dimen/x60"
+                    android:layout_marginRight="@dimen/x60"
+                    android:layout_marginTop="@dimen/y30">
+
+                    <EditText
+                        android:id="@+id/advice_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:text="text"
+                        android:textSize="@dimen/evaluate_text_size"
+                        android:textColor="@color/common_text_color"
+                        android:layout_marginLeft="@dimen/x66"
+                        android:layout_marginTop="@dimen/y68"
+                        android:layout_marginBottom="@dimen/y68"
+                        android:layout_marginRight="@dimen/x66"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="安装服务评分："
+                    android:textSize="@dimen/common_text_size"
+                    android:textColor="@color/deeper_dark_color"
+                    android:layout_marginTop="@dimen/y60"
+                    android:layout_marginLeft="@dimen/x60"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y158"
+                    android:layout_marginLeft="@dimen/x60"
+                    android:orientation="horizontal"
+                    android:layout_marginRight="@dimen/x60"
+                    android:background="@drawable/bg_evaluate"
+                    android:layout_marginTop="@dimen/y30"
+                    android:gravity="center_vertical">
+
+                    <com.deelock.wifilock.overwrite.EvaluateBar
+                        android:layout_width="@dimen/x304"
+                        android:layout_height="@dimen/y66"
+                        android:layout_marginLeft="@dimen/x44"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="@dimen/x39"
+                            android:layout_height="@dimen/x39"
+                            android:src="@mipmap/empty_star"
+                            android:layout_marginLeft="@dimen/x19"
+                            android:layout_marginRight="@dimen/x19"/>
+
+                        <ImageView
+                            android:layout_width="@dimen/x39"
+                            android:layout_height="@dimen/x39"
+                            android:src="@mipmap/empty_star"
+                            android:layout_marginLeft="@dimen/x19"
+                            android:layout_marginRight="@dimen/x19"/>
+
+                        <ImageView
+                            android:layout_width="@dimen/x39"
+                            android:layout_height="@dimen/x39"
+                            android:src="@mipmap/empty_star"
+                            android:layout_marginLeft="@dimen/x19"
+                            android:layout_marginRight="@dimen/x19"/>
+
+                        <ImageView
+                            android:layout_width="@dimen/x39"
+                            android:layout_height="@dimen/x39"
+                            android:src="@mipmap/empty_star"
+                            android:layout_marginLeft="@dimen/x19"
+                            android:layout_marginRight="@dimen/x19"/>
+
+                    </com.deelock.wifilock.overwrite.EvaluateBar>
+
+                    <TextView
+                        android:layout_width="@dimen/x130"
+                        android:layout_height="@dimen/x130"
+                        android:text="非常满意"
+                        android:textSize="@dimen/smaller_text_size"
+                        android:textColor="@color/colorCenterName"
+                        android:gravity="center"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/bg_gray_circle"
+                        android:layout_marginLeft="@dimen/x66" />
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/login_btn"
+                    android:layout_width="@dimen/x500"
+                    android:layout_height="@dimen/y88"
+                    android:layout_marginTop="@dimen/y60"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/bg_big_button"
+                    android:shadowColor="@color/shadow_color"
+                    android:text="提交"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/common_text_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/x24"
+                    android:textColor="@color/colorCenterName"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/evaluate_number"
+                    android:layout_marginTop="@dimen/y60"
+                    android:layout_marginBottom="@dimen/y60"/>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </RelativeLayout>
+</layout>

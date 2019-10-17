@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_item_height">
+
+        <TextView
+            android:id="@+id/name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="右手食指"
+            android:layout_marginLeft="@dimen/x120"
+            android:layout_centerVertical="true"
+            android:textSize="@dimen/common_text_size"
+            android:textColor="@color/colorCenterName"/>
+
+        <ImageView
+            android:id="@+id/manager_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/manager"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/name_tv"
+            android:layout_marginLeft="10dp"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/state_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/x80"/>
+
+        <View
+            android:id="@+id/divider_v"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/divider"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="@dimen/x120"/>
+
+    </RelativeLayout>
+</layout>

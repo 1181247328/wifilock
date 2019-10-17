@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="click"
+            type="android.view.View.OnClickListener"/>
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:background="@drawable/bg_title_gradient">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/title_bar_height"
+            android:background="@drawable/bg_title_gradient">
+
+            <ImageButton
+                android:layout_width="@dimen/title_bar_height"
+                android:layout_height="match_parent"
+                android:padding="@dimen/x26"
+                android:layout_marginLeft="@dimen/icon_left_margin"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/left_arrow_white"
+                android:background="?android:attr/selectableItemBackground"
+                android:onClick="@{click}"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="质保信息"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/title_text_size" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/background"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/common_item_height"
+                android:layout_marginTop="@dimen/x40"
+                android:background="@color/colorWhite"
+                android:paddingLeft="@dimen/x60">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/x38"
+                    android:textSize="@dimen/common_text_size"
+                    android:textColor="@color/deeper_dark_color"
+                    android:text="产品型号"/>
+
+                <TextView
+                    android:id="@+id/type_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/x78"
+                    android:textSize="@dimen/x24"
+                    android:textColor="@color/colorCenterName"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/divider"
+                    android:layout_alignParentBottom="true"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/common_item_height"
+                android:background="@color/colorWhite"
+                android:paddingLeft="@dimen/x60">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/x38"
+                    android:textSize="@dimen/common_text_size"
+                    android:textColor="@color/deeper_dark_color"
+                    android:text="初次绑定时间"/>
+
+                <TextView
+                    android:id="@+id/bind_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/x78"
+                    android:textSize="@dimen/x24"
+                    android:textColor="@color/colorCenterName"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/divider"
+                    android:layout_alignParentBottom="true"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/common_item_height"
+                android:background="@color/colorWhite"
+                android:paddingLeft="@dimen/x60">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/x38"
+                    android:textSize="@dimen/common_text_size"
+                    android:textColor="@color/deeper_dark_color"
+                    android:text="质保期"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/x78"
+                    android:textSize="@dimen/x24"
+                    android:textColor="@color/colorCenterName"
+                    android:text="三年"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/divider"
+                    android:layout_alignParentBottom="true"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/common_item_height"
+                android:background="@color/colorWhite"
+                android:paddingLeft="@dimen/x60">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/x38"
+                    android:textSize="@dimen/common_text_size"
+                    android:textColor="@color/deeper_dark_color"
+                    android:text="保质到期时间"/>
+
+                <TextView
+                    android:id="@+id/rest_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/x78"
+                    android:textSize="@dimen/x24"
+                    android:textColor="@color/colorCenterName"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/divider"
+                    android:layout_alignParentBottom="true"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/common_item_height"
+                android:background="@color/colorWhite"
+                android:paddingLeft="@dimen/x60">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/x38"
+                    android:textSize="@dimen/common_text_size"
+                    android:textColor="@color/deeper_dark_color"
+                    android:text="剩余天数"/>
+
+                <TextView
+                    android:id="@+id/rest_day_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/x78"
+                    android:textSize="@dimen/x24"
+                    android:textColor="@color/colorCenterName"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

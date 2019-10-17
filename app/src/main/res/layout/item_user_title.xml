@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/center_rl"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y140"
+        android:paddingLeft="@dimen/x60">
+
+        <ImageView
+            android:id="@+id/icon_iv"
+            android:layout_width="@dimen/x40"
+            android:layout_height="@dimen/x40"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/user_manage_print" />
+
+        <TextView
+            android:id="@+id/name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x60"
+            android:text="指纹管理"
+            android:textSize="@dimen/common_text_size"
+            android:textColor="@color/deeper_dark_color"/>
+
+        <ImageButton
+            android:id="@+id/add_ib"
+            android:layout_width="@dimen/x80"
+            android:layout_height="@dimen/y80"
+            android:padding="@dimen/x22"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/x60"
+            android:src="@mipmap/user_manage_add"
+            android:background="@null"/>
+
+        <View
+            android:id="@+id/divider_v"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="@dimen/x60"
+            android:background="@color/divider" />
+
+    </RelativeLayout>
+</layout>

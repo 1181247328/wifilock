@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:background="@drawable/bg_title_gradient">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height"
+        android:background="@drawable/bg_title_gradient">
+
+        <ImageButton
+            android:id="@+id/backIb"
+            android:layout_width="@dimen/title_bar_height"
+            android:layout_height="match_parent"
+            android:padding="@dimen/x26"
+            android:layout_marginLeft="@dimen/icon_left_margin"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/left_arrow_white"
+            android:background="?android:attr/selectableItemBackground" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="设备详情"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/title_text_size" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="@color/background">
+
+        <RelativeLayout
+            android:id="@+id/nameRl"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y140"
+            android:layout_marginTop="@dimen/y40"
+            android:paddingLeft="@dimen/x60"
+            android:background="@drawable/bg_ripple_white">
+
+            <ImageView
+                android:layout_width="@dimen/x40"
+                android:layout_height="@dimen/y40"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/equipment_detail_name"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="设备名称"
+                android:textSize="@dimen/common_text_size"
+                android:textColor="@color/deeper_dark_color"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/x60"/>
+
+            <TextView
+                android:id="@+id/nameTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/x120"
+                android:textSize="@dimen/smaller_text_size"
+                android:textColor="@color/colorCenterName"/>
+
+            <ImageView
+                android:layout_width="@dimen/x15"
+                android:layout_height="@dimen/y27"
+                android:layout_marginRight="@dimen/x60"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/item_right_arrow"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider"
+                android:layout_alignParentBottom="true"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/aboutRl"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y140"
+            android:paddingLeft="@dimen/x60"
+            android:background="@drawable/bg_ripple_white"
+            android:layout_alignParentStart="true">
+
+            <ImageView
+                android:layout_width="@dimen/x40"
+                android:layout_height="@dimen/y40"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/equipment_detail_about"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="关于硬件"
+                android:layout_centerVertical="true"
+                android:textSize="@dimen/common_text_size"
+                android:textColor="@color/deeper_dark_color"
+                android:layout_marginLeft="@dimen/x60"/>
+
+            <ImageView
+                android:layout_width="@dimen/x15"
+                android:layout_height="@dimen/y27"
+                android:layout_marginRight="@dimen/x60"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/item_right_arrow"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider"
+                android:layout_alignParentBottom="true"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/changeWifiRl"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y140"
+            android:paddingLeft="@dimen/x60"
+            android:background="@drawable/bg_ripple_white">
+
+            <ImageView
+                android:layout_width="@dimen/x40"
+                android:layout_height="@dimen/y40"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/equipment_detail_wifi"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="设备WiFi"
+                android:textSize="@dimen/common_text_size"
+                android:textColor="@color/deeper_dark_color"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/x60"/>
+
+            <TextView
+                android:id="@+id/wifiTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/x96"
+                android:textColor="@color/colorCenterName"
+                android:textSize="@dimen/common_text_size" />
+
+            <ImageView
+                android:layout_width="@dimen/x15"
+                android:layout_height="@dimen/y27"
+                android:layout_marginRight="@dimen/x60"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/item_right_arrow"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider"
+                android:layout_alignParentBottom="true"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/allRl"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y140"
+            android:background="@drawable/bg_ripple_white"
+            android:paddingLeft="@dimen/x60">
+
+            <ImageView
+                android:layout_width="@dimen/x40"
+                android:layout_height="@dimen/y40"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/password" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/x60"
+                android:textSize="@dimen/common_text_size"
+                android:textColor="@color/deeper_dark_color"
+                android:text="全部密码" />
+
+            <ImageView
+                android:layout_width="@dimen/x15"
+                android:layout_height="@dimen/y27"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/x60"
+                android:src="@mipmap/item_right_arrow" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider"
+                android:layout_alignParentBottom="true"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/recordRl"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y140"
+            android:background="@drawable/bg_ripple_white"
+            android:paddingLeft="@dimen/x60">
+
+            <ImageView
+                android:layout_width="@dimen/x40"
+                android:layout_height="@dimen/y40"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/equipment_history" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/x60"
+                android:textSize="@dimen/common_text_size"
+                android:textColor="@color/deeper_dark_color"
+                android:text="下发密码记录" />
+
+            <ImageView
+                android:layout_width="@dimen/x15"
+                android:layout_height="@dimen/y27"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/x60"
+                android:src="@mipmap/item_right_arrow" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/deleteLl"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y143"
+        android:orientation="vertical"
+        android:background="@color/colorWhite">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y2"
+            android:background="@color/divider"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y140"
+            android:background="@drawable/bg_ripple_white"
+            android:text="删除该设备"
+            android:textSize="@dimen/common_text_size"
+            android:textColor="#ff8239"
+            android:paddingTop="@dimen/y45"
+            android:gravity="center_horizontal"/>
+
+    </LinearLayout>
+
+</LinearLayout>

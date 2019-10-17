@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+    <data>
+
+        <variable
+            name="click"
+            type="com.deelock.wifilock.bluetooth.BleUpdateActivity" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/shadow_color"
+        android:clipToPadding="true"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:onClick="@{()->click.onBackClicked()}"
+                android:src="@mipmap/left_arrow_white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="固件升级"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/background"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y140"
+                android:layout_marginTop="@dimen/y40"
+                android:background="@drawable/bg_ripple_white">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/x60"
+                    android:text="当前版本"
+                    android:textColor="@color/deeper_dark_color"
+                    android:textSize="@dimen/x35" />
+
+                <TextView
+                    android:id="@+id/update_hard_current"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/x80"
+                    android:textColor="@color/colorCenterName"
+                    android:textSize="@dimen/x33" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="@dimen/x60"
+                    android:background="@color/divider" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y140"
+                android:background="@drawable/bg_ripple_white">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/x60"
+                    android:text="最新版本"
+                    android:textColor="@color/deeper_dark_color"
+                    android:textSize="@dimen/x35" />
+
+                <TextView
+                    android:id="@+id/update_hard_newest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/x80"
+                    android:textColor="@color/colorCenterName"
+                    android:textSize="@dimen/x33" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/divider" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/update_hard_content"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:padding="@dimen/x60"
+                android:textColor="@color/colorCenterName"
+                android:textSize="@dimen/x32" />
+
+            <Button
+                android:id="@+id/update_hard_btn"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y140"
+                android:background="@drawable/bg_ripple_white"
+                android:onClick="@{()->click.onUpdateClicked()}"
+                android:text="升级"
+                android:textColor="#ff8239"
+                android:textSize="@dimen/x36" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

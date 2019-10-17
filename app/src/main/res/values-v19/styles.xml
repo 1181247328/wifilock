@@ -1,0 +1,46 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="colorControlNormal">#b9b9b9</item>
+        <item name="colorControlActivated">@color/switch_color</item>
+    </style>
+
+    <style name="customEditText">
+        <item name="android:background">@null</item>
+        <item name="android:drawableBottom">@drawable/line</item>
+        <item name="android:textCursorDrawable">@drawable/bg_cursor</item>
+        <item name="android:textSize">@dimen/x30</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="loginEditText">
+        <item name="android:background">@drawable/login_bg</item>
+        <item name="android:textCursorDrawable">@drawable/bg_cursor</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:textSize">@dimen/x30</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item><!--边框-->
+        <item name="android:windowIsFloating">true</item><!--是否浮现在activity之上-->
+        <item name="android:windowIsTranslucent">false</item><!--半透明-->
+        <item name="android:windowNoTitle">true</item><!--无标题-->
+        <item name="android:windowBackground">@color/transparent</item><!--背景透明-->
+        <item name="android:backgroundDimEnabled">true</item><!--模糊-->
+    </style>
+
+    <style name="switchStyle" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorControlActivated">@color/switch_color</item>
+        <item name="colorSwitchThumbNormal">@color/switch_thumb_material_light</item>
+        <item name="android:colorForegroundInverse">@color/foreground_material_light</item>
+    </style>
+
+</resources>

@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_title_gradient"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height"
+        android:background="@drawable/bg_title_gradient">
+
+        <ImageButton
+            android:id="@+id/back_ib"
+            android:layout_width="@dimen/title_bar_height"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/icon_left_margin"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="@dimen/x26"
+            android:src="@mipmap/left_arrow_white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="设备详情"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/title_text_size" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/background">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/name_rl"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y140"
+                android:layout_marginTop="@dimen/y40"
+                android:background="@drawable/bg_ripple_white"
+                android:paddingLeft="@dimen/x60">
+
+                <ImageView
+                    android:layout_width="@dimen/x40"
+                    android:layout_height="@dimen/y40"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/equipment_detail_name" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/x60"
+                    android:text="设备名称"
+                    android:textColor="@color/deeper_dark_color"
+                    android:textSize="@dimen/common_text_size" />
+
+                <TextView
+                    android:id="@+id/name_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/x120" />
+
+                <ImageView
+                    android:layout_width="@dimen/x15"
+                    android:layout_height="@dimen/y27"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/x60"
+                    android:src="@mipmap/item_right_arrow" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/divider" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/about_rl"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y140"
+                android:layout_alignParentStart="true"
+                android:background="@drawable/bg_ripple_white"
+                android:paddingLeft="@dimen/x60">
+
+                <ImageView
+                    android:layout_width="@dimen/x40"
+                    android:layout_height="@dimen/y40"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/equipment_detail_about" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/x60"
+                    android:text="关于硬件"
+                    android:textColor="@color/deeper_dark_color"
+                    android:textSize="@dimen/common_text_size" />
+
+                <ImageView
+                    android:layout_width="@dimen/x15"
+                    android:layout_height="@dimen/y27"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/x60"
+                    android:src="@mipmap/item_right_arrow" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/divider" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/change_wifi_rl"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y140"
+                android:background="@drawable/bg_ripple_white">
+
+                <ImageView
+                    android:layout_width="@dimen/x40"
+                    android:layout_height="@dimen/y40"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/x60"
+                    android:src="@mipmap/equipment_detail_wifi" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/x120"
+                    android:text="更换WiFi"
+                    android:textColor="@color/deeper_dark_color"
+                    android:textSize="@dimen/common_text_size" />
+
+                <TextView
+                    android:id="@+id/wifi_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/x96"
+                    android:textColor="@color/common_text_color"
+                    android:textSize="@dimen/common_text_size" />
+
+                <ImageView
+                    android:layout_width="@dimen/x15"
+                    android:layout_height="@dimen/y27"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/x60"
+                    android:src="@mipmap/item_right_arrow" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/divider" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/push_rl"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y140"
+                android:layout_marginTop="@dimen/y20"
+                android:background="@drawable/bg_ripple_white">
+
+                <ImageView
+                    android:layout_width="@dimen/x32"
+                    android:layout_height="@dimen/y36"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/x60"
+                    android:layout_marginTop="@dimen/y56"
+                    android:src="@mipmap/magnetometer_push" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/x120"
+                    android:text="消息推送"
+                    android:textColor="@color/deeper_dark_color"
+                    android:textSize="@dimen/common_text_size" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/x96"
+                    android:layout_marginTop="@dimen/y37"
+                    android:gravity="right"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/open_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorCenterName"
+                        android:textSize="@dimen/x26" />
+
+                    <TextView
+                        android:id="@+id/close_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/y8"
+                        android:textColor="@color/colorCenterName"
+                        android:textSize="@dimen/x26" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/push_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/x96"
+                    android:textColor="@color/common_text_color"
+                    android:textSize="@dimen/common_text_size" />
+
+                <ImageView
+                    android:layout_width="@dimen/x15"
+                    android:layout_height="@dimen/y27"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/x60"
+                    android:src="@mipmap/item_right_arrow" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/divider" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/remind_rl"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y280"
+                android:layout_marginTop="@dimen/y20"
+                android:background="@drawable/bg_ripple_white">
+
+                <ImageView
+                    android:layout_width="@dimen/x34"
+                    android:layout_height="@dimen/y43"
+                    android:layout_marginStart="@dimen/x62"
+                    android:layout_marginTop="@dimen/y45"
+                    android:src="@mipmap/magnetometer_warning" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/x120"
+                    android:layout_marginTop="@dimen/y52"
+                    android:text="开启警戒模式"
+                    android:textColor="@color/deeper_dark_color"
+                    android:textSize="@dimen/common_text_size" />
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/warning_sc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/x60"
+                    android:layout_marginTop="@dimen/y46" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2px"
+                    android:layout_marginLeft="@dimen/x60"
+                    android:layout_marginTop="@dimen/y140"
+                    android:background="@color/divider" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="@dimen/y22"
+                    android:layout_marginLeft="@dimen/x60"
+                    android:layout_marginRight="@dimen/x75"
+                    android:layout_marginTop="@dimen/y56"
+                    android:text="@string/magnetometer_remind"
+                    android:textColor="@color/colorCenterName"
+                    android:textSize="@dimen/common_text_size" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/magnetometer_access"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y140"
+                android:layout_marginBottom="@dimen/y40"
+                android:layout_marginTop="@dimen/y20"
+                android:background="@drawable/bg_ripple_white"
+                android:paddingLeft="@dimen/x60">
+
+                <ImageView
+                    android:layout_width="@dimen/x40"
+                    android:layout_height="@dimen/y40"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/access_xinjia" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/x60"
+                    android:text="接入猩家平台"
+                    android:textColor="@color/deeper_dark_color"
+                    android:textSize="@dimen/common_text_size" />
+
+
+                <ImageView
+                    android:layout_width="@dimen/x15"
+                    android:layout_height="@dimen/y27"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/x60"
+                    android:src="@mipmap/item_right_arrow" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/delete_ll"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y140"
+        android:background="@color/colorWhite"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y2"
+            android:background="@color/divider" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y140"
+            android:background="@drawable/bg_ripple_white"
+            android:gravity="center_horizontal"
+            android:paddingTop="@dimen/y45"
+            android:text="解绑该设备"
+            android:textColor="#ff8239"
+            android:textSize="@dimen/common_text_size" />
+
+    </LinearLayout>
+
+</LinearLayout>

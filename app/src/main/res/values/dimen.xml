@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="title_bar_height">@dimen/y88</dimen>
+    <dimen name="common_left_margin">@dimen/x60</dimen>
+    <dimen name="icon_left_margin">@dimen/x34</dimen>
+    <dimen name="common_item_height">@dimen/x140</dimen>
+
+    <dimen name="title_text_size">@dimen/x34</dimen>
+    <dimen name="common_text_size">@dimen/x30</dimen>
+    <dimen name="small_text_size">@dimen/x20</dimen>
+    <dimen name="evaluate_text_size">@dimen/x28</dimen>
+    <dimen name="smaller_text_size">@dimen/x24</dimen>
+</resources>

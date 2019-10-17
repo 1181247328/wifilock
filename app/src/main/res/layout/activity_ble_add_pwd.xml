@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="true"
+        android:fitsSystemWindows="true"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/ble_add_pwd_back"
+                android:layout_width="@dimen/title_bar_height"
+                android:layout_height="@dimen/title_bar_height"
+                android:layout_marginLeft="@dimen/icon_left_margin"
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="@dimen/x26"
+                android:src="@mipmap/left_arrow_black" />
+
+            <TextView
+                android:id="@+id/ble_add_pwd_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:padding="@dimen/x26"
+                android:text="管理员密码"
+                android:textSize="@dimen/x34" />
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/ble_add_pwd_notice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/y140"
+            android:text="请输入6位密码"
+            android:textColor="@color/colorCenterName"
+            android:textSize="@dimen/common_text_size" />
+
+        <com.deelock.wifilock.overwrite.PasswordArea
+            android:id="@+id/ble_add_pwd_pa"
+            android:layout_marginTop="@dimen/x40"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x200" />
+
+        <TextView
+            android:id="@+id/ble_add_pwd_tips"
+            android:layout_width="@dimen/x500"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/ble_add_pwd_tips"
+            android:textColor="#9b9b9b"
+            android:textSize="@dimen/x26" />
+
+        <Button
+            android:id="@+id/ble_add_pwd_submit"
+            android:layout_width="@dimen/x500"
+            android:layout_height="@dimen/y88"
+            android:layout_marginTop="@dimen/x30"
+            android:background="@drawable/bg_big_button"
+            android:text="确认"
+            android:textColor="@color/colorWhite"
+            android:textSize="14dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x50"
+            android:layout_weight="1"
+            android:background="@color/divider"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/ble_add_pwd_1"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_ripple_white"
+                android:text="1"
+                android:textColor="@color/colorCenterName"
+                android:textSize="@dimen/x60" />
+
+            <Button
+                android:id="@+id/ble_add_pwd_2"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginTop="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_ripple_white"
+                android:text="2"
+                android:textColor="@color/colorCenterName"
+                android:textSize="@dimen/x60" />
+
+            <Button
+                android:id="@+id/ble_add_pwd_3"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_ripple_white"
+                android:text="3"
+                android:textColor="@color/colorCenterName"
+                android:textSize="@dimen/x60" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/divider"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/ble_add_pwd_4"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_ripple_white"
+                android:text="4"
+                android:textColor="@color/colorCenterName"
+                android:textSize="@dimen/x60" />
+
+            <Button
+                android:id="@+id/ble_add_pwd_5"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginTop="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_ripple_white"
+                android:text="5"
+                android:textColor="@color/colorCenterName"
+                android:textSize="@dimen/x60" />
+
+            <Button
+                android:id="@+id/ble_add_pwd_6"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_ripple_white"
+                android:text="6"
+                android:textColor="@color/colorCenterName"
+                android:textSize="@dimen/x60" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/divider"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/ble_add_pwd_7"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_ripple_white"
+                android:text="7"
+                android:textColor="@color/colorCenterName"
+                android:textSize="@dimen/x60" />
+
+            <Button
+                android:id="@+id/ble_add_pwd_8"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginTop="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_ripple_white"
+                android:text="8"
+                android:textColor="@color/colorCenterName"
+                android:textSize="@dimen/x60" />
+
+            <Button
+                android:id="@+id/ble_add_pwd_9"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_ripple_white"
+                android:text="9"
+                android:textColor="@color/colorCenterName"
+                android:textSize="@dimen/x60" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/divider"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/ble_add_pwd_c"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="1dp"
+                android:layout_weight="1"
+                android:background="?android:selectableItemBackground"
+                android:text="c"
+                android:textColor="@color/colorCenterName"
+                android:textSize="@dimen/x60" />
+
+            <Button
+                android:id="@+id/ble_add_pwd_0"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginTop="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_ripple_white"
+                android:text="0"
+                android:textColor="@color/colorCenterName"
+                android:textSize="@dimen/x60" />
+
+            <ImageButton
+                android:id="@+id/ble_add_pwd_x"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="1dp"
+                android:layout_weight="1"
+                android:background="?android:selectableItemBackground"
+                android:src="@mipmap/password_delete" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="click"
+            type="com.deelock.wifilock.bluetooth.BleBindActivity" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:clipToPadding="true"
+        android:fitsSystemWindows="true"
+        tools:context=".bluetooth.BleBindActivity">
+
+        <ImageButton
+            android:layout_width="@dimen/title_bar_height"
+            android:layout_height="@dimen/title_bar_height"
+            android:layout_marginLeft="@dimen/icon_left_margin"
+            android:background="?android:attr/selectableItemBackground"
+            android:onClick="@{()->click.onBack()}"
+            android:src="@mipmap/left_arrow_black" />
+
+        <TextView
+            android:id="@+id/ble_bind_title"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/title_bar_height"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="连接门锁蓝牙"
+            android:textColor="#696969"
+            android:textSize="@dimen/x40" />
+
+        <ImageView
+            android:id="@+id/ble_bind_progress"
+            android:layout_width="@dimen/x400"
+            android:layout_height="@dimen/x400"
+            android:layout_below="@id/ble_bind_title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/x210"
+            android:src="@mipmap/ble_binding" />
+
+        <TextView
+            android:id="@+id/ble_binding_text"
+            android:layout_width="@dimen/x400"
+            android:layout_height="@dimen/x400"
+            android:layout_below="@id/ble_bind_title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/x210"
+            android:gravity="center"
+            android:text="正在连接门锁蓝牙"
+            android:textColor="#696969"
+            android:textSize="@dimen/x35"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/ble_bind_state"
+            android:layout_width="@dimen/x400"
+            android:layout_height="@dimen/x400"
+            android:layout_below="@id/ble_bind_title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/x210"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/ble_bind_state_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ble_bind_state_success" />
+
+            <TextView
+                android:id="@+id/ble_bind_state_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/x10"
+                android:text="门锁连接成功"
+                android:textColor="#696969"
+                android:textSize="@dimen/x35" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/ble_bind_tips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ble_bind_progress"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/x60"
+            android:onClick="@{()->click.onReconnect()}"
+            android:padding="@dimen/x30"
+            android:text="请将手机靠近门锁"
+            android:textColor="#a1a1a1"
+            android:textSize="@dimen/x33" />
+
+        <TextView
+            android:id="@+id/ble_bind_permission"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ble_bind_tips"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:text="@string/ble_permission"
+            android:textColor="@color/colorAccent"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+</layout>

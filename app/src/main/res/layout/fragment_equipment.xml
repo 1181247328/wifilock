@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y473"
+            android:scaleType="fitXY"
+            android:src="@mipmap/equipment_top" />
+
+        <TextView
+            android:id="@+id/title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x60"
+            android:layout_marginTop="@dimen/x149"
+            android:text="我的设备"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/x59" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title_tv"
+            android:layout_marginLeft="@dimen/x60"
+            android:layout_marginTop="@dimen/y25"
+            android:textSize="@dimen/smaller_text_size"
+            android:text="显示当前您已绑定的设备"
+            android:textColor="@color/colorWhite" />
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/refresh_srl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/y320">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/y120"
+                    android:overScrollMode="never">
+
+                </android.support.v7.widget.RecyclerView>
+
+                <ImageButton
+                    android:id="@+id/big_add_ib"
+                    android:layout_width="@dimen/x289"
+                    android:layout_height="@dimen/x289"
+                    android:scaleType="fitXY"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/x310"
+                    android:layout_marginRight="@dimen/x45"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:visibility="gone"
+                    android:src="@mipmap/big_add" />
+
+                <TextView
+                    android:id="@+id/add_notice_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#666"
+                    android:textSize="@dimen/smaller_text_size"
+                    android:text="添加新设备"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/big_add_ib"
+                    android:layout_marginTop="@dimen/y26"
+                    android:visibility="gone"/>
+
+            </RelativeLayout>
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+        <ImageButton
+            android:id="@+id/add_ib"
+            android:layout_width="@dimen/x150"
+            android:layout_height="@dimen/x150"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/x55"
+            android:layout_marginTop="@dimen/y320"
+            android:scaleType="fitXY"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:src="@mipmap/add_equipment" />
+
+    </RelativeLayout>
+</layout>

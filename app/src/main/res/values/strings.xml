@@ -1,0 +1,79 @@
+<resources>
+    <string name="app_name">Deelock</string>
+
+    <string name="onLine">在线</string>
+    <string name="offLine">离线</string>
+
+    <string name="rule_password">0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ#*._</string>
+    <string name="bind_lock_notice">长按“联网”键5秒后\n待门锁发出提示音，蓝灯亮起后\n点击“开始”。</string>
+    <string name="link_lick_notice">请长按“设置”按钮，\n待门锁发出提示音后，\n再点击“下一步”</string>
+    <string name="verify_manager_notice">指纹采集器位于门把手圆心，\n录入时需要您多次抬起、按压</string>
+    <string name="input_print_notice">在门锁上手指反复抬起按压5次。</string>
+    <string name="manager_notice">设置为管理员指纹</string>
+    <string name="protocol">《迪洛可科技有限公司软件许可及服务协议》《迪洛可隐私政策》</string>
+    <string name="about">公司团队核心成员均来自一线互联网科技公司，在工业设计、机械结构设计、嵌入式及APP程序开发、生产工艺管理、运维管理等核心岗位均具有多年的从业经验，我们深知智能门锁是一个特殊的安全产品，我们注重产品的每一个细节，可靠、耐用、安全、智能是我们的产品标准，为更多家庭带来安全感是我们的使命。</string>
+    <string name="toast_network_error">Network error.</string>
+    <string name="add_password_notice">注：为保障门锁安全，该密码下发成功后，不会在手机和服务器保留密码信息，请您牢记该密码。</string>
+    <string name="password_succeed_notice">新密码首次开门时需\n在密码前后按“#”键</string>
+    <string name="change_wifi_notice">请先输入正确的WiFi密码，再长按门锁“联网”键5秒，直到门锁发出“正在配置网络，请稍后”的语音提示后，松开按钮(门磁、红外请使用顶针插入背部小孔直到指示灯亮起)，\n点击“开始连接”。</string>
+    <string name="remind">开启后，任意已授权成员连接家中Wi-Fi，或距离设备120米内将不作提醒</string>
+    <string name="magnetometer_remind">开启后，所属门磁设备开启均会打提醒电话（连续两次电话间隔15分以上），适用于用户外出旅行等场景。</string>
+    <string name="infra_remind">开启后，所属红外设备开启会打提醒电话（连续两次电话间隔15分以上），适用于用户外出旅行等场景。</string>
+    <string name="evaluate_number">售后服务及投诉电话：400–060–2106</string>
+    <string name="hijack_notice">注：设置指定的指纹或密码作为报警密码，紧急时刻即可通知家人 实施救助。</string>
+    <string name="property_notice">门锁被撬，会以电话的方式通知物管，随时会有安保人员立即赶到排查安全隐患。</string>
+    <string name="select_unit">请输入单元和户（如1–1801）</string>
+    <string name="select_number">填写业主在物业登记的电话号码</string>
+    <string name="message_wait">请耐心等待1–2个工作日，我们会及时处理</string>
+    <string name="message_wrong">填写资料有误，请修改确认后重新申请</string>
+    <string name="property_number_hint">填写业主在物业登记的电话号码</string>
+    <string name="rule_unit">0123456789-</string>
+    <string name="security_info">1）安全求助会以短信和电话的形式告知通知电话；\n2）安全求助半个小时内连续只会告知一次；\n3）安全求助仅在门锁网络畅通的情况下，保证电话、短信通知达到。\n4）安全求助时，Deelock会以028–63138518的电话号码拨打求助人的手机，务必请求助人惠存该号码。</string>
+    <string name="call_number">请输入遇到危险时需要系统拨打的手机号码</string>
+    <string name="help_name">请输入求助电话持有人的姓名</string>
+    <string name="called_name">请输入该指纹或密码持有人的姓名</string>
+    <string name="forever_notice">备注：\n1）如果勾选了“删除之前的密码”，生成的密码首次使用时，会删除已在锁上使用过的密码，使之失效；\n2）密码在开始时间之后约24小时内至少使用一次，否则将失效。</string>
+    <string name="loop_notice">备注：\n1）密码在开始时间之后约24小时内至少使用一次，否则将失效。</string>
+    <string name="once_notice">备注：\n1）密码在开始时间之后的6小时内有效。</string>
+    <string name="hs_pwd_notice">注：为保障门锁安全，该密码下发成功后，不会在手机和服务器保留密码信息，请您牢记该密码。</string>
+    <string name="hs_verify_notice">注：首次输入密码时，需输入验证码，验证用户身份。</string>
+    <string name="phone_deelock">400-060-2106</string>
+
+    <string name="main_notify">系统检测到当前未开启应用通知，是否开启</string>
+    <string name="no_more_display">下次不再显示</string>
+    <string name="sure">确定</string>
+    <string name="cancel">取消</string>
+
+    <string name="device_protect">为你守护</string>
+
+    <string name="gateway_device_bind">已绑定设备</string>
+    <string name="gateway_day_bind">第&#160;%d&#160;天</string>
+    <string name="gateway_online">-&#160;在线&#160;-</string>
+    <string name="gateway_offline">-&#160;离线&#160;-</string>
+    <string name="bind_gate">长按网关按钮键3秒待蓝灯闪后松手，\n点击下一步，等待网关配置完成。</string>
+    <string name="bind_next">下一步</string>
+
+    <string name="function_lock">门锁功能</string>
+    <string name="function_firmware_update">固件升级</string>
+    <string name="function_device_volume">设备音量</string>
+    <string name="function_anti_tail">防尾随</string>
+    <string name="function_remote_pwd">远程下发密码</string>
+    <string name="function_electronic_lock">电子反锁</string>
+    <string name="function_close_wifi">关闭WiFi</string>
+    <string name="function_restore_lock">恢复门锁出厂设置</string>
+
+    <string name="anti_tail_text">开锁后距离自动上锁有数秒的等待时间，您可以根据使用习惯调节等待时间防止坏人尾随入室的风险</string>
+    <string name="device_volume_text">可在app上自己调节门锁语音音量</string>
+    <string name="remote_pwd_text">关闭功能后，用户将不能通过APP给门锁远程添加密码</string>
+    <string name="electronic_lock_text">当开启该功能时，密码、指纹都无法打开门锁(初始密码除外)，当初始密码开锁后该功能将自动关闭</string>
+    <string name="nfc_bind_tips">请将NFC卡片放在门锁面板处</string>
+    <string name="restore_text">请验证登录密码恢复出厂</string>
+
+    <string name="power_notify">电量%1$d%%</string>
+
+    <string name="ble_add_fprint">点击开始，听到提示音后将手指放置传感器采集区域，根据提示音完成指纹录入</string>
+
+    <string name="ble_add_pwd_tips">注：管理员密码为最高权限，门锁恢复出厂设置时需验证管理员密码。此密码也可正常开门。</string>
+
+    <string name="ble_permission">Android6.0及以上版本需要开启定位权限，否则无法搜索到门锁蓝牙,若要继续使用请返回上一界面重新点击开始按钮</string>
+</resources>

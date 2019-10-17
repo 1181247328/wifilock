@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/x140"
+    android:background="@color/colorWhite">
+
+    <com.deelock.wifilock.overwrite.ScrollItem
+        android:id="@+id/si"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/nameTv"
+            android:layout_width="@dimen/x200"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/common_text_size"
+            android:layout_marginTop="@dimen/y25"
+            android:textColor="@color/colorCenterName"
+            android:layout_marginLeft="@dimen/x60"/>
+
+        <ImageView
+            android:id="@+id/typeIv"
+            android:layout_width="@dimen/x141"
+            android:layout_height="@dimen/y36"
+            android:layout_marginBottom="@dimen/y25"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="@dimen/x60" />
+
+        <TextView
+            android:id="@+id/periodTv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="@dimen/x250"
+            android:layout_marginRight="@dimen/x60"/>
+
+        <ImageButton
+            android:id="@+id/deleteIb"
+            android:layout_width="@dimen/x140"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/rx140"
+            android:scaleType="centerInside"
+            android:src="@mipmap/delete_white"
+            android:background="#f54528"/>
+
+    </com.deelock.wifilock.overwrite.ScrollItem>
+
+</LinearLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/user_ble_share_item"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y140"
+        android:layout_marginTop="@dimen/y20"
+        android:background="@color/colorWhite">
+
+        <ImageView
+            android:layout_width="@dimen/x40"
+            android:layout_height="@dimen/y40"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x60"
+            android:src="@mipmap/icon_ble_share" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x120"
+            android:text="蓝牙钥匙"
+            android:textColor="@color/deeper_dark_color"
+            android:textSize="@dimen/common_text_size" />
+
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/user_ble_share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/common_left_margin"
+            android:theme="@style/switchStyle" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/divider" />
+
+    </RelativeLayout>
+</layout>

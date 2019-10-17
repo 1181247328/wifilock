@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/x280">
+
+    <View
+        android:id="@+id/input_phone_bg"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y370"
+        android:layout_marginLeft="@dimen/x85"
+        android:layout_marginRight="@dimen/x85"
+        android:layout_marginTop="@dimen/y81"
+        android:background="@drawable/bg_equipment_center" />
+
+    <EditText
+        android:id="@+id/input_phone_et"
+        style="@style/customEditText"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x60"
+        android:layout_marginLeft="@dimen/x150"
+        android:layout_marginRight="@dimen/x150"
+        android:layout_marginTop="@dimen/y200"
+        android:gravity="center"
+        android:hint="请输入手机号码"
+        android:inputType="phone"
+        android:maxLength="11"
+        android:maxLines="1"
+        android:textSize="@dimen/x34" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignBottom="@id/input_phone_bg"
+        android:layout_marginBottom="@dimen/x97"
+        android:layout_marginLeft="@dimen/x85"
+        android:layout_marginRight="@dimen/x85"
+        android:background="@color/divider" />
+
+    <TextView
+        android:id="@+id/input_phone_cancel"
+        android:layout_width="@dimen/x290"
+        android:layout_height="@dimen/y97"
+        android:layout_alignBottom="@id/input_phone_bg"
+        android:layout_marginLeft="@dimen/x85"
+        android:gravity="center"
+        android:text="取消"
+        android:textSize="@dimen/x34" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="@dimen/x97"
+        android:layout_alignBottom="@id/input_phone_bg"
+        android:layout_centerHorizontal="true"
+        android:background="@color/divider" />
+
+    <TextView
+        android:id="@+id/input_phone_sure"
+        android:layout_width="@dimen/x290"
+        android:layout_height="@dimen/y97"
+        android:layout_alignBottom="@id/input_phone_bg"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/x85"
+        android:gravity="center"
+        android:text="确定"
+        android:textColor="#ff8239"
+        android:textSize="@dimen/x34" />
+
+</RelativeLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background">
+
+        <ImageButton
+            android:id="@+id/back_ib"
+            android:layout_width="@dimen/title_bar_height"
+            android:layout_height="@dimen/title_bar_height"
+            android:padding="@dimen/x26"
+            android:layout_marginLeft="@dimen/icon_left_margin"
+            android:src="@mipmap/left_arrow_black"
+            android:background="?android:attr/selectableItemBackground"
+            android:layout_marginTop="@dimen/x50"/>
+
+        <TextView
+            android:id="@+id/title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/title_bar_height"
+            android:textSize="@dimen/title_text_size"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_vertical"
+            android:text="手势密码"
+            android:layout_marginTop="@dimen/x50"/>
+
+        <com.deelock.wifilock.overwrite.GestureLockViewGroup
+            android:id="@+id/gl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/x150"
+            android:gravity="center_vertical"
+            app:count="3"
+            app:tryTimes="5" />
+
+    </RelativeLayout>
+</layout>

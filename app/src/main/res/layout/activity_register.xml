@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="event"
+            type="com.deelock.wifilock.event.RegisterEvent"/>
+
+        <variable
+            name="register"
+            type="com.deelock.wifilock.entity.RegisterRequest"/>
+    </data>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:background="@color/background">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/title_bar_height">
+
+            <ImageButton
+                android:id="@+id/back_ib"
+                android:layout_width="@dimen/title_bar_height"
+                android:layout_height="match_parent"
+                android:padding="@dimen/x26"
+                android:layout_marginLeft="@dimen/icon_left_margin"
+                android:src="@mipmap/left_arrow_black"
+                android:background="?android:attr/selectableItemBackground"
+                android:onClick="@{()->event.back()}"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="录入信息"
+                android:textSize="@dimen/title_text_size" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="@dimen/x40"
+            android:layout_height="@dimen/x40"
+            android:layout_marginTop="@dimen/y215"
+            android:layout_marginLeft="@dimen/x125"
+            android:src="@mipmap/phone"/>
+
+        <EditText
+            android:id="@+id/phone_number_et"
+            android:layout_width="@dimen/x435"
+            android:layout_height="@dimen/y60"
+            android:layout_marginLeft="@dimen/x190"
+            android:layout_marginTop="@dimen/x200"
+            android:hint="请输入您的手机号码"
+            android:inputType="number"
+            android:text="@={register.phoneNumber}"
+            android:maxLength="11"
+            android:textSize="14dp"
+            style="@style/customEditText"/>
+
+        <ImageView
+            android:layout_width="@dimen/x40"
+            android:layout_height="@dimen/x40"
+            android:layout_marginTop="@dimen/y75"
+            android:layout_below="@+id/phone_number_et"
+            android:layout_marginLeft="@dimen/x125"
+            android:src="@mipmap/message"/>
+
+        <EditText
+            android:id="@+id/message_et"
+            android:layout_width="@dimen/x189"
+            android:layout_height="@dimen/x60"
+            android:layout_marginLeft="@dimen/x190"
+            android:layout_marginTop="@dimen/y60"
+            android:layout_below="@+id/phone_number_et"
+            android:text="@={register.msgCode}"
+            android:hint="短信验证码"
+            android:textSize="14dp"
+            android:maxLength="6"
+            android:inputType="number"
+            style="@style/customEditText"/>
+
+        <Button
+            android:id="@+id/send_btn"
+            android:layout_width="@dimen/x210"
+            android:layout_height="@dimen/x90"
+            android:text="发送验证码"
+            android:textColor="@color/colorCenterName"
+            android:onClick="@{()->event.sendMessage()}"
+            android:layout_alignBottom="@+id/message_et"
+            android:layout_alignRight="@+id/phone_number_et"
+            android:layout_alignEnd="@+id/phone_number_et" />
+
+        <ImageView
+            android:layout_width="@dimen/x40"
+            android:layout_height="@dimen/x40"
+            android:layout_marginTop="@dimen/y75"
+            android:layout_marginLeft="@dimen/x125"
+            android:layout_below="@+id/message_et"
+            android:src="@mipmap/password"/>
+
+        <EditText
+            android:id="@+id/password_et"
+            android:layout_width="@dimen/x435"
+            android:layout_height="@dimen/y60"
+            android:layout_marginTop="@dimen/y60"
+            android:layout_marginLeft="@dimen/x190"
+            android:text="@={register.password}"
+            android:hint="密码（6~16位）"
+            android:textSize="14dp"
+            android:maxLength="16"
+            android:digits="@string/rule_password"
+            android:inputType="textPassword"
+            style="@style/customEditText"
+            android:layout_below="@+id/message_et"/>
+
+        <ImageView
+            android:layout_width="@dimen/x40"
+            android:layout_height="@dimen/x40"
+            android:layout_marginTop="@dimen/y75"
+            android:layout_marginLeft="@dimen/x125"
+            android:layout_below="@+id/password_et"
+            android:src="@mipmap/nick_name"/>
+
+        <EditText
+            android:id="@+id/nick_name_et"
+            android:layout_width="@dimen/x435"
+            android:layout_height="@dimen/y60"
+            android:layout_marginTop="@dimen/y60"
+            android:layout_marginLeft="@dimen/x190"
+            android:layout_below="@+id/password_et"
+            android:gravity="center_vertical"
+            android:text="@={register.nickName}"
+            android:hint="昵称"
+            android:textSize="14dp"
+            style="@style/customEditText"/>
+
+        <Button
+            android:layout_width="@dimen/x500"
+            android:layout_height="@dimen/y88"
+            android:layout_marginTop="@dimen/y100"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/bg_big_button"
+            android:layout_below="@+id/nick_name_et"
+            android:text="注册"
+            android:textColor="@color/colorWhite"
+            android:onClick="@{()->event.commit()}"
+            android:textSize="14dp"/>
+
+    </RelativeLayout>
+</layout>

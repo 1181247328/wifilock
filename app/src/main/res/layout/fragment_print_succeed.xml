@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="event"
+            type="com.deelock.wifilock.event.PrintNameEvent"/>
+    </data>
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/icon_iv"
+            android:layout_width="@dimen/x80"
+            android:layout_height="@dimen/x88"
+            android:src="@mipmap/add_succeed_print"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/y170"/>
+
+        <EditText
+            android:id="@+id/name_et"
+            android:layout_width="@dimen/x400"
+            android:layout_height="@dimen/y60"
+            style="@style/customEditText"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/icon_iv"
+            android:layout_marginTop="@dimen/y140"
+            android:maxLines="1"
+            android:maxLength="16"
+            android:hint="请输入指纹名称"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="或选择"
+            android:textSize="@dimen/common_text_size"
+            android:textColor="#4c4c4c"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/name_et"
+            android:layout_marginTop="@dimen/x60"/>
+
+        <TextView
+            android:layout_width="@dimen/x200"
+            android:layout_height="@dimen/x88"
+            android:gravity="center"
+            android:text="右手拇指"
+            android:textSize="@dimen/common_text_size"
+            android:textColor="@color/colorCenterName"
+            android:layout_marginLeft="@dimen/x60"
+            android:layout_below="@+id/name_et"
+            android:layout_marginTop="@dimen/x145"
+            android:background="@drawable/bg_print_name"
+            android:onClick="@{()->event.rightThumb()}"/>
+
+        <TextView
+            android:layout_width="@dimen/x200"
+            android:layout_height="@dimen/x88"
+            android:gravity="center"
+            android:text="右手食指"
+            android:textSize="@dimen/common_text_size"
+            android:textColor="@color/colorCenterName"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/name_et"
+            android:layout_marginTop="@dimen/x145"
+            android:background="@drawable/bg_print_name"
+            android:onClick="@{()->event.rightIndex()}"/>
+
+        <TextView
+            android:layout_width="@dimen/x200"
+            android:layout_height="@dimen/x88"
+            android:gravity="center"
+            android:text="右手中指"
+            android:textSize="@dimen/common_text_size"
+            android:textColor="@color/colorCenterName"
+            android:layout_marginRight="@dimen/x60"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/name_et"
+            android:layout_marginTop="@dimen/x145"
+            android:background="@drawable/bg_print_name"
+            android:onClick="@{()->event.rightMiddle()}"/>
+
+        <TextView
+            android:layout_width="@dimen/x200"
+            android:layout_height="@dimen/x88"
+            android:gravity="center"
+            android:text="左手拇指"
+            android:textSize="@dimen/common_text_size"
+            android:textColor="@color/colorCenterName"
+            android:layout_marginLeft="@dimen/x60"
+            android:layout_below="@+id/name_et"
+            android:layout_marginTop="@dimen/x250"
+            android:background="@drawable/bg_print_name"
+            android:onClick="@{()->event.leftThumb()}"/>
+
+        <TextView
+            android:layout_width="@dimen/x200"
+            android:layout_height="@dimen/x88"
+            android:gravity="center"
+            android:text="左手食指"
+            android:textSize="@dimen/common_text_size"
+            android:textColor="@color/colorCenterName"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/name_et"
+            android:layout_marginTop="@dimen/x250"
+            android:background="@drawable/bg_print_name"
+            android:onClick="@{()->event.leftIndex()}"/>
+
+        <TextView
+            android:layout_width="@dimen/x200"
+            android:layout_height="@dimen/x88"
+            android:gravity="center"
+            android:text="左手中指"
+            android:textSize="@dimen/common_text_size"
+            android:textColor="@color/colorCenterName"
+            android:layout_marginRight="@dimen/x60"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/name_et"
+            android:layout_marginTop="@dimen/x250"
+            android:background="@drawable/bg_print_name"
+            android:onClick="@{()->event.leftMiddle()}"/>
+
+        <Button
+            android:id="@+id/save_btn"
+            android:layout_width="@dimen/x500"
+            android:layout_height="@dimen/y88"
+            android:layout_marginTop="@dimen/x406"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/bg_big_button"
+            android:layout_below="@+id/name_et"
+            android:text="保存"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/common_text_size"
+            android:onClick="@{()->event.save()}"/>
+
+    </RelativeLayout>
+</layout>

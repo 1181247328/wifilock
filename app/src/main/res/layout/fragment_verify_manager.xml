@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <com.deelock.wifilock.overwrite.ObliqueView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ImageButton
+        android:id="@+id/back_ib"
+        android:layout_width="@dimen/title_bar_height"
+        android:layout_height="@dimen/title_bar_height"
+        android:layout_marginLeft="@dimen/icon_left_margin"
+        android:src="@mipmap/left_arrow_black"
+        android:background="?android:attr/selectableItemBackground"/>
+
+    <TextView
+        android:id="@+id/title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y155"
+        android:textSize="@dimen/x50"
+        android:text="验证管理员指纹"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/notice_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/input_print_notice"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/title_tv"
+        android:textSize="@dimen/x34"
+        android:layout_marginTop="@dimen/x60"/>
+
+    <ImageView
+        android:id="@+id/image_iv"
+        android:layout_width="@dimen/x558"
+        android:layout_height="@dimen/x643"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:src="@mipmap/verify_manager_bg"/>
+
+</RelativeLayout>

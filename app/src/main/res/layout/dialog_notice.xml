@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/y380">
+
+    <View
+        android:id="@+id/bg_v"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y370"
+        android:layout_marginTop="@dimen/y81"
+        android:layout_marginLeft="@dimen/x85"
+        android:layout_marginRight="@dimen/x85"
+        android:background="@drawable/bg_equipment_center" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y81"
+        android:layout_marginLeft="@dimen/x85"
+        android:layout_marginRight="@dimen/x85">
+
+        <TextView
+            android:id="@+id/notice_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/x40"
+            android:layout_marginRight="@dimen/x40"
+            android:textSize="@dimen/x34"
+            android:layout_marginTop="@dimen/y230"
+            android:layout_centerInParent="true"
+            android:textColor="#4c4c4c"
+            android:text="您确定要删除该指纹？"/>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="@dimen/x85"
+        android:layout_marginRight="@dimen/x85"
+        android:background="@color/divider"
+        android:layout_alignBottom="@+id/bg_v"
+        android:layout_marginBottom="@dimen/x97"/>
+
+    <TextView
+        android:id="@+id/ensure_tv"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x97"
+        android:text="确定"
+        android:textSize="@dimen/x34"
+        android:gravity="center"
+        android:layout_marginLeft="@dimen/x85"
+        android:layout_marginRight="@dimen/x85"
+        android:layout_alignParentRight="true"
+        android:layout_alignBottom="@+id/bg_v"
+        android:textColor="#ff8239"/>
+
+</RelativeLayout>

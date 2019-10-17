@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/item"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/y190">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y170"
+        android:layout_marginRight="@dimen/x170"
+        android:background="@color/colorWhite" />
+
+    <ImageView
+        android:id="@+id/icon_iv"
+        android:layout_width="@dimen/x56"
+        android:layout_height="@dimen/x56"
+        android:layout_marginTop="@dimen/y60"
+        android:layout_marginLeft="@dimen/x60"
+        android:src="@mipmap/message_password" />
+
+    <TextView
+        android:id="@+id/time_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/x21"
+        android:layout_marginTop="@dimen/y52"
+        android:layout_toRightOf="@+id/icon_iv"
+        android:textSize="@dimen/smaller_text_size"
+        android:textColor="@color/colorCenterName"/>
+
+    <TextView
+        android:id="@+id/data_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/time_tv"
+        android:layout_marginRight="@dimen/x180"
+        android:layout_marginLeft="@dimen/x21"
+        android:layout_toRightOf="@id/icon_iv"
+        android:textColor="@color/deeper_dark_color"
+        android:textSize="@dimen/common_text_size"/>
+
+    <TextView
+        android:id="@+id/ensure_tv"
+        android:layout_width="@dimen/x170"
+        android:layout_height="@dimen/y170"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/bg_message_ensure"
+        android:gravity="center"
+        android:text="确认无风险"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/smaller_text_size" />
+
+</RelativeLayout>

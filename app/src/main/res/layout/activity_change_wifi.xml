@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="event"
+            type="com.deelock.wifilock.event.LinkWifiEvent"/>
+        <variable
+            name="password"
+            type="String"/>
+        <variable
+            name="ssid"
+            type="String"/>
+    </data>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:background="@color/background">
+
+        <ImageButton
+            android:layout_width="@dimen/title_bar_height"
+            android:layout_height="@dimen/title_bar_height"
+            android:padding="@dimen/x20"
+            android:layout_marginLeft="@dimen/icon_left_margin"
+            android:src="@mipmap/left_arrow_black"
+            android:background="?android:attr/selectableItemBackground"
+            android:onClick="@{()->event.back()}" />
+
+        <com.deelock.wifilock.overwrite.ObliqueView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x120"
+            android:textSize="@dimen/x50"
+            android:textColor="@color/deep_dark_text_color"
+            android:text="更换WiFi"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/content_tv"
+            android:layout_width="@dimen/x700"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/title_tv"
+            android:layout_marginTop="@dimen/x30"
+            android:gravity="center_horizontal"
+            android:text="@string/change_wifi_notice"
+            android:textSize="@dimen/x24"/>
+        
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x607"
+            android:layout_marginLeft="@dimen/x60"
+            android:layout_marginRight="@dimen/x60"
+            android:layout_below="@+id/title_tv"
+            android:layout_marginTop="@dimen/x150"
+            android:background="@drawable/bg_link_center"/>
+
+        <TextView
+            android:id="@+id/work_wifi_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x259"
+            android:textSize="@dimen/x34"
+            android:textColor="#01bff2"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/title_tv"/>
+
+        <TextView
+            android:id="@+id/ssid_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/x60"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginTop="@dimen/x325"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/title_tv"
+            android:gravity="center"
+            android:text="@{ssid}"/>
+
+        <EditText
+            android:id="@+id/password_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x110"
+            android:layout_marginLeft="@dimen/x320"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/ssid_tv"
+            android:hint="请输入WiFi密码"
+            android:gravity="center"
+            style="@style/customEditText"
+            android:background="@null"
+            android:text="@={password}"
+            android:maxLines="1" />
+        
+        <ImageView
+            android:layout_width="@dimen/x500"
+            android:layout_height="@dimen/x500"
+            android:layout_marginTop="@dimen/x8"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/password_tv"
+            android:src="@mipmap/bind_lock_shadow"
+            android:id="@+id/imageView" />
+
+        <TextView
+            android:layout_width="@dimen/x230"
+            android:layout_height="@dimen/x230"
+            android:background="@mipmap/configure"
+            android:text="开始连接"
+            android:textSize="@dimen/common_text_size"
+            android:gravity="center"
+            android:textColor="@color/colorWhite"
+            android:onClick="@{()->event.link()}"
+            android:layout_alignTop="@+id/imageView"
+            android:layout_marginTop="@dimen/x80"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+</layout>
+

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y140"
+        android:layout_marginTop="@dimen/y20"
+        android:background="@color/colorWhite">
+
+        <ImageView
+            android:layout_width="@dimen/x40"
+            android:layout_height="@dimen/y40"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x60"
+            android:src="@mipmap/user_manage_open" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x120"
+            android:textSize="@dimen/common_text_size"
+            android:textColor="@color/deeper_dark_color"
+            android:text="开门提醒" />
+        
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/switch_sc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:theme="@style/switchStyle"
+            android:layout_marginRight="@dimen/common_left_margin"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/divider" />
+
+    </RelativeLayout>
+</layout>

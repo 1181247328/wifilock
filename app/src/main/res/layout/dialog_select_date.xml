@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/y413">
+
+    <View
+        android:id="@+id/bg_v"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x460"
+        android:layout_marginLeft="@dimen/x85"
+        android:layout_marginRight="@dimen/x85"
+        android:background="@drawable/bg_equipment_center" />
+
+    <android.support.v7.widget.AppCompatCheckBox
+        android:id="@+id/oneCb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="星期一"
+        android:textSize="@dimen/common_text_size"
+        android:textColor="@color/colorCenterName"
+        android:layout_marginTop="@dimen/y52"
+        android:layout_marginStart="@dimen/x200"/>
+
+    <android.support.v7.widget.AppCompatCheckBox
+        android:id="@+id/twoCb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="星期二"
+        android:textSize="@dimen/common_text_size"
+        android:textColor="@color/colorCenterName"
+        android:layout_marginTop="@dimen/y115"
+        android:layout_marginStart="@dimen/x200"/>
+
+    <android.support.v7.widget.AppCompatCheckBox
+        android:id="@+id/threeCb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="星期三"
+        android:textSize="@dimen/common_text_size"
+        android:textColor="@color/colorCenterName"
+        android:layout_marginTop="@dimen/y177"
+        android:layout_marginStart="@dimen/x200"/>
+
+    <android.support.v7.widget.AppCompatCheckBox
+        android:id="@+id/fourCb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="星期四"
+        android:textSize="@dimen/common_text_size"
+        android:textColor="@color/colorCenterName"
+        android:layout_marginTop="@dimen/y240"
+        android:layout_marginStart="@dimen/x200"/>
+
+    <android.support.v7.widget.AppCompatCheckBox
+        android:id="@+id/fiveCb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="星期五"
+        android:textSize="@dimen/common_text_size"
+        android:textColor="@color/colorCenterName"
+        android:layout_marginTop="@dimen/y52"
+        android:layout_marginEnd="@dimen/x200"
+        android:layout_alignParentEnd="true"/>
+
+    <android.support.v7.widget.AppCompatCheckBox
+        android:id="@+id/sixCb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="星期六"
+        android:textSize="@dimen/common_text_size"
+        android:textColor="@color/colorCenterName"
+        android:layout_marginTop="@dimen/y115"
+        android:layout_marginEnd="@dimen/x200"
+        android:layout_alignParentEnd="true"/>
+
+    <android.support.v7.widget.AppCompatCheckBox
+        android:id="@+id/sevenCb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="星期天"
+        android:textSize="@dimen/common_text_size"
+        android:textColor="@color/colorCenterName"
+        android:layout_marginTop="@dimen/y177"
+        android:layout_marginEnd="@dimen/x200"
+        android:layout_alignParentEnd="true"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y1"
+        android:layout_marginLeft="@dimen/x85"
+        android:layout_marginRight="@dimen/x85"
+        android:background="@color/divider"
+        android:layout_alignBottom="@+id/bg_v"
+        android:layout_marginBottom="@dimen/x97"/>
+
+    <TextView
+        android:id="@+id/cancelTv"
+        android:layout_width="@dimen/x290"
+        android:layout_height="@dimen/x97"
+        android:text="取消"
+        android:textSize="@dimen/x34"
+        android:gravity="center"
+        android:layout_marginLeft="@dimen/x85"
+        android:layout_alignBottom="@+id/bg_v"
+        android:textColor="@color/colorCenterName"/>
+
+    <View
+        android:layout_width="@dimen/x1"
+        android:layout_height="@dimen/x97"
+        android:background="@color/divider"
+        android:layout_centerHorizontal="true"
+        android:layout_alignBottom="@+id/bg_v"/>
+
+    <TextView
+        android:id="@+id/ensureTv"
+        android:layout_width="@dimen/x290"
+        android:layout_height="@dimen/x97"
+        android:text="删除"
+        android:textSize="@dimen/x34"
+        android:gravity="center"
+        android:layout_marginRight="@dimen/x85"
+        android:layout_alignParentRight="true"
+        android:layout_alignBottom="@+id/bg_v"
+        android:textColor="@color/deeper_dark_color"/>
+
+</RelativeLayout>

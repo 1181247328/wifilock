@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <com.deelock.wifilock.overwrite.ObliqueView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ImageButton
+        android:id="@+id/back_ib"
+        android:layout_width="@dimen/title_bar_height"
+        android:layout_height="@dimen/title_bar_height"
+        android:layout_marginLeft="@dimen/icon_left_margin"
+        android:src="@mipmap/left_arrow_black"
+        android:background="?android:attr/selectableItemBackground"/>
+
+    <TextView
+        android:id="@+id/title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y155"
+        android:textSize="@dimen/x50"
+        android:text="添加新指纹"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/notice_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/input_print_notice"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/title_tv"
+        android:layout_marginTop="@dimen/y60"/>
+
+    <ImageView
+        android:layout_width="@dimen/x440"
+        android:layout_height="@dimen/x440"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/x166"
+        android:src="@mipmap/add_print_border1"/>
+
+    <ImageView
+        android:layout_width="@dimen/x336"
+        android:layout_height="@dimen/x336"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/x218"
+        android:src="@mipmap/add_print_border2"/>
+
+    <ImageView
+        android:layout_width="@dimen/x261"
+        android:layout_height="@dimen/x261"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/x257"
+        android:src="@mipmap/add_print_border3"/>
+
+    <ImageView
+        android:layout_width="@dimen/x406"
+        android:layout_height="@dimen/x406"
+        android:layout_marginTop="@dimen/x60"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/x150"
+        android:src="@mipmap/bind_lock_shadow"
+        android:id="@+id/imageView" />
+
+    <ImageView
+        android:id="@+id/print_bg"
+        android:layout_width="@dimen/x230"
+        android:layout_height="@dimen/x230"
+        android:src="@mipmap/configure"
+        android:textSize="@dimen/common_text_size"
+        android:textColor="@color/colorWhite"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/x274"
+        android:layout_centerHorizontal="true" />
+
+    <com.deelock.wifilock.overwrite.PrintView
+        android:id="@+id/print"
+        android:layout_width="@dimen/x160"
+        android:layout_height="@dimen/x160"
+        android:layout_alignTop="@+id/print_bg"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/x33"/>
+
+</RelativeLayout>

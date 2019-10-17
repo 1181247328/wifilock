@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="event"
+            type="com.deelock.wifilock.event.MineEvent"/>
+    </data>
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:background="@color/background">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y473"
+            android:scaleType="fitXY"
+            android:src="@mipmap/mine_top"/>
+
+        <TextView
+            android:id="@+id/name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/x59"
+            android:textColor="@color/colorWhite"
+            android:layout_marginLeft="@dimen/x60"
+            android:layout_marginTop="@dimen/x149"/>
+
+        <TextView
+            android:id="@+id/phone_number_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/name_tv"
+            android:layout_marginLeft="@dimen/x60"
+            android:layout_marginTop="@dimen/x25"
+            android:textSize="@dimen/x28"
+            android:textColor="@color/colorWhite"/>
+        
+        <ImageView
+            android:layout_width="@dimen/x200"
+            android:layout_height="@dimen/x200"
+            android:layout_marginTop="@dimen/y289"
+            android:layout_marginRight="@dimen/x45"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/head_shadow"/>
+
+        <com.deelock.wifilock.overwrite.CircleImageView
+            android:id="@+id/head_civ"
+            android:layout_width="@dimen/x178"
+            android:layout_height="@dimen/x178"
+            android:src="@mipmap/mine_head"
+            android:layout_marginTop="@dimen/y295"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/x56" />
+
+        <RelativeLayout
+            android:id="@+id/center_rl"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y140"
+            android:layout_marginTop="@dimen/y475"
+            android:paddingLeft="@dimen/x60"
+            android:onClick="@{()->event.center()}"
+            android:background="?android:attr/selectableItemBackground">
+
+            <ImageView
+                android:layout_width="@dimen/x40"
+                android:layout_height="@dimen/y40"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/mine_center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="个人中心"
+                android:textSize="@dimen/common_text_size"
+                android:textColor="@color/deeper_dark_color"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/x60"/>
+
+            <ImageView
+                android:layout_width="@dimen/x15"
+                android:layout_height="@dimen/y27"
+                android:layout_marginRight="@dimen/x60"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/item_right_arrow"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider"
+                android:layout_alignParentBottom="true"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/about_rl"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y140"
+            android:paddingLeft="@dimen/x60"
+            android:layout_below="@+id/center_rl"
+            android:onClick="@{()->event.about()}"
+            android:background="?android:attr/selectableItemBackground">
+
+            <ImageView
+                android:layout_width="@dimen/x40"
+                android:layout_height="@dimen/y40"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/about"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="关于我们"
+                android:textSize="@dimen/common_text_size"
+                android:textColor="@color/deeper_dark_color"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/x60"/>
+
+            <ImageView
+                android:layout_width="@dimen/x15"
+                android:layout_height="@dimen/y27"
+                android:layout_marginRight="@dimen/x60"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/item_right_arrow"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider"
+                android:layout_alignParentBottom="true"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</layout>

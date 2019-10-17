@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+    <data>
+        <variable
+            name="click"
+            type="com.deelock.wifilock.ui.activity.AddEquipmentActivity"/>
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="true"
+        android:background="@drawable/bg_title_gradient"
+        android:fitsSystemWindows="true">
+
+        <RelativeLayout
+            android:id="@+id/add_equ_rl"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/title_bar_height"
+            android:background="@drawable/bg_title_gradient">
+
+            <ImageButton
+                android:onClick="@{()->click.onBackClicked()}"
+                android:layout_width="@dimen/title_bar_height"
+                android:layout_height="@dimen/title_bar_height"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="@dimen/icon_left_margin"
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="@dimen/x26"
+                android:src="@mipmap/left_arrow_white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="选择设备"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/title_text_size" />
+
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/add_equ_rl"
+            android:background="@color/background">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/x80"
+                android:background="@color/colorPrimary"
+                android:divider="@drawable/line"
+                android:orientation="vertical"
+                android:showDividers="middle">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@drawable/shuzhi_line"
+                    android:orientation="horizontal"
+                    android:showDividers="middle">
+
+                    <!--添加门锁-->
+                    <ImageView
+                        android:onClick="@{()->click.onAddLockClicked()}"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/x250"
+                        android:layout_marginBottom="@dimen/x40"
+                        android:layout_marginTop="@dimen/x40"
+                        android:layout_weight="1"
+                        android:src="@mipmap/add_lock" />
+
+                    <!--添加门磁-->
+                    <ImageView
+                        android:onClick="@{()->click.onAddMagClicked()}"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/x250"
+                        android:layout_marginBottom="@dimen/x40"
+                        android:layout_marginTop="@dimen/x40"
+                        android:layout_weight="1"
+                        android:src="@mipmap/add_gate_magnetic" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@drawable/shuzhi_line"
+                    android:orientation="horizontal"
+                    android:showDividers="middle">
+
+                    <!--添加网关-->
+                    <ImageView
+                        android:onClick="@{()->click.onAddGateClicked()}"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/x250"
+                        android:layout_marginBottom="@dimen/x40"
+                        android:layout_marginTop="@dimen/x40"
+                        android:layout_weight="1"
+                        android:src="@mipmap/add_gateway" />
+
+                    <!--添加人体红外-->
+                    <ImageView
+                        android:onClick="@{()->click.onAddInfraClicked()}"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/x250"
+                        android:layout_marginBottom="@dimen/x40"
+                        android:layout_marginTop="@dimen/x40"
+                        android:layout_weight="1"
+                        android:src="@mipmap/infra_red" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@drawable/shuzhi_line"
+                    android:orientation="horizontal"
+                    android:showDividers="middle">
+
+                    <!--添加智能猫眼-->
+                    <ImageView
+                        android:onClick="@{()->click.onAddCatClicked()}"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/x250"
+                        android:layout_marginBottom="@dimen/x40"
+                        android:layout_marginTop="@dimen/x40"
+                        android:layout_weight="1"
+                        android:src="@mipmap/cat_eye" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="@dimen/x40"
+                        android:layout_marginTop="@dimen/x40"
+                        android:layout_weight="1"
+                        android:src="@mipmap/more_expectation" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </RelativeLayout>
+
+</layout>

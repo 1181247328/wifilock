@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/x100"
+    android:paddingRight="@dimen/x100">
+
+    <RelativeLayout
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+           android:id="@+id/callphone_text"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y80"
+            android:background="@drawable/bg_select_top"
+            android:gravity="center_horizontal"
+            android:paddingBottom="@dimen/x20"
+            android:paddingTop="@dimen/x20"
+            android:text="@string/phone_deelock"
+            android:textColor="#000000"
+            android:textSize="@dimen/x32" />
+
+        <LinearLayout
+          android:layout_below="@id/callphone_text"
+            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y80"
+            android:background="@drawable/bg_select_bottom"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/callphone_cancel"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/common_text_color"
+                android:background="@null"
+                android:text="取消" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/line" />
+
+            <Button
+                android:id="@+id/callphone_click"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:text="拨打"
+                android:textColor="@color/colorAccent" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y320"
+        android:paddingLeft="@dimen/x60"
+        android:background="?android:attr/selectableItemBackground">
+
+        <ImageView
+            android:layout_centerVertical="true"
+            android:id="@+id/icon_iv"
+            android:layout_width="@dimen/x250"
+            android:layout_height="@dimen/x186"
+            android:layout_marginLeft="@dimen/x40"
+            android:src="@mipmap/lock"/>
+
+        <TextView
+            android:id="@+id/name_tv"
+            android:layout_marginTop="@dimen/x80"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x436"
+            android:text="智能门锁"
+            android:textSize="@dimen/common_text_size"
+            android:textColor="@color/deeper_dark_color"/>
+
+        <TextView
+            android:id="@+id/online_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x140"
+            android:layout_marginLeft="@dimen/x436"
+            android:text="在线"
+            android:layout_marginBottom="@dimen/y10"
+            android:textColor="#13c6e5"
+            android:textSize="@dimen/smaller_text_size" />
+
+        <View
+            android:id="@+id/divider_v"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider"
+            android:layout_marginRight="@dimen/x60"
+            android:layout_alignParentBottom="true"/>
+
+    </RelativeLayout>
+</layout>

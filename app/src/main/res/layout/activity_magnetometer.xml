@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="true">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y800"
+        android:background="@mipmap/equipment_bg"
+        android:scaleType="fitXY" />
+
+    <RelativeLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/back_ib"
+            android:layout_width="@dimen/title_bar_height"
+            android:layout_height="@dimen/title_bar_height"
+            android:layout_marginStart="15dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="20dp"
+            android:src="@mipmap/left_arrow_white"/>
+
+        <TextView
+            android:id="@+id/title_tv"
+            android:layout_marginTop="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/title_text_size" />
+
+    </RelativeLayout>
+
+        <View
+            android:id="@+id/center_white_v"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/y197"
+            android:layout_marginLeft="@dimen/x60"
+            android:layout_marginRight="@dimen/x60"
+            android:layout_marginTop="@dimen/x180"
+            android:background="@drawable/bg_equipment_bottom" />
+
+        <com.deelock.wifilock.overwrite.WaterView
+            android:id="@+id/water_wv"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y340"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/y197"
+            android:layout_marginLeft="@dimen/x60"
+            android:layout_marginRight="@dimen/x60" />
+
+        <TextView
+            android:id="@+id/protect_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/y254"
+            android:text="为您守护"
+            android:textColor="@color/colorCenterName"
+            android:textSize="@dimen/x24" />
+
+        <RelativeLayout
+            android:id="@+id/day_rl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/protect_tv"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="@dimen/x120"
+            android:layout_marginRight="@dimen/x120">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_centerInParent="true"
+                android:background="@color/divider" />
+
+            <TextView
+                android:id="@+id/day_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:background="@color/colorWhite"
+                android:paddingLeft="@dimen/x20"
+                android:paddingRight="@dimen/x20"
+                android:textColor="#999999"
+                android:textSize="@dimen/x24" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="@dimen/x456"
+            android:layout_height="@dimen/x335"
+            android:layout_below="@+id/protect_tv"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/x99"
+            android:src="@mipmap/magnetometer_blue" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y167"
+            android:layout_alignTop="@+id/circle_outer_iv"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/x158"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/magnetometer_left_iv"
+                android:layout_width="@dimen/x107"
+                android:layout_height="match_parent"
+                android:src="@mipmap/magnetometer_left" />
+
+            <ImageView
+                android:id="@+id/magnetometer_right_iv"
+                android:layout_width="@dimen/x40"
+                android:layout_height="@dimen/y107"
+                android:src="@mipmap/magnetometer_right" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/open_state_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/circle_outer_iv"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/y93"
+            android:textColor="@color/device_state"
+            android:textSize="@dimen/smaller_text_size" />
+
+        <ImageView
+            android:id="@+id/circle_outer_iv"
+            android:layout_width="@dimen/x419"
+            android:layout_height="@dimen/x419"
+            android:layout_below="@+id/protect_tv"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/x60"
+            android:src="@mipmap/circle_outer_safe" />
+
+        <LinearLayout
+            android:layout_width="@dimen/x180"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/x251"
+            android:layout_marginLeft="@dimen/x105"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/signal_iv"
+                android:layout_width="@dimen/x79"
+                android:layout_height="@dimen/y79"
+                android:layout_marginBottom="@dimen/x10"
+                android:src="@mipmap/signal_full" />
+
+            <TextView
+                android:id="@+id/signal_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="信号强"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/smaller_text_size" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/x251"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/warning_iv"
+                android:layout_width="@dimen/x79"
+                android:layout_height="@dimen/y79"
+                android:layout_marginBottom="@dimen/x10"
+                android:src="@mipmap/warning_close" />
+
+            <TextView
+                android:id="@+id/warning_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="已警戒"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/smaller_text_size" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="@dimen/x180"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="@dimen/x251"
+            android:layout_marginRight="@dimen/x105"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/power_iv"
+                android:layout_width="@dimen/x79"
+                android:layout_height="@dimen/y79"
+                android:layout_marginBottom="@dimen/x10"
+                android:src="@mipmap/power_4" />
+
+            <TextView
+                android:id="@+id/power_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/smaller_text_size" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/detail_ll"
+            android:layout_width="@dimen/x170"
+            android:layout_height="@dimen/y144"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="@dimen/x145"
+            android:background="@drawable/bg_equipment_bottom"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/x40"
+                android:layout_height="@dimen/y40"
+                android:src="@mipmap/equipment_detail" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="设备详情"
+                android:textColor="@color/deeper_dark_color"
+                android:textSize="@dimen/small_text_size" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/history_ll"
+            android:layout_width="@dimen/x170"
+            android:layout_height="@dimen/y144"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/x145"
+            android:background="@drawable/bg_equipment_bottom"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/x40"
+                android:layout_height="@dimen/y40"
+                android:src="@mipmap/equipment_history" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="历史记录"
+                android:textColor="@color/deeper_dark_color"
+                android:textSize="@dimen/small_text_size" />
+
+        </LinearLayout>
+</RelativeLayout>

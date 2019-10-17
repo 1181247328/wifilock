@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/x480"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:text="@string/function_restore_lock"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="18dp"
+        android:gravity="center"
+        android:paddingLeft="@dimen/x40"
+        android:paddingRight="@dimen/x40"
+        android:text="@string/restore_text"
+        android:textColor="@color/ble_default_text"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/ble_restore_btn"
+        android:layout_width="@dimen/x240"
+        android:layout_height="@dimen/x80"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/x80"
+        android:background="@drawable/login_select_bg"
+        android:text="确认"
+        android:textColor="@color/colorWhite" />
+
+</LinearLayout>

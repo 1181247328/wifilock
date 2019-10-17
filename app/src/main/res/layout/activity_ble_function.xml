@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+    <data>
+
+        <variable
+            name="click"
+            type="com.deelock.wifilock.bluetooth.BleFunctionActivity" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/shadow_color"
+        android:clipToPadding="true"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        tools:context=".ui.activity.BleFunctionActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:onClick="@{()->click.onBackClicked()}"
+                android:src="@mipmap/left_arrow_white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/function_lock"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/background"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y140"
+                android:layout_marginTop="@dimen/y40"
+                android:background="@drawable/bg_ripple_white"
+                android:onClick="@{()->click.onUpdateClicked()}"
+                android:paddingLeft="@dimen/x60"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="@dimen/x40"
+                    android:layout_height="@dimen/y40"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/sync_time" />
+
+                <TextView
+                    android:id="@+id/fun_version_state"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/x60"
+                    android:text="固件升级"
+                    android:textColor="@color/deeper_dark_color"
+                    android:textSize="@dimen/common_text_size" />
+
+                <TextView
+                    android:id="@+id/gate_lock_gate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/x96"
+                    android:textColor="@color/offline"
+                    android:textSize="@dimen/common_text_size" />
+
+                <ImageView
+                    android:layout_width="@dimen/x15"
+                    android:layout_height="@dimen/y27"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/x60"
+                    android:src="@mipmap/item_right_arrow" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/divider" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y140"
+                android:background="@drawable/bg_ripple_white"
+                android:onClick="@{()->click.onVolumeClicked()}"
+                android:paddingLeft="@dimen/x60"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="@dimen/x40"
+                    android:layout_height="@dimen/y40"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/device_volume" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/x60"
+                    android:text="@string/function_device_volume"
+                    android:textColor="@color/deeper_dark_color"
+                    android:textSize="@dimen/common_text_size" />
+
+                <TextView
+                    android:id="@+id/fun_volume_state"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/x96"
+                    android:textColor="@color/colorCenterName"
+                    android:textSize="@dimen/common_text_size" />
+
+                <ImageView
+                    android:layout_width="@dimen/x15"
+                    android:layout_height="@dimen/y27"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/x60"
+                    android:src="@mipmap/item_right_arrow" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/divider" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y140"
+                android:background="@drawable/bg_ripple_white"
+                android:onClick="@{()->click.onAntiTailClicked()}"
+                android:paddingLeft="@dimen/x60"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="@dimen/x40"
+                    android:layout_height="@dimen/y40"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/weisui" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/x60"
+                    android:text="@string/function_anti_tail"
+                    android:textColor="@color/deeper_dark_color"
+                    android:textSize="@dimen/common_text_size" />
+
+                <TextView
+                    android:id="@+id/fun_weisui_state"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/x96"
+                    android:textColor="@color/colorCenterName"
+                    android:textSize="@dimen/common_text_size" />
+
+                <ImageView
+                    android:layout_width="@dimen/x15"
+                    android:layout_height="@dimen/y27"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/x60"
+                    android:src="@mipmap/item_right_arrow" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/divider" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y140"
+                android:layout_marginTop="@dimen/y40"
+                android:background="@drawable/bg_ripple_white"
+                android:onClick="@{()->click.onRemoteClicked()}"
+                android:paddingLeft="@dimen/x60">
+
+                <ImageView
+                    android:layout_width="@dimen/x40"
+                    android:layout_height="@dimen/y40"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/remote_pwd" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/x60"
+                    android:text="@string/function_remote_pwd"
+                    android:textColor="@color/deeper_dark_color"
+                    android:textSize="@dimen/common_text_size" />
+
+                <TextView
+                    android:id="@+id/fun_remote_state"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/x96"
+                    android:textColor="@color/colorCenterName"
+                    android:textSize="@dimen/common_text_size" />
+
+                <ImageView
+                    android:layout_width="@dimen/x15"
+                    android:layout_height="@dimen/y27"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/x60"
+                    android:src="@mipmap/item_right_arrow" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/divider" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y140"
+                android:background="@drawable/bg_ripple_white"
+                android:onClick="@{()->click.onLockClicked()}"
+                android:paddingLeft="@dimen/x60"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="@dimen/x40"
+                    android:layout_height="@dimen/y40"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/fansuo" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/x60"
+                    android:text="@string/function_electronic_lock"
+                    android:textColor="@color/deeper_dark_color"
+                    android:textSize="@dimen/common_text_size" />
+
+                <TextView
+                    android:id="@+id/fun_lock_state"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/x96"
+                    android:textColor="@color/colorCenterName"
+                    android:textSize="@dimen/common_text_size" />
+
+                <ImageView
+                    android:layout_width="@dimen/x15"
+                    android:layout_height="@dimen/y27"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/x60"
+                    android:src="@mipmap/item_right_arrow" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/divider" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y140"
+                android:background="@drawable/bg_ripple_white"
+                android:onClick="@{()->click.onCloseWifi()}"
+                android:paddingLeft="@dimen/x60">
+
+                <ImageView
+                    android:layout_width="@dimen/x40"
+                    android:layout_height="@dimen/y40"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/close_wifi" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/x60"
+                    android:text="@string/function_close_wifi"
+                    android:textColor="@color/deeper_dark_color"
+                    android:textSize="@dimen/common_text_size" />
+
+                <TextView
+                    android:id="@+id/fun_wifi_state"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/x96"
+                    android:textColor="@color/colorCenterName"
+                    android:textSize="@dimen/common_text_size" />
+
+                <ImageView
+                    android:layout_width="@dimen/x15"
+                    android:layout_height="@dimen/y27"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/x60"
+                    android:src="@mipmap/item_right_arrow" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/divider" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y140"
+                android:background="@drawable/bg_ripple_white"
+                android:onClick="@{()->click.onRestoreClicked()}"
+                android:paddingLeft="@dimen/x60">
+
+                <ImageView
+                    android:layout_width="@dimen/x40"
+                    android:layout_height="@dimen/y40"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/restore" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/x60"
+                    android:text="@string/function_restore_lock"
+                    android:textColor="@color/deeper_dark_color"
+                    android:textSize="@dimen/common_text_size" />
+
+                <ImageView
+                    android:layout_width="@dimen/x15"
+                    android:layout_height="@dimen/y27"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/x60"
+                    android:src="@mipmap/item_right_arrow" />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

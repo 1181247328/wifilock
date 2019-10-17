@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:background="@color/background">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y473"
+            android:scaleType="fitXY"
+            android:src="@mipmap/message_top"/>
+
+        <TextView
+            android:id="@+id/name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="消息通知"
+            android:textSize="@dimen/x59"
+            android:textColor="@color/colorWhite"
+            android:layout_marginLeft="@dimen/x60"
+            android:layout_marginTop="@dimen/x149"/>
+
+        <TextView
+            android:id="@+id/phone_number_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="显示所有设备的安全事件"
+            android:layout_below="@+id/name_tv"
+            android:layout_marginLeft="@dimen/x60"
+            android:layout_marginTop="@dimen/x25"
+            android:textSize="@dimen/x22"
+            android:textColor="@color/colorWhite"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="@dimen/x60"
+            android:layout_marginTop="@dimen/y460"
+            android:overScrollMode="never">
+
+        </android.support.v7.widget.RecyclerView>
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.deelock.wifilock.entity.GateDetail.SubListBean" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/gateway_item_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/x20">
+
+        <TextView
+            android:id="@+id/gateway_item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{data.devName}"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/gateway_item_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/gateway_item_name"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:layout_width="@dimen/x25"
+            android:layout_height="@dimen/x25"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/x70"
+            android:src="@{data.isOnline==1?@drawable/dot_online:@drawable/dot_red}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="@{data.isOnline==1? @string/onLine :@string/offLine }"
+            android:textColor="@{data.isOnline==1?@color/device_online:@color/red}" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/gateway_item_type"
+            android:layout_marginTop="5dp"
+            android:background="@color/background" />
+
+    </RelativeLayout>
+</layout>

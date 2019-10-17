@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y100"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x60"
+            android:layout_centerVertical="true"/>
+
+        <ImageButton
+            android:id="@+id/delete_ib"
+            android:layout_width="@dimen/x88"
+            android:layout_height="@dimen/x88"
+            android:src="@mipmap/delete_black"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/x29"
+            android:background="@null"/>
+
+        <View
+            android:id="@+id/divider_v"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider"
+            android:layout_alignParentBottom="true"/>
+
+    </RelativeLayout>
+</layout>

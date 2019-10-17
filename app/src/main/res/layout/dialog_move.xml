@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/x85"
+    android:paddingRight="@dimen/x85"
+    android:paddingTop="@dimen/y400">
+
+    <View
+        android:id="@+id/bg_v"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y371"
+        android:background="@drawable/bg_equipment_center" />
+
+    <TextView
+        android:id="@+id/notice_title_tv"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y100"
+        android:gravity="center"
+        android:textSize="@dimen/x34"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/deeper_dark_color"
+        android:text="请选择移动到"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y1"
+        android:layout_marginTop="@dimen/y100"
+        android:background="@color/divider"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y270"
+        android:layout_marginTop="@dimen/y101">
+
+        <LinearLayout
+            android:id="@+id/ll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <ImageView
+        android:id="@+id/back_iv"
+        android:layout_width="@dimen/x100"
+        android:layout_height="@dimen/x100"
+        android:padding="@dimen/x30"
+        android:src="@mipmap/delete_white"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/y450"/>
+
+</RelativeLayout>

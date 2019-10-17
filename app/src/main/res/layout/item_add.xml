@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="name"
+            type="String"/>
+        <variable
+            name="type"
+            type="int"/>
+        <import type="android.view.View"/>
+    </data>
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y140"
+        android:background="?android:attr/selectableItemBackground">
+
+        <com.deelock.wifilock.overwrite.CircleImageView
+            android:id="@+id/head_civ"
+            android:layout_width="@dimen/x60"
+            android:layout_height="@dimen/x60"
+            android:layout_marginLeft="@dimen/x60"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/history_head"/>
+
+        <TextView
+            android:id="@+id/name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x31"
+            android:layout_centerVertical="true"
+            android:text="@{name}"
+            android:layout_toRightOf="@+id/head_civ"
+            android:textSize="@dimen/common_text_size"
+            android:textColor="@color/deeper_dark_color"/>
+
+        <ImageView
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/y36"
+            android:layout_marginLeft="@dimen/x26"
+            android:layout_toRightOf="@+id/name_tv"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/manager"
+            android:visibility="@{type == 1 ? View.VISIBLE : View.GONE}"/>
+
+        <View
+            android:id="@+id/divider_v"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/divider"
+            android:layout_marginLeft="@dimen/x60"/>
+
+    </RelativeLayout>
+</layout>

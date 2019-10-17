@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="event"
+            type="com.deelock.wifilock.event.InputTimeEvent"/>
+    </data>
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/rl"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/title_bar_height">
+
+            <ImageButton
+                android:id="@+id/back_ib"
+                android:layout_width="@dimen/title_bar_height"
+                android:layout_height="match_parent"
+                android:padding="@dimen/x26"
+                android:layout_marginLeft="@dimen/icon_left_margin"
+                android:src="@mipmap/left_arrow_black"
+                android:background="?android:attr/selectableItemBackground"
+                android:onClick="@{()->event.back()}"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="录入信息"
+                android:textSize="@dimen/title_text_size" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/phone_number_iv"
+            android:layout_width="@dimen/x46"
+            android:layout_height="@dimen/x43"
+            android:layout_marginTop="@dimen/y210"
+            android:layout_marginLeft="@dimen/x125"
+            android:src="@mipmap/nick_name"/>
+
+        <EditText
+            android:id="@+id/phone_number_et"
+            android:layout_width="@dimen/x435"
+            android:layout_height="@dimen/y60"
+            android:hint="请输入用户昵称"
+            style="@style/customEditText"
+            android:textSize="@dimen/common_text_size"
+            android:textColorHint="@color/colorCenterName"
+            android:layout_marginTop="@dimen/y200"
+            android:layout_marginLeft="@dimen/x28"
+            android:layout_toRightOf="@+id/phone_number_iv"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="注：密码将以短信的形式分享给该用户"
+            android:layout_marginLeft="@dimen/x135"
+            android:layout_marginTop="@dimen/x31"
+            android:textSize="@dimen/smaller_text_size"
+            android:textColor="@color/colorCenterName"
+            android:layout_below="@+id/phone_number_iv"/>
+
+        <RelativeLayout
+            android:id="@+id/time_rl"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x300"
+            android:layout_marginTop="@dimen/x495"
+            android:background="@color/colorWhite"
+            android:layout_marginLeft="@dimen/x60"
+            android:layout_marginRight="@dimen/x60">
+            
+            <RadioGroup
+                android:id="@+id/group_rg"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x128"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/x45"
+                android:paddingRight="@dimen/x45">
+
+                <RadioButton
+                    android:id="@+id/once_rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="15dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:textColor="@color/deeper_dark_color"
+                    android:checked="true"
+                    android:textSize="@dimen/common_text_size"
+                    android:text="一次性密码"/>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+
+                <RadioButton
+                    android:id="@+id/period_rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="15dp"
+                    android:paddingTop="15dp"
+                    android:textColor="@color/deeper_dark_color"
+                    android:paddingBottom="15dp"
+                    android:textSize="@dimen/common_text_size"
+                    android:text="时段密码"/>
+
+            </RadioGroup>
+
+            <View
+                android:id="@+id/divider_v"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="@dimen/x66"
+                android:layout_marginRight="@dimen/x66"
+                android:background="@color/divider"
+                android:layout_marginTop="@dimen/x128" />
+
+            <TextView
+                android:id="@+id/time_start_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2017/9/12\n10:00"
+                android:padding="@dimen/x20"
+                android:gravity="center_horizontal"
+                android:textSize="@dimen/smaller_text_size"
+                android:textColor="@color/colorCenterName"
+                android:layout_marginLeft="@dimen/x45"
+                android:layout_marginBottom="@dimen/x44"
+                android:layout_alignParentBottom="true"
+                android:onClick="@{()->event.timeStart()}"/>
+
+            <TextView
+                android:id="@+id/time_end_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2017/9/13\n12:00"
+                android:padding="@dimen/x20"
+                android:gravity="center_horizontal"
+                android:layout_marginRight="@dimen/x45"
+                android:layout_marginBottom="@dimen/x44"
+                android:textSize="@dimen/smaller_text_size"
+                android:textColor="@color/colorCenterName"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:onClick="@{()->event.timeEnd()}"/>
+
+            <Button
+                android:layout_width="@dimen/x176"
+                android:layout_height="@dimen/y88"
+                android:text="设置"
+                android:textColor="#01bff2"
+                android:background="@drawable/setting_button_bg"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/y20"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="@dimen/x300"
+            android:layout_height="@dimen/x88"
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true"
+            android:layout_alignTop="@+id/time_rl"
+            android:layout_marginTop="@dimen/x256">
+
+            <TextView
+                android:id="@+id/time_start_btn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="起"
+                android:gravity="center"
+                android:textSize="@dimen/common_text_size"
+                android:background="@drawable/bg_input_time_left_solid"
+                android:textColor="@color/colorWhite"
+                android:onClick="@{()->event.timeStart()}" />
+
+            <TextView
+                android:id="@+id/time_end_btn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="止"
+                android:gravity="center"
+                android:textSize="@dimen/common_text_size"
+                android:background="@drawable/bg_input_time_right_stroke"
+                android:textColor="#01bff2"
+                android:onClick="@{()->event.timeEnd()}"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/next_btn"
+            android:layout_width="@dimen/x500"
+            android:layout_height="@dimen/y88"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/bg_big_button"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/x225"
+            android:text="下一步"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/common_text_size"
+            android:onClick="@{()->event.link()}"/>
+
+    </RelativeLayout>
+</layout>

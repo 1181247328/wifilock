@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/background">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height">
+
+        <ImageButton
+            android:id="@+id/backIb"
+            android:layout_width="@dimen/title_bar_height"
+            android:layout_height="match_parent"
+            android:padding="@dimen/x26"
+            android:layout_marginLeft="@dimen/icon_left_margin"
+            android:src="@mipmap/left_arrow_black"
+            android:background="?android:attr/selectableItemBackground" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="录入信息"
+            android:textColor="@color/deeper_dark_color"
+            android:textSize="@dimen/title_text_size" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/phone_number_rl"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y60"
+        android:layout_marginTop="@dimen/y300">
+
+        <ImageView
+            android:id="@+id/phone_number_iv"
+            android:layout_width="@dimen/x40"
+            android:layout_height="@dimen/x40"
+            android:layout_marginLeft="@dimen/x125"
+            android:src="@mipmap/phone"
+            android:layout_centerVertical="true"/>
+
+        <EditText
+            android:id="@+id/phoneNumberEt"
+            android:layout_width="@dimen/x435"
+            android:layout_height="match_parent"
+            android:hint="请输入新用户手机号（选填）"
+            style="@style/customEditText"
+            android:inputType="number"
+            android:textSize="@dimen/common_text_size"
+            android:textColorHint="@color/colorCenterName"
+            android:layout_marginLeft="@dimen/x28"
+            android:layout_toRightOf="@+id/phone_number_iv" />
+
+        <RelativeLayout
+            android:id="@+id/contactsRl"
+            android:layout_width="@dimen/y60"
+            android:layout_height="@dimen/y60"
+            android:layout_toRightOf="@id/phoneNumberEt">
+
+            <ImageView
+                android:layout_width="@dimen/x40"
+                android:layout_height="@dimen/x40"
+                android:src="@mipmap/contacts"
+                android:layout_centerInParent="true"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/nick_name_rl"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y60"
+        android:layout_below="@+id/phone_number_rl"
+        android:layout_marginTop="@dimen/y60">
+
+        <ImageView
+            android:id="@+id/nickNameIv"
+            android:layout_width="@dimen/x40"
+            android:layout_height="@dimen/x40"
+            android:layout_marginLeft="@dimen/x125"
+            android:src="@mipmap/nick_name"
+            android:layout_centerVertical="true"/>
+
+        <EditText
+            android:id="@+id/nickNameEt"
+            android:layout_width="@dimen/x435"
+            android:layout_height="match_parent"
+            android:textColorHint="@color/colorCenterName"
+            android:layout_marginLeft="@dimen/x28"
+            android:textSize="@dimen/common_text_size"
+            android:layout_toRightOf="@+id/nickNameIv"
+            android:hint="请输入新用户昵称"
+            style="@style/customEditText" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/confirmBtn"
+        android:layout_width="@dimen/x500"
+        android:layout_height="@dimen/y88"
+        android:layout_marginTop="@dimen/y200"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/bg_big_button"
+        android:layout_below="@+id/nick_name_rl"
+        android:text="确定"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/common_text_size"/>
+
+</RelativeLayout>

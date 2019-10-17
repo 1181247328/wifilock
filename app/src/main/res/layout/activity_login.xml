@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="click"
+            type="com.deelock.wifilock.ui.activity.LoginActivity" />
+
+        <variable
+            name="phone"
+            type="String" />
+
+        <variable
+            name="password"
+            type="String" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/login_background"
+        android:fitsSystemWindows="true"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="@dimen/x227"
+            android:layout_height="@dimen/x297"
+            android:layout_marginTop="@dimen/y210"
+            android:src="@mipmap/login_logo" />
+
+        <EditText
+            android:layout_width="@dimen/x500"
+            android:layout_height="@dimen/y88"
+            android:layout_marginTop="@dimen/x80"
+            android:background="@drawable/login_bg"
+            android:gravity="center"
+            android:hint="请输入手机号码"
+            android:inputType="phone"
+            android:text="@={phone}"
+            android:textColorHint="@color/colorCenterName"
+            android:textSize="@dimen/x30" />
+
+        <EditText
+            android:layout_width="@dimen/x500"
+            android:layout_height="@dimen/y88"
+            android:layout_marginTop="@dimen/y30"
+            android:background="@drawable/login_bg"
+            android:digits="@string/rule_password"
+            android:gravity="center"
+            android:hint="请输入密码"
+            android:inputType="textPassword"
+            android:maxLength="16"
+            android:text="@={password}"
+            android:textColorHint="@color/colorCenterName"
+            android:textSize="@dimen/common_text_size" />
+
+        <Button
+            android:id="@+id/login_submit"
+            android:layout_width="@dimen/x500"
+            android:layout_height="@dimen/y88"
+            android:layout_marginTop="@dimen/y50"
+            android:background="@drawable/bg_big_button"
+            android:onClick="@{()->click.onSubmit(phone,password)}"
+            android:shadowColor="@color/shadow_color"
+            android:text="登录"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/common_text_size" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x50"
+            android:onClick="@{()->click.onForget()}"
+            android:text="忘记密码？"
+            android:textColor="#aaa"
+            android:textSize="12sp" />
+
+        <View
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:onClick="@{()->click.onRegister()}"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="注册新账号"
+                android:textColor="@color/switch_color"
+                android:textSize="@dimen/x35" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/login_right_arrow" />
+        </LinearLayout>
+
+        <View
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"/>
+    </LinearLayout>
+</layout>

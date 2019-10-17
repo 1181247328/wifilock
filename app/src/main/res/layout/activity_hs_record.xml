@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@drawable/bg_title_gradient">
+
+    <ImageButton
+        android:id="@+id/backIb"
+        android:layout_width="@dimen/title_bar_height"
+        android:layout_height="@dimen/title_bar_height"
+        android:padding="@dimen/x26"
+        android:layout_marginLeft="@dimen/icon_left_margin"
+        android:src="@mipmap/left_arrow_white"
+        android:background="?android:attr/selectableItemBackground" />
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="@dimen/title_bar_height"
+        android:layout_centerHorizontal="true"
+        android:text="下发密码记录"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/title_text_size"
+        android:gravity="center"/>
+
+    <com.deelock.wifilock.overwrite.HistoryView
+        android:id="@+id/rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:layout_marginTop="@dimen/title_bar_height"
+        android:overScrollMode="never">
+
+    </com.deelock.wifilock.overwrite.HistoryView>
+
+</RelativeLayout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/bg"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <ImageView
+        android:id="@+id/logoIv"
+        android:layout_width="@dimen/x227"
+        android:layout_height="@dimen/x297"
+        android:layout_centerInParent="true"
+        android:src="@mipmap/login_logo"
+        android:background="@null"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/jump"
+        android:layout_width="@dimen/x80"
+        android:layout_height="@dimen/x80"
+        android:background="@drawable/bg_ad_jump"
+        android:textColor="@color/deeper_dark_color"
+        android:textSize="@dimen/smaller_text_size"
+        android:text="跳过\n5s"
+        android:gravity="center"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="@dimen/y100"
+        android:layout_marginRight="@dimen/x60"
+        android:visibility="gone"/>
+
+</RelativeLayout>

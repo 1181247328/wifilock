@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/y460">
+
+    <View
+        android:id="@+id/bg_v"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x370"
+        android:layout_marginLeft="@dimen/x85"
+        android:layout_marginRight="@dimen/x85"
+        android:background="@drawable/bg_equipment_center" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/add_succeed_print"
+        android:layout_marginTop="@dimen/y60"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/notice_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/smaller_text_size"
+        android:text="请验证指纹"
+        android:layout_above="@+id/divider_v"
+        android:layout_marginBottom="@dimen/y30"
+        android:layout_centerHorizontal="true"/>
+
+    <View
+        android:id="@+id/divider_v"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="@dimen/x85"
+        android:layout_marginRight="@dimen/x85"
+        android:background="@color/divider"
+        android:layout_alignBottom="@+id/bg_v"
+        android:layout_marginBottom="@dimen/x97"/>
+
+    <TextView
+        android:id="@+id/cancel_tv"
+        android:layout_width="@dimen/x290"
+        android:layout_height="@dimen/x97"
+        android:text="取消"
+        android:textSize="@dimen/x34"
+        android:gravity="center"
+        android:layout_marginLeft="@dimen/x85"
+        android:layout_alignBottom="@+id/bg_v"
+        android:textColor="@color/common_text_color"/>
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="@dimen/x97"
+        android:background="@color/divider"
+        android:layout_centerHorizontal="true"
+        android:layout_alignBottom="@+id/bg_v"/>
+
+    <TextView
+        android:id="@+id/ensure_tv"
+        android:layout_width="@dimen/x290"
+        android:layout_height="@dimen/x97"
+        android:text="验证手势密码"
+        android:textSize="@dimen/x34"
+        android:gravity="center"
+        android:layout_marginRight="@dimen/x85"
+        android:layout_alignParentRight="true"
+        android:layout_alignBottom="@+id/bg_v"
+        android:textColor="#ff8239"/>
+
+</RelativeLayout>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/x480"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/x60"
+        android:text="@string/function_device_volume"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="@dimen/x39"
+        android:gravity="center"
+        android:paddingLeft="@dimen/x40"
+        android:paddingRight="@dimen/x40"
+        android:text="@string/device_volume_text"
+        android:textColor="@color/ble_default_text"
+        android:textSize="15sp" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/x80"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/fun_ble_text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="关闭"
+            android:textColor="@color/ble_default_select"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/fun_ble_text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x35"
+            android:layout_toRightOf="@id/fun_ble_text1"
+            android:text="小"
+            android:textColor="@color/ble_default_text"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/fun_ble_text3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x45"
+            android:layout_toRightOf="@id/fun_ble_text2"
+            android:text="中"
+            android:textColor="@color/ble_default_text"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/fun_ble_text4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x45"
+            android:layout_toRightOf="@id/fun_ble_text3"
+            android:text="大"
+            android:textColor="@color/ble_default_text"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/fun_ble_img1"
+            android:layout_width="@dimen/x35"
+            android:layout_height="@dimen/x35"
+            android:layout_below="@id/fun_ble_text1"
+            android:layout_marginLeft="@dimen/x17"
+            android:layout_marginTop="@dimen/x36"
+            android:src="@mipmap/ble_pot_selected" />
+
+
+        <ImageView
+            android:id="@+id/fun_ble_img2"
+            android:layout_width="@dimen/x35"
+            android:layout_height="@dimen/x35"
+            android:layout_alignLeft="@id/fun_ble_text2"
+            android:layout_below="@id/fun_ble_text2"
+            android:layout_marginTop="@dimen/x36"
+            android:scaleType="center"
+            android:src="@mipmap/ble_pot" />
+
+        <ImageView
+            android:id="@+id/fun_ble_img3"
+            android:layout_width="@dimen/x35"
+            android:layout_height="@dimen/x35"
+            android:layout_alignLeft="@id/fun_ble_text3"
+            android:layout_below="@id/fun_ble_text3"
+            android:layout_marginTop="@dimen/x36"
+            android:scaleType="center"
+            android:src="@mipmap/ble_pot" />
+
+        <ImageView
+            android:id="@+id/fun_ble_img4"
+            android:layout_width="@dimen/x35"
+            android:layout_height="@dimen/x35"
+            android:layout_alignLeft="@id/fun_ble_text4"
+            android:layout_below="@id/fun_ble_text3"
+            android:layout_marginTop="@dimen/x36"
+            android:scaleType="center"
+            android:src="@mipmap/ble_pot" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/x2"
+            android:layout_alignLeft="@id/fun_ble_img1"
+            android:layout_alignRight="@id/fun_ble_img4"
+            android:layout_below="@id/fun_ble_text1"
+            android:layout_marginLeft="@dimen/x23"
+            android:layout_marginRight="@dimen/x23"
+            android:layout_marginTop="@dimen/x53"
+            android:background="#c4c4c4"
+            android:scaleType="center" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

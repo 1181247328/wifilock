@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/x480"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/x60"
+        android:text="@string/function_anti_tail"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="@dimen/x39"
+        android:gravity="center"
+        android:paddingLeft="@dimen/x40"
+        android:paddingRight="@dimen/x40"
+        android:text="@string/anti_tail_text"
+        android:textColor="@color/ble_default_text"
+        android:textSize="15sp" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/x40"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/fun_ble_text5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x3"
+            android:text="2秒"
+            android:textColor="@color/ble_dialog_color_selector"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/fun_ble_text6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x50"
+            android:layout_toRightOf="@id/fun_ble_text5"
+            android:text="3秒"
+            android:textColor="@color/ble_dialog_color_selector"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/fun_ble_text7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x50"
+            android:layout_toRightOf="@id/fun_ble_text6"
+            android:text="4秒"
+            android:textColor="@color/ble_dialog_color_selector"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/fun_ble_text8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x50"
+            android:layout_toRightOf="@id/fun_ble_text7"
+            android:text="5秒"
+            android:textColor="@color/ble_dialog_color_selector"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/x2"
+            android:layout_alignLeft="@id/fun_ble_text5"
+            android:layout_alignRight="@id/fun_ble_text8"
+            android:layout_below="@id/fun_ble_text5"
+            android:layout_marginLeft="@dimen/x23"
+            android:layout_marginRight="@dimen/x23"
+            android:layout_marginTop="@dimen/x55"
+            android:background="#c4c4c4" />
+
+        <ImageView
+            android:id="@+id/fun_ble_img5"
+            android:layout_width="@dimen/x40"
+            android:layout_height="@dimen/x40"
+            android:layout_below="@id/fun_ble_text5"
+            android:layout_marginLeft="@dimen/x3"
+            android:layout_marginTop="@dimen/x36"
+            android:src="@drawable/ble_dialog_img_selector" />
+
+        <ImageView
+            android:id="@+id/fun_ble_img6"
+            android:layout_width="@dimen/x40"
+            android:layout_height="@dimen/x40"
+            android:layout_alignLeft="@id/fun_ble_text6"
+            android:layout_below="@id/fun_ble_text6"
+            android:layout_marginLeft="@dimen/x3"
+            android:layout_marginTop="@dimen/x36"
+            android:src="@drawable/ble_dialog_img_selector" />
+
+        <ImageView
+            android:id="@+id/fun_ble_img7"
+            android:layout_width="@dimen/x40"
+            android:layout_height="@dimen/x40"
+            android:layout_alignLeft="@id/fun_ble_text7"
+            android:layout_below="@id/fun_ble_text7"
+            android:layout_marginLeft="@dimen/x3"
+            android:layout_marginTop="@dimen/x36"
+            android:src="@drawable/ble_dialog_img_selector" />
+
+        <ImageView
+            android:id="@+id/fun_ble_img8"
+            android:layout_width="@dimen/x40"
+            android:layout_height="@dimen/x40"
+            android:layout_alignLeft="@id/fun_ble_text8"
+            android:layout_below="@id/fun_ble_text8"
+            android:layout_marginLeft="@dimen/x6"
+            android:layout_marginRight="@dimen/x3"
+            android:layout_marginTop="@dimen/x36"
+            android:src="@drawable/ble_dialog_img_selector" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>
