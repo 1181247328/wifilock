@@ -117,12 +117,13 @@ public class BleBindActivity extends BaseActivity<ActivityBleBindBinding> {
         Log.e("main", "---" + isOpen);
         if (isOpen) {
             Log.e("main", "---1");
+            //TODO 通过名字去查找
             BluetoothUtil.connectByName("Deelock");  //通过名字连接门锁设备
             Log.e("main", "---2");
             DisposableObserver scanResultObserver = getScanResultObserver();
             Log.e("main", "---3");
             Observable.interval(0, 1000, TimeUnit.MILLISECONDS)
-                    .take(12).observeOn(AndroidSchedulers.mainThread()).subscribe(scanResultObserver);
+                    .take(6).observeOn(AndroidSchedulers.mainThread()).subscribe(scanResultObserver);
             Log.e("main", "---4");
             boolean isDis = mCompositeDisposable.add(scanResultObserver);
             Log.e("main", "---5---" + isDis);

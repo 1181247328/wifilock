@@ -1,7 +1,6 @@
 package com.deelock.wifilock.adapter
 
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,6 +20,7 @@ class HsRecordAdapter(private var data: List<HsRecord>) : RecyclerView.Adapter<R
     private val typeItem = 0
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        //TODO
         val inflater = LayoutInflater.from(parent!!.context)
         return if (viewType == typeTitle){
             TitleHolder(inflater.inflate(R.layout.item_hs_record_title, parent, false))

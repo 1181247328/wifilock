@@ -11,7 +11,7 @@ android {
         minSdkVersion 18
         targetSdkVersion 28
         versionCode 238
-        versionName '2.3.8'
+        versionName '2.4.0'
         ndk {
             abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64', 'mips', 'mips64'
         }
@@ -78,7 +78,7 @@ dependencies {
     implementation 'com.android.support:support-v4:28.0.0'
     implementation 'com.android.support:multidex:1.0.0'
     implementation 'com.orhanobut:logger:2.2.0'
-    implementation project(':espTouch')
+    implementation project(':XSmartConfigLib')
     implementation project(':refresh_library')
     implementation project(':pickerview')
     implementation project(':wheelview')

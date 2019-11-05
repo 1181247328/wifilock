@@ -17,12 +17,10 @@ import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.text.style.AbsoluteSizeSpan;
 import android.text.style.ForegroundColorSpan;
-import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -237,7 +235,7 @@ public class BleActivity extends BaseActivity<ActivityBleBinding> implements Add
     private void checkConnect() {
         DisposableObserver checkObserver = getCheckObserver();
         Observable.interval(0, 1000, TimeUnit.MILLISECONDS)
-                .take(120).observeOn(AndroidSchedulers.mainThread()).subscribe(checkObserver);
+                .take(20).observeOn(AndroidSchedulers.mainThread()).subscribe(checkObserver);
         mCompositeDisposable.add(checkObserver);
     }
 
@@ -517,7 +515,7 @@ public class BleActivity extends BaseActivity<ActivityBleBinding> implements Add
                         BluetoothUtil.writeCode(openCmd);
                         DisposableObserver orderObserver = getOrderObserver();
                         Observable.interval(0, 200, TimeUnit.MILLISECONDS)
-                                .take(50).observeOn(AndroidSchedulers.mainThread()).subscribe(orderObserver);
+                                .take(30).observeOn(AndroidSchedulers.mainThread()).subscribe(orderObserver);
                         mCompositeDisposable.add(orderObserver);
                     }
 

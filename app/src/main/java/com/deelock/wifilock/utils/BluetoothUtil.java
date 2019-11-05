@@ -251,7 +251,8 @@ public class BluetoothUtil {
                         int size = scanResults.size();
                         Log.e("main", "---已得到的蓝牙数量---" + size
                                 + "---扫描到的蓝牙名称---" + result.getDevice().getName()
-                                + "---扫描到的蓝牙地址---" + result.getDevice().getAddress());
+                                + "---扫描到的蓝牙地址---" + result.getDevice().getAddress()
+                                + "---rssi----" + result.getRssi());
                         if (size == 0) {
                             String name = result.getDevice().getName();
                             if (name != null) {
@@ -480,7 +481,7 @@ public class BluetoothUtil {
             mLeService.initialize();
             mLeService.setDecode(false);
             if (mac != null) {
-                SystemClock.sleep(3000);
+                SystemClock.sleep(300);
                 boolean isConnected = mLeService.connect(mac.toUpperCase(), true);
                 Log.e("main", "---开始连接---" + mac.toUpperCase() + "---" + isConnected);
             } else {

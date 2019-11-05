@@ -20,7 +20,6 @@ import com.baidu.location.LocationClient;
 import com.deelock.wifilock.R;
 import com.deelock.wifilock.databinding.ActivityChangeWifiBinding;
 import com.deelock.wifilock.entity.Bind;
-import com.deelock.wifilock.entity.LockDetail;
 import com.deelock.wifilock.event.LinkWifiEvent;
 import com.deelock.wifilock.network.BaseResponse;
 import com.deelock.wifilock.network.RequestUtils;
@@ -30,13 +29,12 @@ import com.deelock.wifilock.ui.dialog.NoticeDialog;
 import com.deelock.wifilock.utils.SPUtil;
 import com.deelock.wifilock.utils.StatusBarUtil;
 import com.deelock.wifilock.utils.ToastUtil;
-import com.espressif.iot.esptouch.EsptouchTask;
-import com.espressif.iot.esptouch.IEsptouchListener;
-import com.espressif.iot.esptouch.IEsptouchResult;
-import com.espressif.iot.esptouch.IEsptouchTask;
-import com.espressif.iot.esptouch.demo_activity.EspWifiAdminSimple;
-import com.espressif.iot.esptouch.task.__IEsptouchTask;
 import com.google.gson.Gson;
+import com.xuhong.xsmartconfiglib.EsptouchTask;
+import com.xuhong.xsmartconfiglib.IEsptouchListener;
+import com.xuhong.xsmartconfiglib.IEsptouchResult;
+import com.xuhong.xsmartconfiglib.IEsptouchTask;
+import com.xuhong.xsmartconfiglib.task.__IEsptouchTask;
 
 import java.text.DecimalFormat;
 import java.util.HashMap;
@@ -56,7 +54,6 @@ import io.reactivex.disposables.Disposable;
 public class ChangeWifiActivity extends BaseActivity {
 
     private ActivityChangeWifiBinding binding;
-    private EspWifiAdminSimple mWifiAdmin;
 
     public LocationClient mLocationClient = null;
     public MyLocationListener myListener;
@@ -93,7 +90,6 @@ public class ChangeWifiActivity extends BaseActivity {
             binding.workWifiTv.setText("设备当前工作WiFi：" + ssid);
         }
 
-        mWifiAdmin = new EspWifiAdminSimple(this);
         mLocationClient = new LocationClient(this);
         //声明LocationClient类
         myListener = new MyLocationListener();

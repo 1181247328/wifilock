@@ -8,8 +8,8 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/XSmartConfigLib" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/espTouch" />
             <option value="$PROJECT_DIR$/pickerview" />
             <option value="$PROJECT_DIR$/refresh_library" />
             <option value="$PROJECT_DIR$/wheelview" />

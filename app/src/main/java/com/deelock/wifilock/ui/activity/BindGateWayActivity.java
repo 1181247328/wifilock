@@ -11,22 +11,19 @@ import android.widget.Toast;
 import com.deelock.wifilock.R;
 import com.deelock.wifilock.common.BaseActivity;
 import com.deelock.wifilock.databinding.ActivityBindGateWayBinding;
-import com.deelock.wifilock.entity.GateBind;
 import com.deelock.wifilock.network.BaseResponse;
 import com.deelock.wifilock.network.RequestUtils;
 import com.deelock.wifilock.network.ResponseCallback;
 import com.deelock.wifilock.network.TimeUtil;
 import com.deelock.wifilock.utils.SPUtil;
 import com.deelock.wifilock.utils.ToastUtil;
-import com.espressif.iot.esptouch.EsptouchTask;
-import com.espressif.iot.esptouch.IEsptouchResult;
-import com.espressif.iot.esptouch.IEsptouchTask;
-import com.espressif.iot.esptouch.task.__IEsptouchTask;
-import com.google.gson.Gson;
+import com.xuhong.xsmartconfiglib.EsptouchTask;
+import com.xuhong.xsmartconfiglib.IEsptouchResult;
+import com.xuhong.xsmartconfiglib.IEsptouchTask;
+import com.xuhong.xsmartconfiglib.task.__IEsptouchTask;
 
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observable;
@@ -66,6 +63,7 @@ public class BindGateWayActivity extends BaseActivity<ActivityBindGateWayBinding
     }
 
     public void onNextClicked() {
+        Log.e("main", "---wifi---" + "---bssid---" + bssid + "---password---" + password);
         new EsptouchAsyncTask3().execute(wifi, bssid, password, "1");
         final int[] a = {0};
         Observer<Long> observer = new Observer<Long>() {
@@ -87,6 +85,7 @@ public class BindGateWayActivity extends BaseActivity<ActivityBindGateWayBinding
                         .enqueue(new ResponseCallback<BaseResponse>(BindGateWayActivity.this) {
                             @Override
                             protected void onSuccess(int code, String content) {
+                                Log.e("main", "---code---" + code + "---onSuccess---" + content);
                                 super.onSuccess(code, content);
                                 if (code == 1) {
                                     disposable.dispose();
@@ -113,6 +112,7 @@ public class BindGateWayActivity extends BaseActivity<ActivityBindGateWayBinding
 
                             @Override
                             protected void onFailure(int code, String message) {
+                                Log.e("main", "---code---" + code + "---onSuccess---" + message);
                                 super.onFailure(code, message);
                                 Toast.makeText(BindGateWayActivity.this, message, Toast.LENGTH_SHORT).show();
                                 disposable.dispose();
@@ -148,6 +148,7 @@ public class BindGateWayActivity extends BaseActivity<ActivityBindGateWayBinding
 
         @Override
         protected void onPreExecute() {
+            Log.e("main", "---onPreExecute---1---");
             mProgressDialog = new ProgressDialog(BindGateWayActivity.this);
             mProgressDialog.setMessage("正在连接网关...");
             mProgressDialog.setCanceledOnTouchOutside(false);
@@ -189,10 +190,12 @@ public class BindGateWayActivity extends BaseActivity<ActivityBindGateWayBinding
                     });
             mProgressDialog.show();
             mProgressDialog.getButton(DialogInterface.BUTTON_POSITIVE).setEnabled(false);
+            Log.e("main", "---onPreExecute---2---");
         }
 
         @Override
         protected List<IEsptouchResult> doInBackground(String... params) {
+            Log.e("main", "---doInBackground---" + params);
             int taskResultCount = -1;
             synchronized (mLock) {
                 String apSsid = params[0];
@@ -208,8 +211,11 @@ public class BindGateWayActivity extends BaseActivity<ActivityBindGateWayBinding
 
         @Override
         protected void onPostExecute(List<IEsptouchResult> result) {
+            Log.e("main", "---onPostExecute---1---");
             IEsptouchResult firstResult = result.get(0);
-            if (!firstResult.isCancelled()) {
+            boolean isCancelled = firstResult.isCancelled();
+            Log.e("main", "---onPostExecute---2---" + isCancelled);
+            if (!isCancelled) {
                 int count = 0;
                 final int maxDisplayCount = 5;
                 if (firstResult.isSuc()) {
@@ -228,8 +234,10 @@ public class BindGateWayActivity extends BaseActivity<ActivityBindGateWayBinding
                     if (count < result.size()) {
                         sb.append("\nthere's " + (result.size() - count) + " more result(s) without showing\n");
                     }
+                    Log.e("main", "---onPostExecute---3---" + sb.toString());
                     mProgressDialog.setMessage("配置网关成功，正在连接服务器...");
                 } else {
+                    Log.e("main", "---onPostExecute---4---");
                     mProgressDialog.dismiss();
                     ToastUtil.toastShort(getApplicationContext(), "配置网关失败");
                 }

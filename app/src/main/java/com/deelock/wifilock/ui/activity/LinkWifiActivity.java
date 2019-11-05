@@ -85,6 +85,7 @@ public class LinkWifiActivity extends BaseActivity<ActivityLinkWifiBinding>
             return;
         }
         Intent intent;
+        Log.e("main", "---" + lock_type);
         if ("000".equals(lock_type)) {
             //绑定网关设备
             intent = new Intent(this, BindGateWayActivity.class);
@@ -99,6 +100,7 @@ public class LinkWifiActivity extends BaseActivity<ActivityLinkWifiBinding>
         intent.putExtra("latitude", latitude);
         intent.putExtra("mac", mac);
         intent.putExtra("deviceId", deviceId);
+        Log.e("main", "---纬度---" + latitude + "---经度---" + longitude);
         startActivity(intent);
         if (mac != null) {
             finish();

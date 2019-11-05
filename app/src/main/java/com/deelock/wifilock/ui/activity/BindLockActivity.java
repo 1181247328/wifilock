@@ -1,6 +1,8 @@
 package com.deelock.wifilock.ui.activity;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -30,11 +32,11 @@ import com.deelock.wifilock.utils.GsonUtil;
 import com.deelock.wifilock.utils.SPUtil;
 import com.deelock.wifilock.utils.StatusBarUtil;
 import com.deelock.wifilock.utils.ToastUtil;
-import com.espressif.iot.esptouch.EsptouchTask;
-import com.espressif.iot.esptouch.IEsptouchResult;
-import com.espressif.iot.esptouch.IEsptouchTask;
-import com.espressif.iot.esptouch.task.__IEsptouchTask;
 import com.google.gson.Gson;
+import com.xuhong.xsmartconfiglib.EsptouchTask;
+import com.xuhong.xsmartconfiglib.IEsptouchResult;
+import com.xuhong.xsmartconfiglib.IEsptouchTask;
+import com.xuhong.xsmartconfiglib.task.__IEsptouchTask;
 
 import java.text.DecimalFormat;
 import java.util.HashMap;
@@ -53,12 +55,13 @@ import io.reactivex.observers.DisposableObserver;
 /**
  * Created by binChuan on 2017\9\19 0019.
  */
-
+@SuppressLint("NewApi")
 public class BindLockActivity extends BaseActivity {
 
     String type;
     TranslateAnimation animation;
     ImageView hand_iv;
+    private Context context = null;
     ImageView mag_iv;
     public static double latitude = 0;
     public static double longitude = 0;
@@ -85,6 +88,11 @@ public class BindLockActivity extends BaseActivity {
     }
 
     @Override
+    protected void setCallBack() {
+        super.setCallBack();
+    }
+
+    @Override
     protected void doBusiness() {
         mProgressDialog = new ProgressDialog(this);
         StatusBarUtil.StatusBarLightMode(this);
@@ -93,15 +101,15 @@ public class BindLockActivity extends BaseActivity {
         TextView tv = findViewById(R.id.title_tv);
         TextView notice_tv = findViewById(R.id.notice_tv);
         ImageView image_iv = findViewById(R.id.image_iv);
-
+        context = this;
         mac = getIntent().getStringExtra("mac");
         deviceId = getIntent().getStringExtra("deviceId");
         wifi = getIntent().getStringExtra("wifi");
         bssid = getIntent().getStringExtra("bssid");
         password = getIntent().getStringExtra("password");
-
-        type = getIntent().getStringExtra("type");
         mHandle = new HandleOrder();
+        type = getIntent().getStringExtra("type");
+
 
         if (type != null && "A00".equals(type.substring(0, 3))) {
             tv.setText("连接门锁");
@@ -148,6 +156,7 @@ public class BindLockActivity extends BaseActivity {
         });
 
         findViewById(R.id.configure_ib).setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("NewApi")
             @Override
             public void onClick(View v) {
                 if ("C00".equals(type)) {
@@ -175,6 +184,7 @@ public class BindLockActivity extends BaseActivity {
                         startActivity(intent);
                     }
                 } else {
+                    Log.e("main_bind", "---wifi---" + wifi + "---bssid---" + bssid + "---password---" + password);
                     new EsptouchAsyncTask3().execute(wifi, bssid, password, "1");
                     requestBind();
                 }
@@ -185,8 +195,10 @@ public class BindLockActivity extends BaseActivity {
     //检查蓝牙连接
     private DisposableObserver getConnObserver() {
         return new DisposableObserver() {
+            @SuppressLint("NewApi")
             @Override
             public void onNext(Object o) {
+                Log.e("main_bind", "---连接中---" + BluetoothUtil.isConnected);
                 if (BluetoothUtil.isConnected) {
                     dispose();
                     requestBindBleWifi();
@@ -197,6 +209,7 @@ public class BindLockActivity extends BaseActivity {
             public void onError(Throwable e) {
             }
 
+            @SuppressLint("NewApi")
             @Override
             public void onComplete() {
                 comDisposable.clear();
@@ -249,6 +262,11 @@ public class BindLockActivity extends BaseActivity {
             }
             if (code == 25) {
                 mProgressDialog.dismiss();
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
                 new EsptouchAsyncTask3().execute(wifi, bssid, password, "1");
             }
             if (code == 5) {
@@ -737,7 +755,8 @@ public class BindLockActivity extends BaseActivity {
 
         @Override
         protected void onPreExecute() {
-            mProgressDialog = new ProgressDialog(BindLockActivity.this);
+            Log.e("main", "---onPreExecute---1");
+            mProgressDialog = new ProgressDialog(context);
             mProgressDialog.setMessage("正在连接WiFi...");
             mProgressDialog.setCanceledOnTouchOutside(false);
             mProgressDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
@@ -777,11 +796,13 @@ public class BindLockActivity extends BaseActivity {
                         }
                     });
             mProgressDialog.show();
+            Log.e("main", "---onPreExecute---2");
             mProgressDialog.getButton(DialogInterface.BUTTON_POSITIVE).setEnabled(false);
         }
 
         @Override
         protected List<IEsptouchResult> doInBackground(String... params) {
+            Log.e("main", "---doInBackground---" + params);
             int taskResultCount = -1;
             synchronized (mLock) {
                 // !!!NOTICE
@@ -791,6 +812,11 @@ public class BindLockActivity extends BaseActivity {
                 String taskResultCountStr = params[3];
 //                taskResultCount = Integer.parseInt(taskResultCountStr);
                 taskResultCount = 1;
+                Log.e("main",
+                        "---apSsid---" + apSsid +
+                                "---apBssid---" + apBssid +
+                                "---apPassword---" + apPassword +
+                                "---taskResultCountStr---" + taskResultCountStr);
                 mEsptouchTask = new EsptouchTask(apSsid, apBssid, apPassword, BindLockActivity.this);
             }
             List<IEsptouchResult> resultList = mEsptouchTask.executeForResults(taskResultCount);
@@ -798,12 +824,29 @@ public class BindLockActivity extends BaseActivity {
         }
 
         @Override
+        protected void onCancelled() {
+            super.onCancelled();
+        }
+
+        @Override
+        protected void onCancelled(List<IEsptouchResult> iEsptouchResults) {
+            super.onCancelled(iEsptouchResults);
+        }
+
+        @Override
+        protected void onProgressUpdate(Void... values) {
+            super.onProgressUpdate(values);
+        }
+
+        @Override
         protected void onPostExecute(List<IEsptouchResult> result) {
 //            mProgressDialog.getButton(DialogInterface.BUTTON_POSITIVE).setEnabled(true);
 //            mProgressDialog.getButton(DialogInterface.BUTTON_POSITIVE).setText("Confirm");
             IEsptouchResult firstResult = result.get(0);
+            boolean isCancelled = firstResult.isCancelled();
             // check whether the task is cancelled and no results received
-            if (!firstResult.isCancelled()) {
+            Log.e("main", "---onPostExecute---" + isCancelled);
+            if (!isCancelled) {
                 int count = 0;
                 // max results to be displayed, if it is more than maxDisplayCount,
                 // just show the count of redundant ones

@@ -10,11 +10,9 @@ import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.view.ViewCompat;
 import android.text.InputFilter;
 import android.text.Spanned;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
@@ -95,7 +93,9 @@ public abstract class BaseActivity extends Activity {
     /**
      * 设置回调
      */
-    protected void setCallBack(){}
+    protected void setCallBack(){
+
+    }
 
     /**
      * 设置监听
