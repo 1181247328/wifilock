@@ -17,6 +17,7 @@ import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.text.style.AbsoluteSizeSpan;
 import android.text.style.ForegroundColorSpan;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
@@ -279,6 +280,7 @@ public class BleActivity extends BaseActivity<ActivityBleBinding> implements Add
         currentOrder = null;
         BluetoothUtil.recv_order = null;
         boolean b = BluetoothUtil.openBluetooth();
+        Log.e("main"," ---开局蓝牙-- - "+b);
         if (b) {
             BluetoothUtil.connectByMac(mac);
             DisposableObserver connObserver = getConnObserver();
@@ -324,6 +326,7 @@ public class BleActivity extends BaseActivity<ActivityBleBinding> implements Add
             @Override
             public void onNext(Object o) {
                 if (BluetoothUtil.isConnected) {
+                    SystemClock.sleep(500);
                     dispose();
                     CanIUseBluetooth = true;
                     mDialog.setMessage("正在请求开门，请稍后...");
@@ -629,9 +632,9 @@ public class BleActivity extends BaseActivity<ActivityBleBinding> implements Add
                         super.onSuccess(code, content);
                         bleInfo = GsonUtil.json2Bean(content, BleInfo.class);
                         boolean canUseWifi = bleInfo.getSsid() != null && bleInfo.getIsOnline() == 1;
-                        SPUtil.saveData(BleActivity.this,  lockState.getPid() + "wifi", canUseWifi);
-                        SPUtil.saveData(BleActivity.this,  lockState.getPid()+ "onlyWifi", bleInfo.getSsid() != null);
-                        SPUtil.saveData(BleActivity.this,  lockState.getPid() + "remote", bleInfo.getIsAllowPwd() == 1);   //为1时远程下发密码开启
+                        SPUtil.saveData(BleActivity.this, lockState.getPid() + "wifi", canUseWifi);
+                        SPUtil.saveData(BleActivity.this, lockState.getPid() + "onlyWifi", bleInfo.getSsid() != null);
+                        SPUtil.saveData(BleActivity.this, lockState.getPid() + "remote", bleInfo.getIsAllowPwd() == 1);   //为1时远程下发密码开启
                         binding.bleName.setText(bleInfo.getNickName());
                         if (TextUtils.isEmpty(bleInfo.getSsid())) {
                             binding.bleSingle1Rl.setVisibility(View.GONE);

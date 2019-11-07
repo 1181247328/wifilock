@@ -34,6 +34,7 @@ import android.widget.Toast;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.deelock.bleradio.DeelockRadio;
 import com.deelock.wifilock.R;
 import com.deelock.wifilock.adapter.ViewPagerFragmentAdapter;
 import com.deelock.wifilock.databinding.ActivityMainBinding;
@@ -104,7 +105,22 @@ public class MainActivity extends AppActivity {
 
     @Override
     protected void bindActivity() {
+        intentFilter();
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+    }
+
+    /**
+     * 监听蓝牙的广播(动态注册)
+     */
+    private void intentFilter() {
+        //实例化广播接收者
+        DeelockRadio deelockRadio = new DeelockRadio();
+        //打开的扭带
+        IntentFilter filter = new IntentFilter();
+        //要监听的状态(这里是蓝牙的开关)
+        filter.addAction(BluetoothAdapter.ACTION_STATE_CHANGED);
+        //开启广播接收者
+        registerReceiver(deelockRadio, filter);
     }
 
     @Override

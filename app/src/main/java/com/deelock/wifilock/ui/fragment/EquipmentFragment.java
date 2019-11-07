@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -98,6 +99,7 @@ public class EquipmentFragment extends BaseFragment {
                     protected void onSuccess(int code, String content) {
                         super.onSuccess(code, content);
                         states.clear();
+                        Log.e("main", "---主页面---" + content);
                         DeviceStateList deviceStateList = new Gson().fromJson(content, DeviceStateList.class);
                         SPUtil.saveData(getContext(), SPUtil.LOCK_STATE, content);
 

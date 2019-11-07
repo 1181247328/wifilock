@@ -289,7 +289,8 @@ public class BleBindActivity extends BaseActivity<ActivityBleBindBinding> {
                         }
                     } else {
                         results = 0;
-                        BluetoothUtil.startConnect(BluetoothUtil.scanResults.get(size - 1).getDevice());
+                        //TODO 修改了将device改为String
+                        BluetoothUtil.startConnect(BluetoothUtil.scanResults.get(size - 1).getDevice().getAddress());
                         DisposableObserver connObserver = getConnObserver();
                         Observable.interval(0, 1000, TimeUnit.MILLISECONDS)
                                 .take(50).observeOn(AndroidSchedulers.mainThread()).subscribe(connObserver);

@@ -34,10 +34,12 @@ import com.deelock.wifilock.network.RequestUtils;
 import com.deelock.wifilock.network.ResponseCallback;
 import com.deelock.wifilock.network.TimeUtil;
 
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.Set;
 
 import okhttp3.Headers;
 
@@ -309,16 +311,18 @@ public class BluetoothUtil {
      *
      * @param device 扫描到的信号最好的蓝牙设备
      */
-    public static void startConnect(BluetoothDevice device) {
+//    public static void startConnect(BluetoothDevice device) {
+    public static void startConnect(String device) {
         boolean isLe = false;
         if (mLeService != null) {
             isLe = true;
             mLeService.disconnectAll();
             mLeService = null;
         }
+        removePairDevice();
         Log.e("main", "---mLeService---" + isLe);
         isFromBind = true;
-        mac = device.getAddress();
+        mac = device;
         currentMac = mac;
         boolean isBind = CustomApplication.mContext.bindService(intent, conn, BIND_AUTO_CREATE);
         Log.e("main", "---startConnect---" + isBind + "---" + mac);
@@ -343,9 +347,12 @@ public class BluetoothUtil {
      * @param bleMac 蓝牙mac地址，在首次扫描绑定中获取并存储(取消，不再使用)
      */
     public static void connectByMac(String bleMac) {
-        if (mLeService != null && bleMac.equals(currentMac)) {
+        Log.e("main---根据地址连接1---", bleMac + "---" + (mLeService != null) + "----" + bleMac.equals(currentMac));
+//        if (mLeService != null && bleMac.equals(currentMac)) {
+        if (mLeService != null) {
             return;
         }
+        removePairDevice();
         if (mLeService != null) {
             mLeService.disconnectAll();
             mLeService = null;
@@ -354,8 +361,36 @@ public class BluetoothUtil {
         isConnected = false;
         BleActivity.CanIUseBluetooth = false;
         mac = bleMac;
+        Log.e("main---根据地址连接---", bleMac);
         currentMac = mac;
         boolean bindService = CustomApplication.mContext.bindService(intent, conn, BIND_AUTO_CREATE);
+        Log.e("main---根据地址连接2---", bindService + "");
+    }
+
+    private static void removePairDevice() {
+        if (bluetoothAdapter.getState() == BluetoothAdapter.STATE_OFF) {
+            bluetoothAdapter.enable();
+            try {
+                Thread.sleep(3000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        if (bluetoothAdapter != null) {
+            Set<BluetoothDevice> bondedDevices = bluetoothAdapter.getBondedDevices();
+            for (BluetoothDevice device : bondedDevices) {
+                unpairDevice(device);
+            }
+        }
+    }
+
+    private static void unpairDevice(BluetoothDevice device) {
+        try {
+            Method m = device.getClass()
+                    .getMethod("removeBond", (Class[]) null);
+            m.invoke(device, (Object[]) null);
+        } catch (Exception e) {
+        }
     }
 
     private static final Intent intent = new Intent(CustomApplication.mContext, BleService.class);
@@ -400,6 +435,7 @@ public class BluetoothUtil {
      * @param code 指令内容，在广播接收器中生成
      */
     public static void writeCode(String code) {
+        removePairDevice();
         if (mLeService != null) {
             Log.e("main_发送---", code);
             Log.e("main_发送_2---", code.length() + "");
@@ -414,6 +450,7 @@ public class BluetoothUtil {
                 Log.e("main---2", isTwo + "");
                 SystemClock.sleep(20);
                 boolean isThree = mLeService.send(mac.toUpperCase(), send_3, false);
+                SystemClock.sleep(20);
                 Log.e("main---3", isThree + "");
                 Log.e("main---", mac.toUpperCase() + "---" + send_1 + "---" + send_2 + "---" + send_3);
             } else {
