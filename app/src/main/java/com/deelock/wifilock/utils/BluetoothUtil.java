@@ -43,8 +43,6 @@ import java.util.Set;
 
 import okhttp3.Headers;
 
-import static android.content.Context.BIND_AUTO_CREATE;
-
 @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 public class BluetoothUtil {
 
@@ -71,6 +69,8 @@ public class BluetoothUtil {
     private static int detectLinkTime = 20;   //重连时间，单位（秒）
 
     private static boolean isFromBind = false;
+
+    private static Context context = null;
 
     /**
      * 当门锁与手机非用户主动断开连接时，监听重连，重新连接时间超过规定时间，中断连接
@@ -324,7 +324,7 @@ public class BluetoothUtil {
         isFromBind = true;
         mac = device;
         currentMac = mac;
-        boolean isBind = CustomApplication.mContext.bindService(intent, conn, BIND_AUTO_CREATE);
+        boolean isBind = CustomApplication.mContext.bindService(intent, conn, CustomApplication.mContext.BIND_AUTO_CREATE);
         Log.e("main", "---startConnect---" + isBind + "---" + mac);
 //        Log.e("main", "---判断当前这个服务是否存在后台---" + isServiceRunning());
     }
@@ -363,7 +363,7 @@ public class BluetoothUtil {
         mac = bleMac;
         Log.e("main---根据地址连接---", bleMac);
         currentMac = mac;
-        boolean bindService = CustomApplication.mContext.bindService(intent, conn, BIND_AUTO_CREATE);
+        boolean bindService = CustomApplication.mContext.bindService(intent, conn, CustomApplication.mContext.BIND_AUTO_CREATE);
         Log.e("main---根据地址连接2---", bindService + "");
     }
 
@@ -413,7 +413,7 @@ public class BluetoothUtil {
         BleActivity.CanIUseBluetooth = false;
         mac = bleMac;
         currentMac = mac;
-        CustomApplication.mContext.bindService(intent, conn, BIND_AUTO_CREATE);
+        CustomApplication.mContext.bindService(intent, conn, CustomApplication.mContext.BIND_AUTO_CREATE);
     }
 
     /**
@@ -443,22 +443,25 @@ public class BluetoothUtil {
                 String send_1 = code.substring(0, 40);
                 String send_2 = code.substring(40, 80);
                 String send_3 = code.substring(80);
-                boolean isOne = mLeService.send(mac.toUpperCase(), send_1, false);
-                Log.e("main---1", isOne + "");
+                boolean isSendOne = send(mac.toUpperCase(), send_1, false);
+                Log.e("main", "---1---" + isSendOne);
                 SystemClock.sleep(20);
-                boolean isTwo = mLeService.send(mac.toUpperCase(), send_2, false);
-                Log.e("main---2", isTwo + "");
+                boolean isSendTwo = send(mac.toUpperCase(), send_2, false);
+                Log.e("main", "---2---" + isSendTwo);
                 SystemClock.sleep(20);
-                boolean isThree = mLeService.send(mac.toUpperCase(), send_3, false);
-                SystemClock.sleep(20);
-                Log.e("main---3", isThree + "");
-                Log.e("main---", mac.toUpperCase() + "---" + send_1 + "---" + send_2 + "---" + send_3);
+                boolean isSendThree = send(mac.toUpperCase(), send_3, false);
+                Log.e("main", "---3---" + isSendThree);
             } else {
-                boolean isCode = mLeService.send(mac.toUpperCase(), code, false);
-                Log.e("main---", isCode + "---" + mac.toUpperCase() + "---" + code);
+                boolean isCode = send(mac.toUpperCase(), code, false);
+                Log.e("main", "---4---" + isCode);
             }
             recv_order = null;
         }
+    }
+
+    //      SystemClock.sleep(20);
+    private static boolean send(String address, String value, boolean isMessage) {
+        return mLeService.send(address, value, isMessage);
     }
 
     public static String recv_order = null;

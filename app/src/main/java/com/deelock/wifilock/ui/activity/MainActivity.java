@@ -103,6 +103,8 @@ public class MainActivity extends AppActivity {
     AlertDialog dialog;
     int REQUESTPERMISSION = 110;
 
+    private DeelockRadio deelockRadio;
+
     @Override
     protected void bindActivity() {
         intentFilter();
@@ -114,7 +116,7 @@ public class MainActivity extends AppActivity {
      */
     private void intentFilter() {
         //实例化广播接收者
-        DeelockRadio deelockRadio = new DeelockRadio();
+        deelockRadio = new DeelockRadio();
         //打开的扭带
         IntentFilter filter = new IntentFilter();
         //要监听的状态(这里是蓝牙的开关)
@@ -517,6 +519,7 @@ public class MainActivity extends AppActivity {
     protected void onDestroy() {
         super.onDestroy();
         handler.removeCallbacksAndMessages(null);
+        unregisterReceiver(deelockRadio);
         removePairDevice();
     }
 
