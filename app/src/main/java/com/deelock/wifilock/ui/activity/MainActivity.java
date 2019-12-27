@@ -105,6 +105,7 @@ public class MainActivity extends AppActivity {
 
     private DeelockRadio deelockRadio;
 
+    private MaterialDialog materialDialog = null;
     @Override
     protected void bindActivity() {
         intentFilter();
@@ -173,7 +174,7 @@ public class MainActivity extends AppActivity {
             NotificationManagerCompat managerCompat = NotificationManagerCompat.from(this);
             boolean enabled = managerCompat.areNotificationsEnabled();   //应用是否拥有通知权限，4.4以下默认返回true
             if (!enabled) {
-                new MaterialDialog.Builder(this)
+                materialDialog =   new MaterialDialog.Builder(this)
                         .title(R.string.app_name)
                         .content(R.string.main_notify)
                         .checkBoxPromptRes(R.string.no_more_display, false, new CompoundButton.OnCheckedChangeListener() {
@@ -518,6 +519,9 @@ public class MainActivity extends AppActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        if(materialDialog!=null&&materialDialog.isShowing()){
+            materialDialog.dismiss();
+        }
         handler.removeCallbacksAndMessages(null);
         unregisterReceiver(deelockRadio);
         removePairDevice();

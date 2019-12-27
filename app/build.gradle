@@ -11,7 +11,7 @@ android {
         minSdkVersion 18
         targetSdkVersion 28
         versionCode 238
-        versionName '2.4.0'
+        versionName '2.4.2'
         ndk {
             abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64', 'mips', 'mips64'
         }
@@ -82,6 +82,7 @@ dependencies {
     implementation project(':refresh_library')
     implementation project(':pickerview')
     implementation project(':wheelview')
+    implementation 'com.wanjian:cockroach:0.0.5'
 }
 repositories {
     mavenCentral()

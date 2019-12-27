@@ -12,6 +12,7 @@ public class Login {
     private int headIcon;
     private int sex;
     private String headUrl;
+    private String accountMark;
 
     public String getHeadUrl() {
         return headUrl;
@@ -20,8 +21,6 @@ public class Login {
     public void setHeadUrl(String headUrl) {
         this.headUrl = headUrl;
     }
-
-    private String accountMark;
 
     public void setPid(String pid) {
         this.pid = pid;

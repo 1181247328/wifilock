@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.util.Log;
 
 import com.deelock.wifilock.ui.activity.LoginActivity;
-import com.deelock.wifilock.utils.AES7P256;
 import com.deelock.wifilock.utils.BluetoothUtil;
 import com.deelock.wifilock.utils.Logger;
 import com.deelock.wifilock.utils.SPUtil;
@@ -44,8 +43,10 @@ public abstract class ResponseCallback<Body extends BaseResponse> implements Cal
         int code = response.body().code;
         if (mActivityRef != null && mActivityRef.get() != null) {
             String token = SPUtil.getKey(mActivityRef.get());
-            Log.e("main_网络返回数据",
-                    response.body().code + "--" + response.body().msg + "  ---- " + AES7P256.getData((String) response.body().content, token));
+            Log.e("main","---"+code+"---"+token);
+
+//            Log.e("main_网络返回数据",
+//                    response.body().code + "--" + response.body().msg + "  ---- " + AES7P256.getData((String) response.body().content, token));
             switch (code) {
                 case -300:
                 case -201:

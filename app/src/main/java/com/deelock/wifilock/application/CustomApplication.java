@@ -2,20 +2,22 @@ package com.deelock.wifilock.application;
 
 import android.annotation.SuppressLint;
 import android.app.Application;
-import android.bluetooth.BluetoothGatt;
 import android.content.Context;
 import android.os.Build;
+import android.os.Handler;
+import android.os.Looper;
 import android.os.StrictMode;
-import android.support.annotation.RequiresApi;
 import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
 import android.util.Log;
 
+import com.deelock.wifilock.BuildConfig;
 import com.deelock.wifilock.constants.Constants;
 import com.deelock.wifilock.utils.BluetoothUtil;
 import com.mob.MobSDK;
 import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.Logger;
-import com.deelock.wifilock.BuildConfig;
+import com.wanjian.cockroach.Cockroach;
 
 import cn.jpush.android.api.JPushInterface;
 
@@ -49,6 +51,23 @@ public class CustomApplication extends Application {
         } else {
             InitializeService.start(this);
         }
+
+        Cockroach.install(new Cockroach.ExceptionHandler() {
+            @Override
+            public void handlerException(final Thread thread, final Throwable throwable) {
+                new Handler(Looper.getMainLooper()).post(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            Log.e("CustomApplication", "--->CockroachException:" + thread + "<---", throwable);
+//                            Toast.makeText(App.this, "Exception Happend\n" + thread + "\n" + throwable.toString(), Toast.LENGTH_SHORT).show();
+                        } catch (Throwable e) {
+
+                        }
+                    }
+                });
+            }
+        });
     }
 
     @Override

@@ -10,7 +10,7 @@ public class ServerHost {
     }
 
 //    public static String INTERNAL_SERVER_HOST = "http://192.168.0.70:7211/smarthome/";
-    public static String INTERNAL_SERVER_HOST = "http://app.deelock.net:7211/smarthome/";
+    public static String INTERNAL_SERVER_HOST = "http://120.79.37.67:7211/smarthome/";
 //    public static String UPLOAD = "http://47.96.158.139:8080";
 //    public static String UPLOAD = "http://192.168.0.102:8080";
 }

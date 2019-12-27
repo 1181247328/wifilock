@@ -2,6 +2,7 @@ package com.deelock.wifilock.ui.activity;
 
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.widget.Toast;
 
@@ -80,8 +81,8 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding> {
             SPUtil.saveData(this, "main_key", pwd + "AES256134654");
         }
         params.put("height", DensityUtil.getScreenHeight(this));
-        params.put("width", DensityUtil.getScreenWidth(this));
         params.put("model", android.os.Build.MODEL);
+        params.put("width", DensityUtil.getScreenWidth(this));
         RequestUtils.requestUnLogged(RequestUtils.LOGIN, LoginActivity.this, params).enqueue(
                 new ResponseCallback<BaseResponse>(this) {
                     @Override
@@ -92,6 +93,7 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding> {
                     @Override
                     protected void onSuccess(int code, final String content) {
                         super.onSuccess(code, content);
+                        Log.e("LoginActivity", "---登录成功---" + content);
                         ToastUtil.toastShort(LoginActivity.this, "登录成功");
                         Login login = GsonUtil.json2Bean(content, Login.class);
                         SPUtil.setLoginInfo(LoginActivity.this, login);

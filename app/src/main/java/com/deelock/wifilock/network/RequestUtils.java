@@ -3,13 +3,12 @@ package com.deelock.wifilock.network;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.util.Log;
 
 import com.deelock.wifilock.utils.AES7P256;
-import com.deelock.wifilock.utils.ZLibUtils;
-import com.google.gson.Gson;
 import com.deelock.wifilock.utils.MD5Util;
 import com.deelock.wifilock.utils.SPUtil;
+import com.deelock.wifilock.utils.ZLibUtils;
+import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonPrimitive;
@@ -25,7 +24,6 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -240,7 +238,8 @@ public class RequestUtils {
         }
         sign = MD5Util.string2MD5(params);
         byte[] zip = ZLibUtils.compress(new Gson().toJson(params));
-        content = AES7P256.encrypt(zip, accountMark);
+//        content = AES7P256.encrypt(zip, accountMark);
+        content = AES7P256.encrypt(zip, token);
     }
 
     public static Call<BaseResponse> request(String url, Context context, Map params) {

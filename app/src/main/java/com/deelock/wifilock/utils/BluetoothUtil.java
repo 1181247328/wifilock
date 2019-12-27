@@ -460,7 +460,7 @@ public class BluetoothUtil {
     }
 
     //      SystemClock.sleep(20);
-    private static boolean send(String address, String value, boolean isMessage) {
+    private static synchronized boolean send(String address, String value, boolean isMessage) {
         return mLeService.send(address, value, isMessage);
     }
 
