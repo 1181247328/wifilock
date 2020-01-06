@@ -40,7 +40,12 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
+import io.reactivex.Observable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.observers.DisposableObserver;
 import okhttp3.Headers;
 
 @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -59,6 +64,27 @@ public class BluetoothUtil {
     private static ScanCallback scanCallback;
 
     private static String currentMac;
+
+    //监听器
+    private static CompositeDisposable mCompositeDisposable = new CompositeDisposable();
+
+    //发送的第一段数据
+    private static String send_1;
+
+    //发送的第一段数据是否成功
+    private static boolean isSendOne = false;
+
+    //发送的第二段数据
+    private static String send_2;
+
+    //发送的第二段数据是否成功
+    private static boolean isSendTwo = false;
+
+    //发送的第三段数据
+    private static String send_3;
+
+    //发送的第三段数据是否成功
+    private static boolean isSendThree = false;
 
     public static ArrayList<ScanResult> scanResults = new ArrayList<>();   //扫描蓝牙结果集
 
@@ -251,7 +277,7 @@ public class BluetoothUtil {
                         super.onScanResult(callbackType, result);
                         needOpenLocatopn = false;
                         int size = scanResults.size();
-                        Log.e("main", "---已得到的蓝牙数量---" + size
+                        Log.e("BluetoothUtil", "---已得到的蓝牙数量---" + size
                                 + "---扫描到的蓝牙名称---" + result.getDevice().getName()
                                 + "---扫描到的蓝牙地址---" + result.getDevice().getAddress()
                                 + "---rssi----" + result.getRssi());
@@ -390,6 +416,7 @@ public class BluetoothUtil {
                     .getMethod("removeBond", (Class[]) null);
             m.invoke(device, (Object[]) null);
         } catch (Exception e) {
+
         }
     }
 
@@ -445,12 +472,18 @@ public class BluetoothUtil {
                 String send_3 = code.substring(80);
                 boolean isSendOne = send(mac.toUpperCase(), send_1, false);
                 Log.e("main", "---1---" + isSendOne);
-                SystemClock.sleep(20);
+                SystemClock.sleep(50);
                 boolean isSendTwo = send(mac.toUpperCase(), send_2, false);
                 Log.e("main", "---2---" + isSendTwo);
-                SystemClock.sleep(20);
+                SystemClock.sleep(50);
                 boolean isSendThree = send(mac.toUpperCase(), send_3, false);
                 Log.e("main", "---3---" + isSendThree);
+//                String send_2 = code.substring(40, 80);
+//                String send_3 = code.substring(80);
+//                DisposableObserver orderObserver = getWriteOneOrderObserver();
+//                Observable.interval(0, 1000, TimeUnit.MILLISECONDS)
+//                        .take(1).observeOn(AndroidSchedulers.mainThread()).subscribe(orderObserver);
+//                mCompositeDisposable.add(orderObserver);
             } else {
                 boolean isCode = send(mac.toUpperCase(), code, false);
                 Log.e("main", "---4---" + isCode);
@@ -584,10 +617,13 @@ public class BluetoothUtil {
             String recv = InputUtil.bytesToHexString(bluetoothGattCharacteristic.getValue());
             Log.e("main_接收", recv);
             if ("A1D".equals(recv.substring(0, 3)) || "A2D".equals(recv.substring(0, 3))) {
+                isSendOne = true;
                 recv_1 = recv;
             } else if (recv.length() >= 20 && "CC".equals(recv.substring(18, 20))) {
+                isSendThree = true;
                 recv_3 = recv.substring(0, 20);
             } else {
+                isSendTwo = true;
                 recv_2 = recv;
             }
             if (recv_1 != null && recv_2 != null && recv_3 != null && recv_order == null) {
@@ -604,4 +640,116 @@ public class BluetoothUtil {
             }
         }
     };
+
+    /**
+     * 发送第一段数据的监听
+     *
+     * @return
+     */
+    private static DisposableObserver getWriteOneOrderObserver() {
+        return new DisposableObserver() {
+
+            @Override
+            public void onNext(Object o) {
+                Log.e("main_onNext_1", o.toString());
+
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                Log.e("main_Throwable_1", e.toString());
+            }
+
+            @Override
+            public void onComplete() {
+                Log.e("main_onComplete_1", "onComplete");
+                //关闭第一段数据的监听
+                mCompositeDisposable.clear();
+                if (isSendOne) {
+                    //代表第一段数据发送成功,准备发送第二段
+                    boolean isSendTwo = send(mac.toUpperCase(), send_2, false);
+                    Log.e("main", "---2---" + isSendTwo);
+                    DisposableObserver orderObserver = getWriteTwoOrderObserver();
+                    Observable.interval(0, 1000, TimeUnit.MILLISECONDS)
+                            .take(1).observeOn(AndroidSchedulers.mainThread()).subscribe(orderObserver);
+                    mCompositeDisposable.add(orderObserver);
+                } else {
+                    //代表第一段数据发送失败
+                }
+            }
+        };
+    }
+
+    /**
+     * 发送第二段数据的监听
+     *
+     * @return
+     */
+    private static DisposableObserver getWriteTwoOrderObserver() {
+        return new DisposableObserver() {
+
+            @Override
+            public void onNext(Object o) {
+                Log.e("main_onNext_2", o.toString());
+
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                Log.e("main_Throwable_2", e.toString());
+            }
+
+            @Override
+            public void onComplete() {
+                Log.e("main_onComplete_2", "onComplete");
+                //关闭第二段数据的监听
+                mCompositeDisposable.clear();
+                if (isSendTwo) {
+                    //代表第二段数据发送成功,准备发送第三段
+                    boolean isSendThree = send(mac.toUpperCase(), send_3, false);
+                    Log.e("main", "---3---" + isSendThree);
+                    DisposableObserver orderObserver = getWriteThreeOrderObserver();
+                    Observable.interval(0, 1000, TimeUnit.MILLISECONDS)
+                            .take(1).observeOn(AndroidSchedulers.mainThread()).subscribe(orderObserver);
+                    mCompositeDisposable.add(orderObserver);
+                } else {
+                    //代表第二段数据发送失败
+                }
+            }
+        };
+    }
+
+    /**
+     * 发送第三段数据的监听
+     *
+     * @return
+     */
+    private static DisposableObserver getWriteThreeOrderObserver() {
+        return new DisposableObserver() {
+
+            @Override
+            public void onNext(Object o) {
+                Log.e("main_onNext_3", o.toString());
+
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                Log.e("main_Throwable_3", e.toString());
+            }
+
+            @Override
+            public void onComplete() {
+                Log.e("main_onComplete_3", "onComplete");
+                //关闭第三段数据的监听
+                mCompositeDisposable.clear();
+                if (isSendTwo) {
+                    //代表第三段数据发送成功
+
+                } else {
+                    //代表第三段数据发送失败
+                }
+            }
+        };
+    }
 }

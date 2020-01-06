@@ -123,7 +123,7 @@ public class BleBindActivity extends BaseActivity<ActivityBleBindBinding> {
             DisposableObserver scanResultObserver = getScanResultObserver();
             Log.e("main", "---3");
             Observable.interval(0, 1000, TimeUnit.MILLISECONDS)
-                    .take(6).observeOn(AndroidSchedulers.mainThread()).subscribe(scanResultObserver);
+                    .take(15).observeOn(AndroidSchedulers.mainThread()).subscribe(scanResultObserver);
             Log.e("main", "---4");
             boolean isDis = mCompositeDisposable.add(scanResultObserver);
             Log.e("main", "---5---" + isDis);
@@ -191,7 +191,7 @@ public class BleBindActivity extends BaseActivity<ActivityBleBindBinding> {
 
         DisposableObserver waitObserver = waitObserver();
         Observable.interval(2000, 1000, TimeUnit.MILLISECONDS)
-                .take(4).observeOn(AndroidSchedulers.mainThread()).subscribe(waitObserver);
+                .take(15).observeOn(AndroidSchedulers.mainThread()).subscribe(waitObserver);
         mCompositeDisposable.add(waitObserver);
     }
 
@@ -208,7 +208,8 @@ public class BleBindActivity extends BaseActivity<ActivityBleBindBinding> {
             @Override
             protected void onStart() {
                 super.onStart();
-                binding.bleBindStateText.setText("正在配置门锁请稍后");
+//                binding.bleBindStateText.setText("正在配置门锁请稍后");
+                binding.bleBindStateText.setText("蓝牙初始化请稍候...");
             }
 
             @Override

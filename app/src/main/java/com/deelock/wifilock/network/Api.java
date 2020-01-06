@@ -20,7 +20,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class Api {
 
     //public static String baseUrl = "http://192.168.0.70:9881";   //内网
-    public static String baseUrl = "http://120.79.37.67:7211/smarthome/";  //外网
+//    public static String baseUrl = "http://120.79.37.67:7211/smarthome/";  //外网
+    public static String baseUrl = "http://116.62.244.252:7211/smarthome/";  //外网
     public static RequestService service;
 
     private Api(){

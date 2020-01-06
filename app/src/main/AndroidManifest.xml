@@ -45,7 +45,7 @@
         android:name="android.permission.WRITE_SETTINGS"
         tools:ignore="ProtectedPermissions" />
 
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
 
     <application
@@ -58,6 +58,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <meta-data
             android:name="channeltest"
             android:value="1" />
@@ -305,7 +306,9 @@
         <service
             android:name="com.ble.ble.BleService"
             android:enabled="true"
-            android:exported="false" />
+            android:exported="false">
+
+        </service>
 
 
     </application>

@@ -16,6 +16,7 @@ import java.util.List;
 
 import static com.mob.MobSDK.getContext;
 
+//TODO 绑定成功之后跳转的管理员密码界面
 public class BleAddPwdActivity extends BaseActivity<ActivityBleAddPwdBinding> {
 
     List<Button> buttons;
@@ -135,6 +136,8 @@ public class BleAddPwdActivity extends BaseActivity<ActivityBleAddPwdBinding> {
                 bundle.putBoolean("isFollow", isFollow);
                 bundle.putString("openName", openName);
                 bundle.putString("pid", pid);
+                //TODO 首次添加管理员密码蓝牙初使化,等待10秒发送
+                bundle.putString("pass", "1");
                 openView(BlePwdNameActivity.class, bundle);
                 finish();
                 password = new char[]{'\0', '\0', '\0', '\0', '\0', '\0'};

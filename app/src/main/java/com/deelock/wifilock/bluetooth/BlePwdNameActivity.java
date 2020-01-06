@@ -80,6 +80,8 @@ public class BlePwdNameActivity extends BaseActivity<ActivityBlePwdNameBinding> 
     private HandleOrder mHandle;
     private boolean isWrongName = false;    //由于名字错误
 
+    private String pass = "2";
+
     @Override
     protected int initLayout() {
         return R.layout.activity_ble_pwd_name;
@@ -111,6 +113,7 @@ public class BlePwdNameActivity extends BaseActivity<ActivityBlePwdNameBinding> 
         pid = getIntent().getStringExtra("pid");
         isFollow = getIntent().getBooleanExtra("isFollow", false);
         openName = getIntent().getStringExtra("openName");
+        pass = getIntent().getStringExtra("pass");
 
         if (isFromBind) {
             binding.blePwdMessage.setVisibility(View.GONE);
@@ -254,6 +257,47 @@ public class BlePwdNameActivity extends BaseActivity<ActivityBlePwdNameBinding> 
      * 下发密码
      */
     public void savePwd() {
+        //第一次下发管理员密码时延迟10S
+//        if (TextUtils.equals(pass, "1")) {
+//            mProgressDialog.setMessage("正在连接门锁蓝牙，请稍候...");
+//            mProgressDialog.show();
+//            new Handler().postDelayed(new Runnable() {
+//                @Override
+//                public void run() {
+//                    if (userPasswords == null) {
+//                        Toast.makeText(BlePwdNameActivity.this, "请等待网络配置完成", Toast.LENGTH_SHORT).show();
+//                        return;
+//                    }
+//                    if (isWrongName) {
+//                        if (openName == null) {
+//                            sendResult();
+//                        } else {
+//                            updatePw();
+//                        }
+//                        return;
+//                    }
+//                    boolean b = BluetoothUtil.openBluetooth();
+//                    if (b) {
+//                        currentOrder = null;
+//                        BluetoothUtil.recv_order = null;
+//                        BluetoothUtil.connectByMac(mac);
+//                        send_type = 3;
+//                        DisposableObserver connObserver = getConnObserver();
+//                        Observable.interval(0, 1000, TimeUnit.MILLISECONDS)
+//                                .take(30).observeOn(AndroidSchedulers.mainThread()).subscribe(connObserver);
+//                        mCompositeDisposable.add(connObserver);
+//                    } else {
+//                        Toast.makeText(BlePwdNameActivity.this, "请开启蓝牙", Toast.LENGTH_SHORT).show();
+//                    }
+//                }
+//            },10000);
+//        } else {
+//            initTimer();
+//        }
+        initTimer();
+    }
+
+    private void initTimer(){
         if (userPasswords == null) {
             Toast.makeText(this, "请等待网络配置完成", Toast.LENGTH_SHORT).show();
             return;
@@ -705,5 +749,27 @@ public class BlePwdNameActivity extends BaseActivity<ActivityBlePwdNameBinding> 
         super.onDestroy();
         isWrongName = false;
         mCompositeDisposable.dispose();
+    }
+
+    //延迟处理
+    private DisposableObserver getPassConnObserver() {
+        return new DisposableObserver() {
+            @Override
+            public void onNext(Object o) {
+                mProgressDialog.setMessage("正在发送请稍候...");
+                mProgressDialog.show();
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                Log.e("main", "---onError---");
+            }
+
+            @Override
+            public void onComplete() {
+                Log.e("main", "---onComplete---");
+                mProgressDialog.dismiss();
+            }
+        };
     }
 }

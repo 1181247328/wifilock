@@ -238,8 +238,9 @@ public class RequestUtils {
         }
         sign = MD5Util.string2MD5(params);
         byte[] zip = ZLibUtils.compress(new Gson().toJson(params));
-//        content = AES7P256.encrypt(zip, accountMark);
-        content = AES7P256.encrypt(zip, token);
+        content = AES7P256.encrypt(zip, accountMark);
+        //TODO 使用token加密
+//        content = AES7P256.encrypt(zip, token);
     }
 
     public static Call<BaseResponse> request(String url, Context context, Map params) {

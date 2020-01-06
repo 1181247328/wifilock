@@ -87,6 +87,7 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding> {
                 new ResponseCallback<BaseResponse>(this) {
                     @Override
                     protected void onFinish() {
+                        Log.e("LoginActivity", "---onFinish---");
                         binding.loginSubmit.setClickable(true);
                     }
 
@@ -104,6 +105,7 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding> {
                     @Override
                     protected void onFailure(int code, String message) {
                         super.onFailure(code, message);
+                        Log.e("LoginActivity", "---onFailure---");
                         Toast.makeText(LoginActivity.this, message, Toast.LENGTH_SHORT).show();
                     }
                 }

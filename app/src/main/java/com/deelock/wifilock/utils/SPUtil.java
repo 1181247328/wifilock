@@ -1,21 +1,19 @@
 package com.deelock.wifilock.utils;
 
-import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
 import android.util.Log;
 
 import com.deelock.wifilock.entity.HelpInfo;
+import com.deelock.wifilock.entity.Login;
+import com.deelock.wifilock.entity.Pid;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
-import com.deelock.wifilock.entity.Login;
-import com.deelock.wifilock.entity.Pid;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 /**
