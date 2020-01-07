@@ -209,6 +209,9 @@ public class RequestUtils {
     //蓝牙锁修改授权用户
     public static final String BLE_UPDATE_AUTH_USER = single + "wifi/bt_lock/user/update.json";
 
+    //请求WIFI配置信息
+    public static final String BLE_WIFI = single + "wifi/bt_lock/bt_product_cmd.json";
+
     private static void unLoggedData(Context context, Map params) {
         check = 0;
         sign = MD5Util.string2MD5(params);

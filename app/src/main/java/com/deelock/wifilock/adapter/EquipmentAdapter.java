@@ -7,23 +7,19 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.deelock.state.LockMac;
 import com.deelock.wifilock.R;
 import com.deelock.wifilock.bluetooth.BleActivity;
-import com.deelock.wifilock.bluetooth.BleAddFprintActivity;
 import com.deelock.wifilock.bluetooth.BleAddPwdActivity;
 import com.deelock.wifilock.databinding.ItemEquipmentBinding;
-import com.deelock.wifilock.entity.FPrintList;
 import com.deelock.wifilock.entity.GateWay;
-import com.deelock.wifilock.entity.LockDetail;
 import com.deelock.wifilock.entity.LockState;
 import com.deelock.wifilock.entity.PasswordList;
 import com.deelock.wifilock.entity.TempPassword;
-import com.deelock.wifilock.entity.UserFPrint;
 import com.deelock.wifilock.entity.UserPassword;
 import com.deelock.wifilock.network.BaseResponse;
 import com.deelock.wifilock.network.RequestUtils;
@@ -82,7 +78,7 @@ public class EquipmentAdapter extends CommonAdapter<EquipmentAdapter.ViewHolder>
                     holder.getBinding().onlineTv.setText(isOnline ? "离线" : "在线");
                     holder.getBinding().onlineTv.setTextColor(isOnline ? 0xfff54528 : 0xff13c6e5);
                 }
-                if (type == 40 && lock.getIsBtopen() == 1 && lock.getIsManager()==2) {
+                if (type == 40 && lock.getIsBtopen() == 1 && lock.getIsManager() == 2) {
                     holder.getBinding().onlineTv.setVisibility(View.VISIBLE);
                     holder.getBinding().onlineTv.setText("被授权");
                 }
@@ -182,6 +178,11 @@ public class EquipmentAdapter extends CommonAdapter<EquipmentAdapter.ViewHolder>
                         }
                         Bundle b = new Bundle();
                         b.putParcelable("lockState", (LockState) data.get(position));
+                        //保存好MAC地址和版本号
+                        LockMac lockMac = new LockMac();
+                        //保存mac地址
+                        lockMac.setMac(((LockState) data.get(position)).getMacAddr());
+                        com.deelock.state.LockState.getLockState().setLockMac(lockMac);
                         openActivityForMoment(BleActivity.class, b);
                     }
                 }

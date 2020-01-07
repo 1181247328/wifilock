@@ -357,6 +357,7 @@ public class ChangeWifiActivity extends BaseActivity {
 
         @Override
         protected List<IEsptouchResult> doInBackground(String... params) {
+
             int taskResultCount = -1;
             synchronized (mLock) {
                 // !!!NOTICE

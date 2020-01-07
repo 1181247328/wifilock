@@ -39,6 +39,9 @@ public class EquipmentFragment extends BaseFragment {
     private List<Object> states;
     private EquipmentAdapter adapter;
 
+    //中间逻辑层初始化
+    private com.deelock.state.LockState lockState = com.deelock.state.LockState.getLockState();
+
     public EquipmentFragment() {
 
     }
@@ -101,6 +104,9 @@ public class EquipmentFragment extends BaseFragment {
                         states.clear();
                         Log.e("main", "---主页面---" + content);
                         DeviceStateList deviceStateList = new Gson().fromJson(content, DeviceStateList.class);
+                        //TODO 保存主页面数据用于在后期判断是否为不同版本的使用情况
+                        lockState.setDeviceStateList(deviceStateList);
+
                         SPUtil.saveData(getContext(), SPUtil.LOCK_STATE, content);
 
                         List<LockState> lockList = deviceStateList.getSingleWifiObjs().getLockList();
