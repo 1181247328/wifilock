@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/selectableItemBackground"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent">
+
+        <TextView
+            android:id="@+id/tv_ble_item_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_40"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+            android:gravity="center"
+            android:paddingLeft="@dimen/dp_8"
+            android:paddingRight="@dimen/dp_8"
+            android:text="-67"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/dp_14" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/tv_ble_item_distance"
+            android:background="@android:color/transparent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_ble_item_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@android:color/transparent"
+                android:gravity="left"
+                android:paddingLeft="@dimen/dp_8"
+                android:paddingTop="@dimen/dp_6"
+                android:paddingRight="@dimen/dp_8"
+                android:paddingBottom="@dimen/dp_6"
+                android:singleLine="true"
+                android:text="Deelock"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/dp_14" />
+
+            <TextView
+                android:id="@+id/tv_ble_item_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@android:color/transparent"
+                android:gravity="left"
+                android:paddingLeft="@dimen/dp_8"
+                android:paddingRight="@dimen/dp_8"
+                android:paddingBottom="@dimen/dp_6"
+                android:singleLine="true"
+                android:text="AA:00:00:00:00"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/dp_14" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

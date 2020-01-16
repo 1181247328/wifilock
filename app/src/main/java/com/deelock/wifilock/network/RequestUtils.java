@@ -212,6 +212,9 @@ public class RequestUtils {
     //请求WIFI配置信息
     public static final String BLE_WIFI = single + "wifi/bt_lock/bt_product_cmd.json";
 
+    //上传从蓝牙返回的数据
+    public static final String BLE_WIFI_UPLOAD = single + "wifi/bt_lock/bt_accept_cmd.json";
+
     private static void unLoggedData(Context context, Map params) {
         check = 0;
         sign = MD5Util.string2MD5(params);

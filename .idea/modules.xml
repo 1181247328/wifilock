@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/XSmartConfigLib/XSmartConfigLib.iml" filepath="$PROJECT_DIR$/XSmartConfigLib/XSmartConfigLib.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/espTouch/espTouch.iml" filepath="$PROJECT_DIR$/espTouch/espTouch.iml" />
       <module fileurl="file://$PROJECT_DIR$/pickerview/pickerview.iml" filepath="$PROJECT_DIR$/pickerview/pickerview.iml" />
       <module fileurl="file://$PROJECT_DIR$/refresh_library/refresh_library.iml" filepath="$PROJECT_DIR$/refresh_library/refresh_library.iml" />
       <module fileurl="file://$PROJECT_DIR$/wheelview/wheelview.iml" filepath="$PROJECT_DIR$/wheelview/wheelview.iml" />

@@ -27,6 +27,7 @@ import android.widget.Toast;
 
 import com.ble.ble.BleCallBack;
 import com.ble.ble.BleService;
+import com.deelock.state.BleListPullFind;
 import com.deelock.wifilock.application.CustomApplication;
 import com.deelock.wifilock.bluetooth.BleActivity;
 import com.deelock.wifilock.network.BaseResponse;
@@ -41,6 +42,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Set;
 
+import de.greenrobot.event.EventBus;
 import io.reactivex.disposables.CompositeDisposable;
 import okhttp3.Headers;
 
@@ -50,6 +52,8 @@ public class BluetoothUtil {
     private static BluetoothAdapter bluetoothAdapter = null;
 
     private static BluetoothGatt bluetoothGatt;
+
+    private static EventBus eventBus = EventBus.getDefault();
 
     public static boolean isConnected = false;
     private static boolean isOpen = false;
@@ -285,11 +289,15 @@ public class BluetoothUtil {
                                     scanResults.add(result);
                                 }
                             }
+                            eventBus.post(new BleListPullFind());
                         } else {
                             int a;
                             for (a = 0; a < size; a++) {
                                 boolean equals = scanResults.get(a).getDevice().getAddress().equals(result.getDevice().getAddress());
                                 if (equals) {
+                                    //先删除这个重复的数据
+                                    scanResults.remove(a);
+                                    scanResults.add(result);
                                     break;
                                 }
                             }
@@ -302,6 +310,7 @@ public class BluetoothUtil {
                                     }
                                 }
                             }
+                            eventBus.post(new BleListPullFind());
                         }
                         Collections.sort(scanResults, new Comparator<ScanResult>() {
                             @Override
@@ -309,6 +318,7 @@ public class BluetoothUtil {
                                 return o1.getRssi() - o2.getRssi();
                             }
                         });
+                        eventBus.post(new BleListPullFind());
                     }
 
                     @Override
@@ -322,7 +332,10 @@ public class BluetoothUtil {
             } else {
                 Toast.makeText(CustomApplication.mContext, "当前手机版本不支持该功能", Toast.LENGTH_LONG).show();
             }
-        } catch (Exception e) {
+        } catch (
+                Exception e)
+
+        {
             SystemClock.sleep(100);
             connectByName(deviceName);
         }
@@ -541,6 +554,7 @@ public class BluetoothUtil {
         void success(int code, String message, String content);
 
         void fail(int code, String message, String content);
+
     }
 
     private static ServiceConnection conn = new ServiceConnection() {

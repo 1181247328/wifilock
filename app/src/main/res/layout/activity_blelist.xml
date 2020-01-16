@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary"
+            android:orientation="vertical">
+
+            <android.support.v4.widget.SwipeRefreshLayout
+                android:id="@+id/srl_plant_pull"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimary"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/divider"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorPrimary">
+
+                        <RelativeLayout
+                            android:id="@+id/rl_collection_return"
+                            android:layout_width="@dimen/dp_40"
+                            android:layout_height="@dimen/dp_40"
+                            android:background="?android:attr/selectableItemBackground">
+
+                            <ImageView
+                                android:layout_width="@dimen/dp_18"
+                                android:layout_height="@dimen/dp_17"
+                                android:layout_centerInParent="true"
+                                android:background="@android:color/transparent"
+                                android:src="@mipmap/left_arrow_black" />
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                    <ListView
+                        android:id="@+id/lv_ble_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/dp_1"
+                        android:background="@color/colorPrimary"
+                        android:divider="@color/divider"
+                        android:dividerHeight="@dimen/dp_1"
+                        android:scrollbars="none" />
+                </LinearLayout>
+            </android.support.v4.widget.SwipeRefreshLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -100,9 +100,18 @@ public class BleBindActivity extends BaseActivity<ActivityBleBindBinding> {
         binding.bleBindTips.setClickable(false);
         binding();
 
+        Intent intent = getIntent();
+        int position = intent.getIntExtra("position", 0);
+
         boolean checkPermission = BluetoothUtil.checkPermission();   //检查定位权限
         if (checkPermission) {
-            openBluetooth();
+
+            BluetoothUtil.startConnect(BluetoothUtil.scanResults.get(position).getDevice().getAddress());
+            DisposableObserver connObserver = getConnObserver();
+            Observable.interval(0, 1000, TimeUnit.MILLISECONDS)
+                    .take(50).observeOn(AndroidSchedulers.mainThread()).subscribe(connObserver);
+            mCompositeDisposable.add(connObserver);
+//            openBluetooth();
         } else {
             ActivityCompat.requestPermissions(this,
                     new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, REQUEST_LOCATION);
