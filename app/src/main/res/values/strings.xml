@@ -1,5 +1,5 @@
-<resources>
-    <string name="app_name">Deelock</string>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">rongzhonghe</string>
 
     <string name="onLine">在线</string>
     <string name="offLine">离线</string>

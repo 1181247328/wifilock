@@ -28,6 +28,7 @@ import android.widget.Toast;
 import com.ble.ble.BleCallBack;
 import com.ble.ble.BleService;
 import com.deelock.state.BleListPullFind;
+import com.deelock.state.WiFiFind;
 import com.deelock.wifilock.application.CustomApplication;
 import com.deelock.wifilock.bluetooth.BleActivity;
 import com.deelock.wifilock.network.BaseResponse;
@@ -53,7 +54,6 @@ public class BluetoothUtil {
 
     private static BluetoothGatt bluetoothGatt;
 
-    private static EventBus eventBus = EventBus.getDefault();
 
     public static boolean isConnected = false;
     private static boolean isOpen = false;
@@ -68,24 +68,6 @@ public class BluetoothUtil {
     //监听器
     private static CompositeDisposable mCompositeDisposable = new CompositeDisposable();
 
-    //发送的第一段数据
-    private static String send_1;
-
-    //发送的第一段数据是否成功
-    private static boolean isSendOne = false;
-
-    //发送的第二段数据
-    private static String send_2;
-
-    //发送的第二段数据是否成功
-    private static boolean isSendTwo = false;
-
-    //发送的第三段数据
-    private static String send_3;
-
-    //发送的第三段数据是否成功
-    private static boolean isSendThree = false;
-
     public static ArrayList<ScanResult> scanResults = new ArrayList<>();   //扫描蓝牙结果集
 
 //    private static UUID my_serviceUuid = UUID.fromString("00001000-0000-1000-8000-00805f9b34fb");   //主服务uuid
@@ -97,6 +79,15 @@ public class BluetoothUtil {
     private static boolean isFromBind = false;
 
     private static Context context = null;
+
+    /**
+     * 用于当通过蓝牙将wifi密码发送到蓝牙模块时，wifi会有一个等待绑定的时间，由于没有发送数据给蓝牙，所以recv_1、recv_2、recv_3是为空
+     * 无法在返回过程中做出recv_1!=null的判断，这里单独为绑定wifi做一个布尔型数据
+     */
+    public static boolean isWifi = false;
+
+    //用于判断是否返回绑定wifi会成功
+    public static boolean isWifiYes = false;
 
     /**
      * 当门锁与手机非用户主动断开连接时，监听重连，重新连接时间超过规定时间，中断连接
@@ -289,7 +280,7 @@ public class BluetoothUtil {
                                     scanResults.add(result);
                                 }
                             }
-                            eventBus.post(new BleListPullFind());
+                            EventBus.getDefault().post(new BleListPullFind());
                         } else {
                             int a;
                             for (a = 0; a < size; a++) {
@@ -310,7 +301,7 @@ public class BluetoothUtil {
                                     }
                                 }
                             }
-                            eventBus.post(new BleListPullFind());
+                            EventBus.getDefault().post(new BleListPullFind());
                         }
                         Collections.sort(scanResults, new Comparator<ScanResult>() {
                             @Override
@@ -318,7 +309,7 @@ public class BluetoothUtil {
                                 return o1.getRssi() - o2.getRssi();
                             }
                         });
-                        eventBus.post(new BleListPullFind());
+                        EventBus.getDefault().post(new BleListPullFind());
                     }
 
                     @Override
@@ -627,14 +618,18 @@ public class BluetoothUtil {
             String recv = InputUtil.bytesToHexString(bluetoothGattCharacteristic.getValue());
             Log.e("main_接收", recv);
             if ("A1D".equals(recv.substring(0, 3)) || "A2D".equals(recv.substring(0, 3))) {
-                isSendOne = true;
                 recv_1 = recv;
             } else if (recv.length() >= 20 && "CC".equals(recv.substring(18, 20))) {
-                isSendThree = true;
                 recv_3 = recv.substring(0, 20);
             } else {
-                isSendTwo = true;
                 recv_2 = recv;
+            }
+            if (isWifi && recv_1 != null && recv_2 != null && recv_3 != null) {
+                String recv_4 = recv_1 + recv_2 + recv_3;
+                Log.e("main", "---" + recv_1 + "---" + recv_2 + "---" + recv_3);
+                isWifi = false;
+                EventBus.getDefault().post(new WiFiFind(recv_4));
+                return;
             }
             if (recv_1 != null && recv_2 != null && recv_3 != null && recv_order == null) {
                 String recv_4 = recv_1 + recv_2 + recv_3;

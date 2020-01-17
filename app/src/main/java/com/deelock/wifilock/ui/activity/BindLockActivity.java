@@ -16,7 +16,7 @@ import android.widget.Toast;
 
 import com.alibaba.fastjson.JSONObject;
 import com.deelock.state.BleListActivity;
-import com.deelock.state.LockState;
+import com.deelock.state.WiFiFind;
 import com.deelock.wifilock.R;
 import com.deelock.wifilock.entity.Bind;
 import com.deelock.wifilock.entity.FPrintList;
@@ -45,6 +45,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
+import de.greenrobot.event.EventBus;
+import de.greenrobot.event.Subscribe;
 import io.reactivex.Observable;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -83,8 +85,8 @@ public class BindLockActivity extends BaseActivity {
     private String currentOrder;
     private HandleOrder mHandle;
 
-    //中间逻辑处理层
-    private LockState lockState = LockState.getLockState();
+    //事件分发总线
+    private EventBus eventBus = EventBus.getDefault();
 
     //监听器
     private static CompositeDisposable mCompositeDisposable = new CompositeDisposable();
@@ -104,6 +106,9 @@ public class BindLockActivity extends BaseActivity {
 
     @Override
     protected void doBusiness() {
+        if (!eventBus.isRegistered(this)) {
+            eventBus.register(this);
+        }
         mProgressDialog = new ProgressDialog(this);
         StatusBarUtil.StatusBarLightMode(this);
         hand_iv = findViewById(R.id.hand_iv);
@@ -398,11 +403,11 @@ public class BindLockActivity extends BaseActivity {
     }
 
     /**
-     * 上传从蓝牙得到的数据
+     * 再将从服务器得到的数据发送给蓝牙
      */
     private void bleUploadWifi(String word) {
         //将通过蓝牙将WIFI密码、名称全部发送给蓝牙
-        mProgressDialog.setMessage("指令上传中...");
+        mProgressDialog.setMessage("请稍候...");
         mProgressDialog.show();
         HashMap<String, Object> params = new HashMap<>();
         //用户id
@@ -424,10 +429,28 @@ public class BindLockActivity extends BaseActivity {
                         }
                         Log.e("BindLockActivity", "---" + code + "---" + content);
                         if (code == 27) {
-                            Toast.makeText(context, "wifi配置成功", Toast.LENGTH_SHORT).show();
+                            mProgressDialog.setMessage("指令下发中,请稍候...");
+                            mProgressDialog.show();
+                            wifiCode = GsonUtil.getValueByKey("cmd", content);
+                            Log.e("BindLockActivity", "---二次发送的---" + wifiCode);
+                            BluetoothUtil.writeCode(wifiCode);
+                            DisposableObserver orderObserver = getWifiTwoObserver();
+                            Observable.interval(0, 1000, TimeUnit.MILLISECONDS)
+                                    .take(30).observeOn(AndroidSchedulers.mainThread()).subscribe(orderObserver);
+                            mCompositeDisposable.add(orderObserver);
+                        } else if (code == 28) {
+                            mProgressDialog.setMessage("Wifi配置中,请稍候...");
+                            mProgressDialog.show();
+                            BluetoothUtil.isWifi = true;
+                            DisposableObserver orderObserver = getWifiThreeObserver();
+                            Observable.interval(0, 1000, TimeUnit.MILLISECONDS)
+                                    .take(500).observeOn(AndroidSchedulers.mainThread()).subscribe(orderObserver);
+                            mCompositeDisposable.add(orderObserver);
+                        } else if (code == 5) {
+                            Toast.makeText(BindLockActivity.this, "wifi配置成功", Toast.LENGTH_SHORT).show();
                             finish();
                         } else {
-                            Toast.makeText(context, "wifi配置失败,请重新配置", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(BindLockActivity.this, "wifi配置失败,请重新配置", Toast.LENGTH_SHORT).show();
                         }
                     }
 
@@ -990,6 +1013,7 @@ public class BindLockActivity extends BaseActivity {
                 }
             }
         }
+
     }
 
     @Override
@@ -1010,6 +1034,7 @@ public class BindLockActivity extends BaseActivity {
             mProgressDialog.dismiss();
             mProgressDialog = null;
         }
+        eventBus.unregister(this);
     }
 
     /**
@@ -1049,5 +1074,137 @@ public class BindLockActivity extends BaseActivity {
                 }
             }
         };
+    }
+
+    /**
+     * 再次下发WIFI绑定指令的监听，并处理返回来的数据
+     *
+     * @return
+     */
+    private DisposableObserver getWifiTwoObserver() {
+        return new DisposableObserver() {
+
+            @Override
+            public void onNext(Object o) {
+                Log.e("BindLockActivity", "---onNext---" + BluetoothUtil.isConnected);
+                if (BluetoothUtil.recv_order != null) {
+                    if (currentOrder == null || !BluetoothUtil.recv_order.equals(currentOrder)) {
+                        currentOrder = BluetoothUtil.recv_order;
+                        bleUploadWifi(currentOrder);
+                    }
+                }
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                Log.e("BindLockActivity", "---onError---");
+            }
+
+            @Override
+            public void onComplete() {
+                Log.e("BindLockActivity", "---onComplete---" + BluetoothUtil.isConnected);
+                mCompositeDisposable.clear();
+                BluetoothUtil.closeBluetooth();
+                BluetoothUtil.clearInfo();
+                Toast.makeText(BindLockActivity.this, "下发指令失败,请重新发送", Toast.LENGTH_SHORT).show();
+                if (mProgressDialog != null) {
+                    mProgressDialog.dismiss();
+                }
+            }
+        };
+    }
+
+    /**
+     * 等待wifi配置成功
+     *
+     * @return
+     */
+    private DisposableObserver getWifiThreeObserver() {
+        return new DisposableObserver() {
+
+            @Override
+            public void onNext(Object o) {
+                Log.e("BindLockActivity", "---onNext---");
+//                if (BluetoothUtil.isWifiYes) {
+//                    BluetoothUtil.isWifiYes = false;
+//                    dispose();
+//                    currentOrder = BluetoothUtil.recv_order;
+//                    Log.e("BindLockActivity", "---最终数据---" + currentOrder);
+//                    bleUploadWifi(currentOrder);
+//                }
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                Log.e("BindLockActivity", "---onError---");
+            }
+
+            @Override
+            public void onComplete() {
+                Log.e("BindLockActivity", "---onComplete---" + BluetoothUtil.isConnected);
+                mCompositeDisposable.clear();
+                BluetoothUtil.closeBluetooth();
+                BluetoothUtil.clearInfo();
+                Toast.makeText(BindLockActivity.this, "下发指令失败,请重新发送", Toast.LENGTH_SHORT).show();
+                if (mProgressDialog != null) {
+                    mProgressDialog.dismiss();
+                }
+            }
+        };
+    }
+
+    /**
+     * 绑定数据返回
+     *
+     * @param w
+     */
+    @Subscribe
+    public void onEventMainThread(WiFiFind w) {
+        Log.e("BindLockActivity", "---" + w.code);
+        if (mProgressDialog != null) {
+            mProgressDialog.dismiss();
+        }
+        currentOrder = w.code;
+//        bleUploadWifi(currentOrder);
+        mCompositeDisposable.clear();
+        try {
+            Thread.sleep(300);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        HashMap<String, Object> params = new HashMap<>();
+        //用户id
+        params.put("uid", SPUtil.getUid(BindLockActivity.this));
+        //时间
+        params.put("timestamp", TimeUtil.getTime());
+        //发送指令
+        params.put("type", "C3C3");
+        //获得的数据
+        Log.e("BindLockActivity", "---" + currentOrder);
+        params.put("lockCmd", w.code);
+        RequestUtils.request(RequestUtils.BLE_WIFI_UPLOAD, BindLockActivity.this, params).enqueue(
+                new ResponseCallback<BaseResponse>(BindLockActivity.this) {
+                    @Override
+                    protected void onSuccess(int code, final String content) {
+                        super.onSuccess(code, content);
+                        Log.e("BindLockActivity", "---" + code + "---" + content);
+                        if (code == 5) {
+                            Toast.makeText(BindLockActivity.this, "wifi配置成功", Toast.LENGTH_SHORT).show();
+                            finish();
+                        } else {
+                            Toast.makeText(BindLockActivity.this, "wifi配置失败,请重新配置", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    protected void onFailure(int code, String message) {
+                        super.onFailure(code, message);
+                        Log.e("BindLockActivity", "---onFailure---" + message);
+                        if (mProgressDialog != null) {
+                            mProgressDialog.dismiss();
+                        }
+                        Toast.makeText(BindLockActivity.this, "获取绑定指令失败,请重新请求", Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 }
