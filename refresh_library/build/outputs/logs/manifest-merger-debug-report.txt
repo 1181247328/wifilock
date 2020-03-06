@@ -1,39 +1,39 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml:2:1-9:12
-INJECTED from C:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml:2:1-9:12
-INJECTED from C:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml:2:1-9:12
-INJECTED from C:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml:2:1-9:12
-INJECTED from C:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml:2:1-9:12
-INJECTED from C:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml:2:1-9:12
-INJECTED from C:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml:2:1-9:12
+ADDED from D:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml:2:1-9:12
+INJECTED from D:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml:2:1-9:12
+INJECTED from D:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml:2:1-9:12
+INJECTED from D:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml:2:1-9:12
+INJECTED from D:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml:2:1-9:12
+INJECTED from D:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml:2:1-9:12
+INJECTED from D:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml:2:1-9:12
 	package
-		ADDED from C:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml:3:5-49
-		INJECTED from C:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml
-		INJECTED from C:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml
+		ADDED from D:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml:3:5-49
+		INJECTED from D:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml
+		INJECTED from D:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml
 	android:versionName
-		ADDED from C:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml:5:5-32
-		INJECTED from C:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml
-		INJECTED from C:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml
+		ADDED from D:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml:5:5-32
+		INJECTED from D:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml
+		INJECTED from D:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml:2:11-69
+		ADDED from D:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml:2:11-69
 	android:versionCode
-		ADDED from C:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml:4:5-31
-		INJECTED from C:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml
-		INJECTED from C:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml
+		ADDED from D:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml:4:5-31
+		INJECTED from D:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml
+		INJECTED from D:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml
 application
-ADDED from C:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml:7:5-20
+ADDED from D:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml:7:5-20
 uses-sdk
-INJECTED from C:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml
-INJECTED from C:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml
-INJECTED from C:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml
-INJECTED from C:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml
+INJECTED from D:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml
+INJECTED from D:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml
+INJECTED from D:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml
+INJECTED from D:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from C:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml
-		ADDED from C:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml
-		INJECTED from C:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml
+		INJECTED from D:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml
+		ADDED from D:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml
+		INJECTED from D:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml
-		ADDED from C:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml
-		INJECTED from C:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml
+		INJECTED from D:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml
+		ADDED from D:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml
+		INJECTED from D:\AndroidStudio\deek_one\wifilock\refresh_library\src\main\AndroidManifest.xml

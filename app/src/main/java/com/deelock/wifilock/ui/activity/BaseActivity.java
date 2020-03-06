@@ -29,6 +29,7 @@ public abstract class BaseActivity extends Activity {
 
     boolean clickAble = true;
 
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

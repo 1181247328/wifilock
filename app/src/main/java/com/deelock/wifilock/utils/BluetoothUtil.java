@@ -36,6 +36,8 @@ import com.deelock.wifilock.network.RequestUtils;
 import com.deelock.wifilock.network.ResponseCallback;
 import com.deelock.wifilock.network.TimeUtil;
 
+import org.greenrobot.eventbus.EventBus;
+
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -43,7 +45,6 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Set;
 
-import de.greenrobot.event.EventBus;
 import io.reactivex.disposables.CompositeDisposable;
 import okhttp3.Headers;
 

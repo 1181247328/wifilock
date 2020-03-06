@@ -21,11 +21,13 @@ import com.deelock.wifilock.R;
 import com.deelock.wifilock.bluetooth.BleBindActivity;
 import com.deelock.wifilock.utils.BluetoothUtil;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import de.greenrobot.event.EventBus;
-import de.greenrobot.event.Subscribe;
+
 
 /**
  * ble设备扫描集合
